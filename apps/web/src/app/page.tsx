@@ -15,6 +15,7 @@ import Products from './products';
 import AboutUs from './about';
 import BrandsSection from './brands';
 import ContactUsSection from './ContactUsSection';
+import Highlights from './highlights';
 
 export default function Page() {
   return (
@@ -73,6 +74,8 @@ export default function Page() {
         <Products />
 
         <TestimonialsPage />
+        
+        <Highlights />
 
         <NewsSection />
         <ContactUsSection />

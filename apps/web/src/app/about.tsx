@@ -15,8 +15,6 @@ const AboutUs = () => {
         <div className="w-full lg:w-1/2 lg:pl-8">
           <h2 className="text-3xl font-bold mb-4">About Us</h2>
           <p className="mb-4 text-md">
-
-            Brand Information: Switchoff Energy Drink and Switchoff Guarana
             Switchoff Energy Drink and Switchoff Guarana are globally recognized products owned by DISSCO Ltd, a Rwandan company.DISSCO Ltd has deep roots in the beverage distribution industry, with our parents having been involved in the distribution of Heineken and SKOL products for over 40 years.
 
             Driven by a desire to aim high and create our own brand, we embarked on a journey to build Switchoff with the help of industry experts. Our vision is to elevate our brand to new heights and provide consumers with high-quality energy drinks that meet their needs and expectations.

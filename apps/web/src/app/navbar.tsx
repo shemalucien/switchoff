@@ -28,10 +28,10 @@ const Navbar = () => {
             link: "Get in touch",
         },
 
-        {
-            id: 5,
-            link: <Image src={flag} alt="Image 1" width={40} height={40} />,
-        }
+        // {
+        //     id: 5,
+        //     link: <Image src={flag} alt="Image 1" width={40} height={40} />,
+        // }
 
     ];
 
