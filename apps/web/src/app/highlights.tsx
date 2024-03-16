@@ -1,6 +1,5 @@
 // components/Highlights.tsx
 import { useState } from 'react';
-import Splide, { AutoScroll } from '@splidejs/react-splide';
 import Image from 'next/image';
 import bottle from './Image.jpg';
 
