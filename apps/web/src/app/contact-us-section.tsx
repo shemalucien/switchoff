@@ -5,13 +5,11 @@ import logo from './logo1.png';
 const ContactUsSection = () => {
   // Dummy data for partners
   const partners = [
-    { name: 'DISSCO LTD', address: 'City, Kigali, Rwanda,KN 20 Ave', logo: logo, email: 'dissco@gmail.com', tel: 250785135816 },
-
-    // Add more partners as needed
+    { name: 'DISSCO LTD', address: 'City, Kigali, Rwanda,KN 20 Ave', logo: logo, email: 'dissco@gmail.com', tel: 250785135816 }
   ];
 
   return (
-    
+
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col lg:flex-row lg:space-x-8">
         {/* Column for Partners */}
@@ -60,12 +58,13 @@ const ContactUsSection = () => {
 
 
       {/* Back to Top Button */}
-      <button className="fixed bottom-4 right-4 bg-blue-500 text-white py-2 px-4 rounded" onClick={() => window.scrollTo(0, 0)}>
+      <button className="fixed bottom-4 right-4 bg-blue-500 text-white py-2 px-4 rounded" onClick={() => { window.scrollTo(0, 0); }}>
         <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 11l7-7 7 7M5 19l7-7 7 7" />
         </svg>
       </button>
-    // </div>
+
+    </div>
   );
 };
 
