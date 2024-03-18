@@ -1,15 +1,14 @@
-// components/TestimonialCard.tsx
 import React from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 interface TestimonialCardProps {
-  quote: string;
-  author: string;
-  imageUrl: string;
+ quote: string;
+ author: string;
+ imageUrl: StaticImageData;
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author, imageUrl }) => {
-  return (
+ return (
     <div className="bg-blue-400 shadow-md rounded-lg p-6 m-2 flex flex-col text-center relative">
       <p className="text-white text-lg mt-4 font-bold">Testimonial</p>
       <p className="text-gray-700 text-lg mt-4">{quote}</p>
@@ -20,10 +19,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author, imageU
         <p className="text-gray-500">- {author}</p>
       </div>
     </div>
-
-
-
-  );
+ );
 };
 
 export default TestimonialCard;
