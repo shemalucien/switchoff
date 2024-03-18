@@ -26,10 +26,10 @@ const ContactUsSection = () => {
                 <h4 className="font-semibold">{partner.address}</h4>
               </div>
               <div>
-                <p className="font-semibold"><label>Email :</label>{partner.email}</p>
+                <p className="font-semibold">Email: {partner.email}</p>
               </div>
               <div>
-                <p className="font-semibold"><label>Tel: +</label>{partner.tel}</p>
+                <p className="font-semibold">Tel: {partner.tel}</p>
               </div>
             </div>
           ))}

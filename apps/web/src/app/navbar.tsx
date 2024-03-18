@@ -25,29 +25,12 @@ const Navbar = () => {
             id: 4,
             link: "Get in touch",
         },
-
-        // {
-        //     id: 5,
-        //     link: <Image src={flag} alt="Image 1" width={40} height={40} />,
-        // }
-
     ];
 
     return (
         <div className="flex justify-between items-center w-full h-20 px-4 text-black bg-white fixed nav shadow-md z-50">
             <div>
-                {/* <h1 className="text-5xl font-signature ml-2"><a className="link-underline hover:transition ease-in-out delay-150 hover:underline hover:decoration-solid" href="">Logo</a></h1> */}
-                {/* <h1 className="text-5xl font-signature ml-2">
-          <a
-            className="link-underline link-underline-black"
-            href=""
-            target="_blank"
-            rel="noreferrer"
-          >
-            Logo
-          </a>
-        </h1> */}
-                <Image src={logo} alt="Image 1" width={50} height={40} onClick={() => setNav(false)} />
+                <Image src={logo} alt="Logo" width={50} height={40} onClick={() => { setNav(false); }} />
             </div>
 
             <ul className="hidden md:flex">
@@ -60,13 +43,19 @@ const Navbar = () => {
                     </li>
                 ))}
                 <li className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-black duration-200">
-                <Image src={flag} alt="Image 1" width={40} height={40} />
+                    <Image src={flag} alt="Flag" width={40} height={40} />
                 </li>
             </ul>
 
             <div
                 onClick={() => setNav(!nav)}
                 className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
+                tabIndex={0} // Make the div focusable
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                        setNav(!nav);
+                    }
+                }} // Add keyboard event listener
             >
                 {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
             </div>
@@ -77,9 +66,15 @@ const Navbar = () => {
                         <li
                             key={id}
                             className="px-4 cursor-pointer capitalize py-6 text-4xl"
+                            tabIndex={0} // Make the li focusable
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    setNav(!nav);
+                                }
+                            }} // Add keyboard event listener
                         >
-                            <Link onClick={() => setNav(!nav)} href={link}>
-                                {link}
+                            <Link href={link}>
+                                <a onClick={() => setNav(!nav)}>{link}</a>
                             </Link>
                         </li>
                     ))}
