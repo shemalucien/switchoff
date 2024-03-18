@@ -2,14 +2,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import guaran from './Image.jpg';
 
-// Define a type for the image object within a tweet
-interface Image {
-    url: string;
-    width: number;
-    height: number;
-}
-
-
 // Define a type for the media object within a tweet
 interface Media {
     type: 'image' | 'video';
@@ -38,7 +30,7 @@ const dummyTweets: Tweet[] = [
         text: 'Another highlight from the social media showcasing our new video.',
         media: {
             type: 'video',
-            url: './NICE.mp4',
+            url: './ENERGY.mp4',
         },
     },
     {
