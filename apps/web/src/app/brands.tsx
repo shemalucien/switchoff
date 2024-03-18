@@ -38,7 +38,7 @@ const BrandsSection = () => {
           {brands.map((brand, index) => (
             <div key={index} className="bg-white p-6 rounded-lg text-center shadow-md flex flex-col items-center mb-8"> {/* Add margin to create space between cards */}
               <div className="mx-auto w-24 h-24 mb-4">
-                <Image src={brand.image} alt={brand.name} width={96} height={96} className="rounded-full" />
+                <Image src={brand.image} alt={brand.name} width={96} height={96} className="rounded-full mx-auto object-cover" />
               </div>
               {/* <h3 className="text-xl font-semibold text-center mb-2 mt-12">{brand.name}</h3> */}
               <h3 className="text-xl font-semibold text-center mb-2 mt-12" dangerouslySetInnerHTML={{ __html: brand.name }}></h3>

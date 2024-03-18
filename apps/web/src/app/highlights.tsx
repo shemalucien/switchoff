@@ -57,12 +57,12 @@ const Highlights: React.FC = () => {
                         {tweet.media && (
                             <div className="flex justify-center">
                                 {tweet.media.type === 'image' && (
-                                    <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/2 p-2">
-                                        <Image src={guaran} alt="Image 1" layout="responsive" width={50} height={100} />
+                                    <div className="p-2 flex justify-center items-center">
+                                        <Image src={guaran} alt="Image 1" layout="responsive" width={50} height={50} />
                                     </div>
                                 )}
                                 {tweet.media.type === 'video' && (
-                                    <video className="w-full sm:w-1/2 md:w-1/3 lg:w-1/2 p-2" controls>
+                                    <video className="p-2 flex justify-center items-center" controls>
                                         <source src={tweet.media.url} type="video/mp4" />
                                         <track kind="captions" src="path/to/captions.vtt" srcLang="en" label="English" default />
                                         Your browser does not support the video tag.

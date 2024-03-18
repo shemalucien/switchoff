@@ -8,13 +8,13 @@ const AboutUs = () => {
       <div className="flex flex-col lg:flex-row">
         {/* Column for Image */}
         <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
-          <Image src={bottle} alt="Image 1" width={400} height={400} />
+          <Image className='rounded-lg mx-auto object-cover' src={bottle} alt="Image 1" width={450} height={250} />
         </div>
 
         {/* Column for Content */}
-        <div className="w-full lg:w-1/2 lg:pl-8">
+        <div className="w-full lg:w-1/2 lg:pl-4">
           <h2 className="text-3xl font-bold mb-4">About Us</h2>
-          <p className="mb-4 text-md">
+          <p className="mb-4 text-md text-justify">
             Switchoff Energy Drink and Switchoff Guarana are globally recognized products owned by DISSCO Ltd, a Rwandan company.DISSCO Ltd has deep roots in the beverage distribution industry, with our parents having been involved in the distribution of Heineken and SKOL products for over 40 years.
 
             Driven by a desire to aim high and create our own brand, we embarked on a journey to build Switchoff with the help of industry experts. Our vision is to elevate our brand to new heights and provide consumers with high-quality energy drinks that meet their needs and expectations.
@@ -27,12 +27,12 @@ const AboutUs = () => {
 
           <div className="mb-6">
             <h3 className="text-xl font-bold mb-2">Mission</h3>
-            <p className="mb-2 text-md">Our mission is to provide the best services...</p>
+            <p className="mb-2 text-md text-justify">Our mission is to provide the best services...</p>
           </div>
 
           <div className="mb-6">
             <h3 className="text-xl font-bold mb-2">Values</h3>
-            <p className="mb-2 text-md">
+            <p className="mb-2 text-md text-justify">
 
               At DISSCO Ltd, we are committed to delivering excellence in every bottle of Switchoff, and we look forward to continuing our journey of growth and innovation in the beverage industry.
             </p>

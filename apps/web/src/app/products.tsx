@@ -18,11 +18,11 @@ const Products = () => {
 
             <div className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                 {/* First Card */}
-                <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <div className="sm:w-1/2 p-2">
-                        <Image src={guaran} alt="Image 1" layout="responsive" width={200} height={100} />
+                <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col">
+                    <div className="p-2 flex justify-center items-center">
+                        <Image src={guaran} alt="Image 1" layout="responsive" width={50} height={50} />
                     </div>
-                    <div className="p-5">
+                    <div className="p-5 flex flex-col justify-between">
                         <a href="https://flowbite.com/docs/components/card">
                             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"> 
                                 NICE GUARANA <sup>+</sup>
@@ -34,20 +34,18 @@ const Products = () => {
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                             Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
                         </p>
-
                     </div>
                 </div>
 
                 {/* Second Card */}
-                <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <div className="sm:w-1/2 p-2 relative overflow-hidden flex justify-center items-center">
-                        <Image src={energy} alt="Image 3" layout="responsive" width={200} height={100} className="w-full h-full object-center object-cover" />
+                <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col">
+                    <div className="p-2 flex justify-center items-center">
+                        <Image src={energy} alt="Image 3" layout="responsive" width={50} height={50} />
                     </div>
-
-                    <div className="p-5">
+                    <div className="p-5 flex flex-col justify-between">
                         <a href="https://flowbite.com/docs/components/card">
                             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            ENERGY DRINK
+                                ENERGY DRINK
                             </h5>
                             <h6 className="mb-2 text-xl  text-gray-900 dark:text-white ">
                                 600 kcal
@@ -58,8 +56,6 @@ const Products = () => {
                         </p>
                     </div>
                 </div>
-
-                
             </div>
         </>
     );

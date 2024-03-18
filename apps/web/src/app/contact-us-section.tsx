@@ -11,10 +11,10 @@ const ContactUsSection = () => {
   return (
 
     <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col lg:flex-row lg:space-x-8">
+      <div className="flex flex-col lg:flex-row lg:space-x-8 sm:flex-row-reverse ">
         {/* Column for Partners */}
         <div className="mb-8 lg:w-1/2">
-          <h3 className="text-2xl font-semibold mb-4">Our Partners</h3>
+          <h3 className="text-2xl font-semibold mb-4 text-left">Our Address</h3>
           {partners.map((partner, index) => (
             <div key={index} className="flex flex-col mb-4">
               <Image src={partner.logo} alt={partner.name} width={80} height={80} className="mr-4 rounded-lg" />

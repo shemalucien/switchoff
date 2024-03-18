@@ -10,10 +10,10 @@ const NewsSection = () => {
             <div className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                 {/* First Card */}
                 <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <div className="sm:w-1/2 p-2">
-                        <Image src={bottle} alt="Image 1" layout="responsive" width={200} height={100} />
+                    <div className="p-2 flex justify-center items-center">
+                        <Image src={bottle} alt="Image 1" layout="responsive" width={50} height={50} />
                     </div>
-                    <div className="p-5">
+                    <div className="p-5 flex flex-col justify-between">
                         <a href="https://flowbite.com/docs/components/card">
                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 Noteworthy technology acquisitions 2021
@@ -24,7 +24,7 @@ const NewsSection = () => {
                         </p>
                         <a
                             href="https://flowbite.com/docs/components/card"
-                            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            className="inline-flex items-center px-3 py-2  text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         >
                             Read more
                             <svg
@@ -48,11 +48,11 @@ const NewsSection = () => {
 
                 {/* Second Card */}
                 <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <div className="sm:w-1/2 p-2 relative overflow-hidden flex justify-center items-center">
-                        <Image src={bottle} alt="Image 3" layout="responsive" width={200} height={100} className="w-full h-full object-center object-cover" />
+                    <div className="p-2 flex justify-center items-center">
+                        <Image src={bottle} alt="Image 3" layout="responsive" width={50} height={50} className="w-full h-full object-center object-cover" />
                     </div>
 
-                    <div className="p-5">
+                    <div className="p-5 flex flex-col justify-between">
                         <a href="https://flowbite.com/docs/components/card">
                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 Noteworthy technology acquisitions 2021
@@ -87,11 +87,11 @@ const NewsSection = () => {
 
                 {/* Third Card */}
                 <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <div className="sm:w-1/2 p-2 relative overflow-hidden flex justify-center items-center">
-                        <Image src={bottle} alt="Image 3" layout="responsive" width={200} height={100} className="w-full h-full object-center object-cover" />
+                    <div className="p-2 flex justify-center items-center">
+                        <Image src={bottle} alt="Image 3" layout="responsive" width={50} height={50} className="w-full h-full object-center object-cover" />
                     </div>
 
-                    <div className="p-5">
+                    <div className="p-5 flex flex-col justify-between">
                         <a href="https://flowbite.com/docs/components/card">
                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 Noteworthy technology acquisitions 2021
