@@ -50,12 +50,13 @@ const Navbar = () => {
             </ul>
 
             <button
-                onClick={() => setNav(!nav)}
+                onClick={() => { setNav(!nav); }}
                 className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
                 aria-label="Toggle navigation"
             >
                 {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
             </button>
+
 
             {nav && (
                 <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-cyan-500 to-blue-500 text-white">
