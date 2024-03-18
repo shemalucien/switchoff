@@ -1,10 +1,5 @@
 'use client';
 import React from 'react';
-import Head from 'next/head';
-import Image from 'next/image';
-import bottle from './Image.jpg';
-import bootle1 from './ENERGY_41.jpg';
-
 import Navbar from './navbar';
 import Footer from './footer';
 import NewsSection from './newssection';
@@ -12,7 +7,7 @@ import TestimonialsPage from './testimonials';
 import Products from './products';
 import AboutUs from './about';
 import BrandsSection from './brands';
-import ContactUsSection from './ContactUsSection';
+import ContactUsSection from './contact-us-section';
 import Highlights from './highlights';
 import Slide from './slide';
 

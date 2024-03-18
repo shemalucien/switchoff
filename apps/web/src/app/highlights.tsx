@@ -1,4 +1,3 @@
-// components/Highlights.tsx
 import { useState } from 'react';
 import Image from 'next/image';
 import bottle from './Image.jpg';
@@ -58,13 +57,14 @@ const Highlights: React.FC = () => {
                         {tweet.media && (
                             <div>
                                 {tweet.media.type === 'image' && (
-                                    <><div className="sm:w-1/3 p-2">
+                                    <div className="sm:w-1/3 p-2">
                                         <Image src={bottle} alt="Image 1" layout="responsive" width={200} height={100} />
-                                    </div></>
+                                    </div>
                                 )}
                                 {tweet.media.type === 'video' && (
                                     <video controls>
                                         <source src={tweet.media.url} type="video/mp4" />
+                                        <track kind="captions" src="path/to/captions.vtt" srcLang="en" label="English" default />
                                         Your browser does not support the video tag.
                                     </video>
                                 )}
@@ -78,4 +78,3 @@ const Highlights: React.FC = () => {
 };
 
 export default Highlights;
-

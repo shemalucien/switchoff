@@ -1,5 +1,5 @@
 import React from 'react';
-import TestimonialCard from './TestimonialCard';
+import TestimonialCard from './testimonial-card';
 import bottle from './Image.jpg';
 const testimonials = [
  { quote: "This product has changed my life!", author: "John Doe", imageUrl: bottle },

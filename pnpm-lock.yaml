@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@splidejs/react-splide':
+        specifier: ^0.7.12
+        version: 0.7.12
     devDependencies:
       '@repo/typescript-config':
         specifier: workspace:*

@@ -23,7 +23,7 @@ const Products = () => {
                         <Image src={bottle} alt="Image 1" layout="responsive" width={200} height={100} />
                     </div>
                     <div className="p-5">
-                        <a href="#">
+                        <a href="https://flowbite.com/docs/components/card">
                             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 SwitchOff Drink 
                             </h5>
@@ -45,9 +45,9 @@ const Products = () => {
                     </div>
 
                     <div className="p-5">
-                        <a href="#">
+                        <a href="https://flowbite.com/docs/components/card">
                             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                Nice Guarana
+                            Nice Guarana<sup>+</sup>
                             </h5>
                             <h6 className="mb-2 text-xl  text-gray-900 dark:text-white ">
                                 600 kcal
@@ -68,7 +68,7 @@ const Products = () => {
                     </div>
 
                     <div className="p-5">
-                        <a href="#">
+                        <a href="https://flowbite.com/docs/components/card">
                             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 Energy Drink
                             </h5>
