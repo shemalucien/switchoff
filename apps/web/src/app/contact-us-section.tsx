@@ -38,7 +38,7 @@ const ContactUsSection = () => {
         {/* Column for Contact Form */}
         <div className="lg:w-1/2">
           <h3 className="text-2xl font-semibold mb-4">Connect with Us</h3>
-          <form className="space-y-4">
+          <form className="space-y-4" >
             <div className="mb-4">
               <label htmlFor="name" className="block mb-1">Name:</label>
               <input type="text" id="name" name="name" className="w-full border border-gray-300 rounded-lg px-4 py-2" />

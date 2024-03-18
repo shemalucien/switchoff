@@ -1,7 +1,6 @@
 import React from "react";
 import Image from 'next/image';
 import bottle from './Image.jpg';
-import bottle1 from './ENERGY_41.jpg';
 
 const Products = () => {
     return (

@@ -20,7 +20,7 @@ const AboutUs = () => {
             Driven by a desire to aim high and create our own brand, we embarked on a journey to build Switchoff with the help of industry experts. Our vision is to elevate our brand to new heights and provide consumers with high-quality energy drinks that meet their needs and expectations.
 
             Production of Switchoff takes place in Vietnam, specifically at the esteemed company called RITA FOOD&DRINK CO., LTD located at No. 8 Thong Nhat Boulevard, Song Than 2 Industrial Park, Di An City., Binh Duong Province, Viet Nam. We work closely with Yumi and Vivien, who oversee operations at RITA.
-            Vietnam was chosen for its abundance of quality raw materials and packaging materials, as well as the expertise offered by RITA. Furthermore, RITA's positive reputation with relevant regulators solidified our decision to partner with them in bringing Switchoff to life.
+            Vietnam was chosen for its abundance of quality raw materials and packaging materials, as well as the expertise offered by RITA. Furthermore, RITA has positive reputation with relevant regulators solidified our decision to partner with them in bringing Switchoff to life.
 
 
           </p>

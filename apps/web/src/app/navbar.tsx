@@ -47,7 +47,7 @@ const Navbar = () => {
             Logo
           </a>
         </h1> */}
-                <Image src={logo} alt="Image 1" width={50} height={40} />
+                <Image src={logo} alt="Image 1" width={50} height={40} onClick={() => setNav(false)} />
             </div>
 
             <ul className="hidden md:flex">
