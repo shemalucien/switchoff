@@ -61,6 +61,9 @@ const Navbar = () => {
                         <Link href={link}>{link}</Link>
                     </li>
                 ))}
+                <li className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-black duration-200">
+                <Image src={flag} alt="Image 1" width={40} height={40} />
+                </li>
             </ul>
 
             <div

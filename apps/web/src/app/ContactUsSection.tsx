@@ -53,14 +53,6 @@ const ContactUsSection = () => {
             </div>
             <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded">Submit</button>
           </form>
-          {/* Company Address */}
-          <div className="mt-8 font-bold">
-            <h3 className="text-2xl mb-4">Our Address</h3>
-            <p> RITA FOOD&DRINK CO., LTD</p>
-            <p>Add: No. 8 Thong Nhat Boulevard, Song Than 2 Industrial Park, Di An City., Binh Duong Province, Viet Nam.</p>
-            <p>Attn: Yumi/Vivien</p>
-            <p>Tel: 0966 482 489</p>
-          </div>
         </div>
       </div>
 
