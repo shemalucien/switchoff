@@ -1,9 +1,10 @@
-import Link from "next/link";
-import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import Image from 'next/image';
-import flag from './flag.jpg';
-import logo from './logo1.png';
+
+import React from "react";
+// import Link from "next/link";
+// import { FaBars, FaTimes } from "react-icons/fa";
+// import Image from 'next/image';
+// import flag from './flag.jpg';
+// import logo from './logo1.png';
 
 const Navbar = () => {
     // const [nav, setNav] = useState(false);

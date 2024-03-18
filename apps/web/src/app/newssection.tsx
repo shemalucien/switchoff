@@ -1,6 +1,6 @@
 import React from "react";
-import Image from 'next/image';
-import bottle from './Image.jpg';
+// import Image from 'next/image';
+// import bottle from './Image.jpg';
 
 const NewsSection = () => {
     return (
