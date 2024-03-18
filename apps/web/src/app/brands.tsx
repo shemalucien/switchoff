@@ -1,39 +1,31 @@
 import React from 'react';
 import Image from 'next/image';
-import bottle from './Image.jpg';
+import guaran from './Image.jpg';
+import energy from './ENERGY.jpg';
 
 const BrandsSection = () => {
  const brands = [
     {
-      name: 'Brand A',
+      name: "NICE GUARANA <sup>+</sup>",
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat fermentum felis, ut sodales dolor ultrices non.',
       products: [
         { name: 'Product 1', icon: 'icon1.svg' },
         { name: 'Product 2', icon: 'icon2.svg' },
         { name: 'Product 3', icon: 'icon3.svg' }
       ],
-      image: bottle
+      image: guaran
     },
     {
-      name: 'Brand B',
+      name: 'ENERGY DRINK',
       description: 'Phasellus quis finibus eros, sed consequat est. Mauris pretium est eu lacus rhoncus, vel malesuada ex ultricies.',
       products: [
         { name: 'Product 4', icon: 'icon4.svg' },
         { name: 'Product 5', icon: 'icon5.svg' },
         { name: 'Product 6', icon: 'icon6.svg' }
       ],
-      image: bottle
+      image: energy
     },
-    {
-        name: 'Brand C',
-        description: 'Phasellus quis finibus eros, sed consequat est. Mauris pretium est eu lacus rhoncus, vel malesuada ex ultricies.',
-        products: [
-          { name: 'Product 4', icon: 'icon4.svg' },
-          { name: 'Product 5', icon: 'icon5.svg' },
-          { name: 'Product 6', icon: 'icon6.svg' }
-        ],
-        image: bottle
-      },
+    
     // Add more brands as needed
  ];
 
@@ -48,9 +40,10 @@ const BrandsSection = () => {
               <div className="mx-auto w-24 h-24 mb-4">
                 <Image src={brand.image} alt={brand.name} width={96} height={96} className="rounded-full" />
               </div>
-              <h3 className="text-xl font-semibold text-center mb-2 mt-12">{brand.name}</h3>
+              {/* <h3 className="text-xl font-semibold text-center mb-2 mt-12">{brand.name}</h3> */}
+              <h3 className="text-xl font-semibold text-center mb-2 mt-12" dangerouslySetInnerHTML={{ __html: brand.name }}></h3>
               <p className="text-gray-600 mb-4">{brand.description}</p>
-              <ul className="list-disc ml-6 mb-4">
+              {/* <ul className="list-disc ml-6 mb-4">
                 {brand.products.map((product, idx) => (
                  <li key={idx} className="flex items-center">
                     <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -59,7 +52,7 @@ const BrandsSection = () => {
                     {product.name}
                  </li>
                 ))}
-              </ul>
+              </ul> */}
               <button className="bg-blue-500 text-white py-2 px-4 rounded">View Products</button>
             </div>
           ))}

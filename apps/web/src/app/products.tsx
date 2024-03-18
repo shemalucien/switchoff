@@ -1,6 +1,7 @@
 import React from "react";
 import Image from 'next/image';
-import bottle from './Image.jpg';
+import guaran from './Image.jpg';
+import energy from './ENERGY.jpg';
 
 const Products = () => {
     return (
@@ -19,12 +20,12 @@ const Products = () => {
                 {/* First Card */}
                 <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div className="sm:w-1/2 p-2">
-                        <Image src={bottle} alt="Image 1" layout="responsive" width={200} height={100} />
+                        <Image src={guaran} alt="Image 1" layout="responsive" width={200} height={100} />
                     </div>
                     <div className="p-5">
                         <a href="https://flowbite.com/docs/components/card">
-                            <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                SwitchOff Drink 
+                            <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"> 
+                                NICE GUARANA <sup>+</sup>
                             </h5>
                             <h6 className="mb-2 text-xl  text-gray-900 dark:text-white ">
                                 600 kcal
@@ -40,13 +41,13 @@ const Products = () => {
                 {/* Second Card */}
                 <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div className="sm:w-1/2 p-2 relative overflow-hidden flex justify-center items-center">
-                        <Image src={bottle} alt="Image 3" layout="responsive" width={200} height={100} className="w-full h-full object-center object-cover" />
+                        <Image src={energy} alt="Image 3" layout="responsive" width={200} height={100} className="w-full h-full object-center object-cover" />
                     </div>
 
                     <div className="p-5">
                         <a href="https://flowbite.com/docs/components/card">
                             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            Nice Guarana<sup>+</sup>
+                            ENERGY DRINK
                             </h5>
                             <h6 className="mb-2 text-xl  text-gray-900 dark:text-white ">
                                 600 kcal
@@ -55,32 +56,10 @@ const Products = () => {
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                             Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
                         </p>
-
-
                     </div>
                 </div>
 
-                {/* Third Card */}
-                <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <div className="sm:w-1/2 p-2 relative overflow-hidden flex justify-center items-center">
-                        <Image src={bottle} alt="Image 3" layout="responsive" width={200} height={100} className="w-full h-full object-center object-cover" />
-                    </div>
-
-                    <div className="p-5">
-                        <a href="https://flowbite.com/docs/components/card">
-                            <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                Energy Drink
-                            </h5>
-                            <h6 className="mb-2 text-xl  text-gray-900 dark:text-white ">
-                                600 kcal
-                            </h6>
-                        </a>
-                        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                            Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-                        </p>
-
-                    </div>
-                </div>
+                
             </div>
         </>
     );

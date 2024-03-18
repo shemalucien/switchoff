@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import bottle from './Image.jpg';
+import guaran from './Image.jpg';
+
+// Define a type for the image object within a tweet
+interface Image {
+    url: string;
+    width: number;
+    height: number;
+}
+
 
 // Define a type for the media object within a tweet
 interface Media {
@@ -30,7 +38,7 @@ const dummyTweets: Tweet[] = [
         text: 'Another highlight from the social media showcasing our new video.',
         media: {
             type: 'video',
-            url: 'https://example.com/path/to/video1.mp4',
+            url: './NICE.mp4',
         },
     },
     {
@@ -38,7 +46,7 @@ const dummyTweets: Tweet[] = [
         text: 'Another highlight from the social media showcasing our new video.',
         media: {
             type: 'video',
-            url: 'https://example.com/path/to/video1.mp4',
+            url: './NICE.mp4',
         },
     },
     // Add more dummy tweets as needed
@@ -49,20 +57,20 @@ const Highlights: React.FC = () => {
 
     return (
         <div className="highlights">
-            <h2 className="text-4xl font-bold text-center mb-8">Recent Highlights From Our Social Medias</h2>
+            <h2 className="text-3xl font-bold text-center mb-8">Recent Highlights From Our Social Medias</h2>
             <ul className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                 {tweets.map((tweet) => (
-                    <li key={tweet.id}>
+                    <li key={tweet.id} className="flex flex-col items-center">
                         <p>{tweet.text}</p>
                         {tweet.media && (
-                            <div>
+                            <div className="flex justify-center">
                                 {tweet.media.type === 'image' && (
-                                    <div className="sm:w-1/3 p-2">
-                                        <Image src={bottle} alt="Image 1" layout="responsive" width={200} height={100} />
+                                    <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/2 p-2">
+                                        <Image src={guaran} alt="Image 1" layout="responsive" width={50} height={100} />
                                     </div>
                                 )}
                                 {tweet.media.type === 'video' && (
-                                    <video controls>
+                                    <video className="w-full sm:w-1/2 md:w-1/3 lg:w-1/2 p-2" controls>
                                         <source src={tweet.media.url} type="video/mp4" />
                                         <track kind="captions" src="path/to/captions.vtt" srcLang="en" label="English" default />
                                         Your browser does not support the video tag.
@@ -74,7 +82,11 @@ const Highlights: React.FC = () => {
                 ))}
             </ul>
         </div>
+
     );
 };
 
 export default Highlights;
+
+
+

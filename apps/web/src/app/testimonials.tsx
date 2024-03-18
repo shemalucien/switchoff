@@ -1,12 +1,16 @@
 import React from 'react';
 import TestimonialCard from './testimonial-card';
-import bottle from './Image.jpg';
+import charles from './Charles.jpg';
+import aline from './aline.jpg';
+import junior from './junior.jpg';
+import junior2 from './junior2.jpg';
+import muyango from './muyango.jpg';
 const testimonials = [
- { quote: "This product has changed my life!", author: "John Doe", imageUrl: bottle },
- { quote: "I am happy with the service.", author: "Jane Smith", imageUrl:bottle },
- { quote: "Highly recommended!", author: "Alice Johnson", imageUrl: bottle },
- { quote: "Excellent quality and service.", author: "Bob Williams", imageUrl: bottle },
- { quote: "Amazing experience!", author: "Charlie Brown", imageUrl: bottle},
+ { quote: "This product has changed my life!", author: "Charles", imageUrl: charles },
+ { quote: "I am happy with the service.", author: "Aline", imageUrl:aline },
+ { quote: "Highly recommended!", author: "Junior", imageUrl: junior },
+ { quote: "Excellent quality and service.", author: "Junior", imageUrl: junior2 },
+ { quote: "Amazing experience!", author: "Muyango", imageUrl: muyango},
 ];
 
 const TestimonialsPage = () => {
