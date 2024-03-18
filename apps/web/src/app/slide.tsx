@@ -2,56 +2,168 @@ import React from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import Image from 'next/image';
-import bottle from './Image.jpg';
-import bootle1 from './ENERGY_41.jpg';
+import junior from './junior.jpg';
+import junior2 from './junior2.jpg';
+import muyango from './muyango.jpg';
+import muyango2 from './muyango2.jpg';
+import lady from './lady.jpg';
+import lady2 from './lady2.jpg';
+import guaran from './Image.jpg';
+import energy from './ENERGY.jpg';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 
 export default function Slide() {
-    return (
-        <div>
-             <div className="flex justify-center my-8 bg-blue-500">
-          <Splide
-            options={{
-              type: 'loop',
+  return (
+    <div className="flex justify-center my-8 bg-gradient-to-r from-cyan-500 to-blue-500 h-screen overflow-hidden">
+      <Splide
+        options={{
+          type: 'loop',
+          perPage: 4, // Display one slide at a time
+          autoScroll: {
+            speed: 1,
+          },
+          gap: '0.125rem', // Set the gap between slides
+          breakpoints: {
+            640: {
               perPage: 4,
-              autoScroll: {
-                speed: 1,
-              },
-            }}
-            extensions={{ AutoScroll }}
-          >
-             <SplideSlide>
-              <div className="flex items-center justify-center flex-col sm:flex-row">
-                <div className="w-full sm:w-1/2 p-2 flex items-center justify-center sm:justify-start">
-                  <div className="text-center sm:text-left">
-                    <p className="text-lg py-2 px-4">Elevate your test Experience</p>
-                    <p className='text-lg py-2 px-4'> Energize your mind and body with this high-quality energy boost.</p>
-                    <button className="bg-blue-500 text-white py-2 px-4 rounded mt-4">Explore More</button>
-                  </div>
-                </div>
-                <div className="w-full sm:w-1/2">
-                  <Image  className='rounded-lg' src={bottle} alt="Image 1" width={600} height={600} style={{ transform: 'rotate(-10deg)' }} />
-                </div>
-              </div>
-            </SplideSlide>
-            <SplideSlide>
-              <div className="flex items-center justify-center flex-col sm:flex-row">
-                <div className="w-full sm:w-1/2 p-2 flex items-center justify-center sm:justify-start">
-                  <div className="text-center sm:text-left">
-                    <p className="text-lg py-2 px-4">Elevate your test Experience</p>
-                    <p className='text-lg py-2 px-4'>The secret to your stamina, featuring a unique blend of ingredients including guarana..</p>
-                    <button className="bg-blue-500 text-white py-2 px-4 rounded mt-4">Explore More</button>
-                  </div>
-                </div>
-                <div className="w-full sm:w-1/2">
-                  <Image className='rounded-lg m-8' src={bootle1} alt="Image 1" width={600} height={600} style={{ transform: 'rotate(10deg)' }} />
-                </div>
-              </div>
-            </SplideSlide>
+            },
+            768: {
+              perPage: 4,
+            },
+            1024: {
+              perPage: 4,
+            },
+          },
+        }}
+        extensions={{ AutoScroll }}
 
-            {/* Add more SplideSlide components for additional images */}
-          </Splide>
-        </div>
-        </div>
-    );
+      >
+        <SplideSlide>
+          <div className="flex  items-center justify-center h-screen">
+            <div className="w-full p-2 flex flex-col items-center justify-center text-white">
+              <div className="text-center">
+                <p className="text-base sm:text-sm md:text-base lg:text-lg text-white font-bold">Elevate your test Experience</p>
+                <p className='text-base sm:text-sm md:text-base lg:text-lg min-w-[100px] text-white '>Energize your mind and body with this high-quality energy boost.</p>
+                <button className="bg-blue-500 text-white py-2 px-4 rounded mt-4">Explore More</button>
+              </div>
+            </div>
+            <div className="w-full">
+              <Image className='rounded-lg mx-auto object-cover' src={guaran} alt="Image 1" width={400} height={300} style={{ transform: 'rotate(0deg)' }} />
+            </div>
+
+          </div>
+        </SplideSlide>
+        <SplideSlide>
+          <div className="flex  items-center justify-center h-screen">
+            <div className="w-full p-2 flex flex-col items-center justify-center text-white">
+              <div className="text-center">
+                <p className="text-base sm:text-sm md:text-base lg:text-lg text-white font-bold">Elevate your test Experience</p>
+                <p className='text-base sm:text-sm md:text-base lg:text-lg min-w-[100px] text-white '>Energize your mind and body with this high-quality energy boost.</p>
+                <button className="bg-blue-500 text-white py-2 px-4 rounded mt-4">Explore More</button>
+              </div>
+            </div>
+            <div className="w-full">
+              <Image className='rounded-lg mx-auto object-cover' src={energy} alt="Image 1" width={400} height={300} style={{ transform: 'rotate(0deg)' }} />
+            </div>
+
+          </div>
+        </SplideSlide>
+        <SplideSlide>
+          <div className="flex items-center justify-center h-screen">
+            <div className="w-full p-2 flex flex-col items-center justify-center">
+              <div className="text-center">
+                <p className="text-base sm:text-sm md:text-base lg:text-lg  text-white font-bold">Elevate your test Experience</p>
+                <p className='text-base sm:text-sm md:text-base lg:text-lg min-w-[100px]  text-white '>Energize your mind and body with this high-quality energy boost.</p>
+                <button className="bg-blue-500 text-white py-2 px-4 rounded mt-4">Explore More</button>
+              </div>
+            </div>
+            <div className="w-full">
+              <Image className='rounded-lg mx-auto object-cover' src={junior} alt="Image 1" width={400} height={300} style={{ transform: 'rotate(0deg)' }} />
+            </div>
+
+          </div>
+        </SplideSlide>
+
+        <SplideSlide>
+          <div className="flex items-center justify-center h-screen">
+            <div className="w-full p-2 flex flex-col items-center justify-center">
+              <div className="text-center">
+                <p className="text-base sm:text-sm md:text-base lg:text-lg  text-white font-bold">Elevate your test Experience</p>
+                <p className='text-base sm:text-sm md:text-base lg:text-lg min-w-[100px]  text-white '>The secret to your stamina, featuring a unique blend of ingredients</p>
+                <button className="bg-blue-500 text-white py-2 px-4 rounded mt-4">Explore More</button>
+              </div>
+            </div>
+            <div className="w-full">
+              <Image className='rounded-lg mx-auto object-cover' src={muyango} alt="Image 1" width={400} height={300} style={{ transform: 'rotate(0deg)' }} />
+            </div>
+
+          </div>
+        </SplideSlide>
+        <SplideSlide>
+          <div className="flex  items-center justify-center h-screen">
+            <div className="w-full p-2 flex flex-col items-center justify-center">
+              <div className="text-center">
+                <p className="text-base sm:text-sm md:text-base lg:text-lg  text-white font-bold">Elevate your test Experience</p>
+                <p className='text-base sm:text-sm md:text-base lg:text-lg min-w-[100px]  text-white '>The secret to your stamina, featuring a unique blend of ingredients</p>
+                <button className="bg-blue-500 text-white py-2 px-4 rounded mt-4">Explore More</button>
+              </div>
+            </div>
+            <div className="w-full">
+              <Image className='rounded-lg mx-auto object-cover' src={muyango2} alt="Image 1" width={400} height={300} style={{ transform: 'rotate(0deg)' }} />
+            </div>
+
+          </div>
+        </SplideSlide>
+
+        <SplideSlide>
+          <div className="flex  items-center justify-center h-screen">
+            <div className="w-full p-2 flex flex-col items-center justify-center">
+              <div className="text-center">
+                <p className="text-base sm:text-sm md:text-base lg:text-lg  text-white font-bold">Elevate your test Experience</p>
+                <p className='text-base sm:text-sm md:text-base lg:text-lg min-w-[100px]  text-white '>The secret to your stamina, featuring a unique blend of ingredients</p>
+                <button className="bg-blue-500 text-white py-2 px-4 rounded mt-4">Explore More</button>
+              </div>
+            </div>
+            <div className="w-full">
+              <Image className='rounded-lg mx-auto object-cover' src={junior2} alt="Image 1" width={400} height={300} style={{ transform: 'rotate(0deg)' }} />
+            </div>
+
+          </div>
+        </SplideSlide>
+        <SplideSlide>
+          <div className="flex  items-center justify-center h-screen">
+            <div className="w-full p-2 flex flex-col items-center justify-center">
+              <div className="text-center">
+                <p className="text-base sm:text-sm md:text-base lg:text-lg  text-white font-bold">Elevate your test Experience</p>
+                <p className='text-base sm:text-sm md:text-base lg:text-lg min-w-[100px]  text-white '>The secret to your stamina, featuring a unique blend of ingredients</p>
+                <button className="bg-blue-500 text-white py-2 px-4 rounded mt-4">Explore More</button>
+              </div>
+            </div>
+            <div className="w-full">
+              <Image className='rounded-lg mx-auto object-cover' src={lady} alt="Image 1" width={400} height={300} style={{ transform: 'rotate(0deg)' }} />
+            </div>
+
+          </div>
+        </SplideSlide>
+
+        <SplideSlide>
+          <div className="flex  items-center justify-center h-screen">
+            <div className="w-full p-2 flex flex-col items-center justify-center text-white">
+              <div className="text-center">
+                <p className="text-base sm:text-sm md:text-base lg:text-lg  text-white font-bold">Elevate your test Experience</p>
+                <p className='text-base sm:text-sm md:text-base lg:text-lg min-w-[100px]  text-white '>The secret to your stamina, featuring a unique blend of ingredients</p>
+                <button className="bg-blue-500 text-white py-2 px-4 rounded mt-4">Explore More</button>
+              </div>
+            </div>
+            <div className="w-full">
+              <Image className='rounded-lg mx-auto object-cover' src={lady2} alt="Image 1" width={400} height={300} style={{ transform: 'rotate(0deg)' }} />
+            </div>
+
+          </div>
+        </SplideSlide>
+
+        {/* Add more SplideSlide components for additional images */}
+      </Splide>
+    </div>
+  );
 }
