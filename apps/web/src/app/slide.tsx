@@ -2,14 +2,14 @@ import React from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import Image from 'next/image';
-import energy from '../../../public/images/ENERGY.jpg';
-import junior from '../../../public/images/junior.jpg';
-import junior2 from '../../../public/images/junior2.jpg';
-import muyango from '../../../public/images/muyango.jpg';
-import muyango2 from '../../../public/images/muyango2.jpg';
-import lady from '../../../public/images/lady.jpg';
-import lady2 from '../../../public/images/lady2.jpg';
-import guaran from '../../../public/images/Image.jpg';
+import energy from '../../public/images/ENERGY.jpg';
+import junior from '../../public/images/junior.jpg';
+import junior2 from '../../public/images/junior2.jpg';
+import muyango from '../../public/images/muyango.jpg';
+import muyango2 from '../../public/images/muyango2.jpg';
+import lady from '../../public/images/lady.jpg';
+import lady2 from '../../public/images/lady2.jpg';
+import guaran from '../../public/images/Image.jpg';
 
 
 export default function Slide() {

@@ -9,7 +9,7 @@ import AboutUs from './about/page';
 import BrandsSection from './brands/page';
 import ContactUsSection from './contact/page';
 import Highlights from './highlights/page';
-import Slide from './slide/page';
+import Slide from './slide';
 
 export default function Page() {
   return (
