@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from './logo1.png';
-import { FaFacebook } from 'react-icons/fa';
+import logo from '../../../public/images/logo1.png';
+import { FaFacebook, FaTwitter, FaInstagram,FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
  return (
@@ -22,15 +22,15 @@ const Footer = () => {
               <FaFacebook className="mx-2" />
             </Link>
             <Link href="#">
-              <FaFacebook className="mx-2" />
+              <FaTwitter className="mx-2" />
             </Link>
             <Link href="#">
-              <FaFacebook className="mx-2" />
+              <FaInstagram className="mx-2" />
             </Link>
             <Link href="#">
-              <FaFacebook className="mx-2" />
+              <FaYoutube className="mx-2" />
             </Link>
-            <h2 className="mx-2">@switch@gmail.com</h2>
+            <h2 className="mx-2">switchoff@gmail.com</h2>
           </div>
         </div>
       </div>

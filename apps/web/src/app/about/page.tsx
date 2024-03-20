@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import Navbar from '../navbar';
-import bottle from '../Image.jpg';
+import Navbar from '../navbar/page';
+import bottle from '../../../public/images/Image.jpg';
 
 const AboutUs = () => {
   return (
@@ -45,7 +45,8 @@ const AboutUs = () => {
           <button className="bg-blue-500 text-white py-2 px-4 rounded">Learn More</button>
         </div>
       </div>
-    </div></>
+    </div>
+    </>
   );
 };
 

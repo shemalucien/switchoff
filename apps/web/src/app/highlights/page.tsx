@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import guaran from './Image.jpg';
+import guaran from '../../../public/images/Image.jpg';
 
 // Define a type for the media object within a tweet
 interface Media {
@@ -30,7 +30,7 @@ const dummyTweets: Tweet[] = [
         text: 'Another highlight from the social media showcasing our new video.',
         media: {
             type: 'video',
-            url: './ENERGY.mp4',
+            url: './videos/ENERGY.mp4',
         },
     },
     {
@@ -38,7 +38,7 @@ const dummyTweets: Tweet[] = [
         text: 'Another highlight from the social media showcasing our new video.',
         media: {
             type: 'video',
-            url: './NICE.mp4',
+            url: './videos/NICE.mp4',
         },
     },
     // Add more dummy tweets as needed

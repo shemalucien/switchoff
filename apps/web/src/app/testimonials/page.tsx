@@ -1,10 +1,10 @@
 import React from 'react';
 import TestimonialCard from './testimonial-card';
-import charles from './Charles.jpg';
-import aline from './aline.jpg';
-import junior from './junior.jpg';
-import junior2 from './junior2.jpg';
-import muyango from './muyango.jpg';
+import charles from '../../../public/images/Charles.jpg';
+import aline from '../../../public/images/aline.jpg';
+import junior from '../../../public/images/junior.jpg';
+import junior2 from '../../../public/images/junior2.jpg';
+import muyango from '../../../public/images/muyango.jpg';
 const testimonials = [
  { quote: "This product has changed my life!", author: "Charles", imageUrl: charles },
  { quote: "I am happy with the service.", author: "Aline", imageUrl:aline },

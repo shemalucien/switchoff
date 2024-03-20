@@ -15,8 +15,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author, imageU
       <div className="relative h-32 w-32 mx-auto mb-8">
         <Image src={imageUrl} alt={author} width={100} height={50} className="rounded-full w-100 h-50 p-1 ring-2 ring-gray-300 dark:ring-gray-500" />
       </div>
-      <div className='absolute bottom-0 left-0 right-0 bg-white rounded-t-lg mt-4 flex items-center justify-center px-2 py-2 h-12'>
-        <p className="text-gray-500 text-center">{author}</p>
+      <div className='absolute bottom-0 left-0 right-0 bg-white rounded-t-lg mt-4 text-center px-2 py-2 h-12'>
+        <p className="text-gray-500">{author}</p>
       </div>
     </div>
  );

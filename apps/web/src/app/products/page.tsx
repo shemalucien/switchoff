@@ -1,13 +1,13 @@
 import React from "react";
 import Image from 'next/image';
-import guaran from './Image.jpg';
-import energy from './ENERGY.jpg';
+import guaran from '../../../public/images/Image.jpg';
+import energy from '../../../public/images/ENERGY.jpg';
 
 const Products = () => {
     return (
         <>
-            <h2 className="text-4xl font-bold text-center mb-8">Are you Ready to Taste our brands </h2>
-            <h3 className="text-xl text-center mb-8"> Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</h3>
+            <h2 className="text-4xl font-bold text-center mb-8">Are you Ready to Taste our Products </h2>
+            <h3 className="text-xl text-center mb-8"> Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</h3>
 
             <div className="flex justify-center mb-8">
                 <button className="bg-blue-500 font-bold text-white py-2 px-4 rounded-full mx-2">ALL</button>
@@ -23,7 +23,7 @@ const Products = () => {
                         <Image src={guaran} alt="Image 1" layout="responsive" width={50} height={50} />
                     </div>
                     <div className="p-5 flex flex-col justify-between">
-                        <a href="https://flowbite.com/docs/components/card">
+                        <a href="/products">
                             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"> 
                                 NICE GUARANA <sup>+</sup>
                             </h5>
@@ -43,7 +43,7 @@ const Products = () => {
                         <Image src={energy} alt="Image 3" layout="responsive" width={50} height={50} />
                     </div>
                     <div className="p-5 flex flex-col justify-between">
-                        <a href="https://flowbite.com/docs/components/card">
+                        <a href="/products">
                             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 ENERGY DRINK
                             </h5>

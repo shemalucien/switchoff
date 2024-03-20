@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import logo from '../logo1.png';
-import Navbar from '../navbar';
+import logo from '../../../public/images/logo1.png';
+import Navbar from '../navbar/page';
 
 const ContactUsSection = () => {
   // Dummy data for partners
@@ -33,7 +33,7 @@ const ContactUsSection = () => {
                   <p className="font-semibold">Email: {partner.email}</p>
                 </div>
                 <div>
-                  <p className="font-semibold">Tel: {partner.tel}</p>
+                  <p className="font-semibold">Tel: +{partner.tel}</p>
                 </div>
               </div>
             ))}
@@ -41,7 +41,7 @@ const ContactUsSection = () => {
 
           {/* Column for Contact Form */}
           <div className="lg:w-1/2">
-            <h3 className="text-2xl font-semibold mb-4 mt-20">Connect with Us</h3>
+            <h3 className="text-2xl font-semibold mb-4 mt-4">Connect with Us</h3>
             <form className="space-y-4">
               <div className="mb-4">
                 <label htmlFor="name" className="block mb-1">Name:</label>

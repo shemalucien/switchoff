@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import guaran from '../Image.jpg';
-import energy from '../ENERGY.jpg';
-import Navbar from '../navbar';
+import Link from 'next/link';
+import guaran from '../../../public/images/Image.jpg';
+import energy from '../../../public/images/ENERGY.jpg';
+import Navbar from '../navbar/page';
 
 const BrandsSection = () => {
  const brands = [
@@ -34,7 +35,7 @@ const BrandsSection = () => {
     <><Navbar />
       <div className="container mx-auto px-4 py-8"> {/* Adjust the top margin as needed */}
         <h2 className="text-3xl text-center font-bold mb-8 mt-20">Our Brands</h2>
-        <h3 className='text-xl text-center mb-8'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo voluptatum expedita deserunt doloremque quod, natus cum quisquam quaerat est magni beatae quibusdam, laborum doloribus iste iusto. Mollitia quibusdam eos officiis?</h3>
+        <h3 className='text-xl text-center mb-8'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo voluptatum expedita deserunt doloremque quod, natus cum quisquam dolorem</h3>
         <div className="flex justify-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16"> {/* Adjust the grid layout based on screen size */}
             {brands.map((brand, index) => (
@@ -44,12 +45,14 @@ const BrandsSection = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-center mb-2 mt-12" dangerouslySetInnerHTML={{ __html: brand.name }}></h3>
                 <p className="text-gray-600 mb-4">{brand.description}</p>
-                <button className="bg-blue-500 text-white py-2 px-4 rounded">View Products</button>
+                <Link href="/products" className="bg-blue-500 text-white py-2 px-4 rounded">View Products</Link>
+                {/* <button className="bg-blue-500 text-white py-2 px-4 rounded">View Products</button> */}
               </div>
             ))}
           </div>
         </div>
       </div>
+
     </>
 
  );
