@@ -13,7 +13,7 @@ const Navbar = () => {
         <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
             <div className="flex justify-between items-center w-full h-20 px-4 text-black bg-white fixed nav shadow-md z-50">
                 <div>
-                    <button onClick={() => { setNav(false); }} aria-label="Logo">
+                    <button onClick={() => { setNav(false); return undefined; }} aria-label="Logo">
                         <Image src={logo} alt="Logo" width={50} height={40} />
                     </button>
                 </div>
@@ -26,7 +26,7 @@ const Navbar = () => {
                         <Link href="/about">About Us</Link>
                     </li>
                     <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black duration-200 relative">
-                        <button onClick={() => setDropdownOpen(!dropdownOpen)} className="focus:outline-none">
+                        <button onClick={() => { setDropdownOpen(!dropdownOpen); return undefined; }} className="focus:outline-none">
                             Brands
                         </button>
                         {dropdownOpen && (
@@ -52,7 +52,7 @@ const Navbar = () => {
                 </ul>
 
                 <button
-                    onClick={() => { setNav(!nav); }}
+                    onClick={() => { setNav(!nav); return undefined; }}
                     className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
                     aria-label="Toggle navigation"
                 >
@@ -68,7 +68,7 @@ const Navbar = () => {
                             <Link href="/about">About Us</Link>
                         </li>
                         <li className="px-4 cursor-pointer capitalize py-4 text-xl relative">
-                            <button onClick={() => setDropdownOpen(!dropdownOpen)} className="focus:outline-none">
+                            <button onClick={() => { setDropdownOpen(!dropdownOpen); return undefined; }} className="focus:outline-none">
                                 Brands
                             </button>
                             {dropdownOpen && (
