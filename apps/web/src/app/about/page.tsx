@@ -1,11 +1,15 @@
+'use client';
 import React from 'react';
 import Image from 'next/image';
-import bottle from './Image.jpg';
+import Navbar from '../navbar';
+import bottle from '../Image.jpg';
 
 const AboutUs = () => {
   return (
+    <><Navbar />
     <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col lg:flex-row">
+
+      <div className="flex flex-col lg:flex-row m-2">
         {/* Column for Image */}
         <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
           <Image className='rounded-lg mx-auto object-cover' src={bottle} alt="Image 1" width={450} height={250} />
@@ -41,7 +45,7 @@ const AboutUs = () => {
           <button className="bg-blue-500 text-white py-2 px-4 rounded">Learn More</button>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 

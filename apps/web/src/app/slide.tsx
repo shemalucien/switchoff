@@ -14,7 +14,7 @@ import lady2 from './lady2.jpg';
 
 export default function Slide() {
   return (
-    <div className="flex justify-center my-8 bg-gradient-to-r from-cyan-500 to-blue-500 h-screen overflow-hidden">
+    <div className="flex justify-center my-8 bg-gradient-to-r from-cyan-500 to-blue-500 h-screen overflow-hidden mt-20">
 
       <Splide
         options={{
