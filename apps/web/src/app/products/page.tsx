@@ -23,7 +23,7 @@ const Products = () => {
                         <Image src={guaran} alt="Image 1" layout="responsive" width={50} height={50} />
                     </div>
                     <div className="p-5 flex flex-col justify-between">
-                        <a href="/products">
+                        <a href="/products/productpage">
                             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"> 
                                 NICE GUARANA <sup>+</sup>
                             </h5>
@@ -43,7 +43,7 @@ const Products = () => {
                         <Image src={energy} alt="Image 3" layout="responsive" width={50} height={50} />
                     </div>
                     <div className="p-5 flex flex-col justify-between">
-                        <a href="/products">
+                        <a href="/products/productpage">
                             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 ENERGY DRINK
                             </h5>
