@@ -1,5 +1,3 @@
-// pages/ProductPage.tsx
-
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import guaran from '../../../../public/images/Image.jpg';
@@ -139,18 +137,20 @@ const ProductPage: React.FC = () => {
         </ul>
       </div>
       <div className="mt-4">
-        <h2 className="text-2xl font-bold mb-4 text-center">Related Products</h2>
-        <div className="grid grid-cols-2 gap-4">
+        <h2 className="text-2xl font-bold mb-4 text-center ">Related Products</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-wrap">
           {staticProduct.relatedProducts.map((relatedProduct, index) => (
-            <div key={index} className="border p-4 relative"> {/* Add 'relative' to position the image absolutely */}
-              <Image src={relatedProduct.imageUrl} alt={relatedProduct.title} width={500} height={500} /> {/* Use 'layout="fill"' and 'objectFit="cover"' to make the image fill the card */}
-              <div className="p-4"> {/* Add a padding inside the card to ensure content is not under the image */}
+            <div key={index} className="border p-4 relative">
+              <Image src={relatedProduct.imageUrl} alt={relatedProduct.title} width={500} height={500} />
+              <div className="p-4">
                 <h3 className="text-xl font-bold mt-2">{relatedProduct.title}</h3>
                 <p>{relatedProduct.description}</p>
               </div>
             </div>
           ))}
         </div>
+
+
 
       </div>
 

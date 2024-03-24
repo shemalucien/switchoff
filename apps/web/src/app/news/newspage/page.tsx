@@ -1,7 +1,7 @@
 // Import React and Image from 'next/image'
 import React from 'react';
 import Image from 'next/image';
-import energy from '../../../../public/images/ENERGY.jpg';
+import energy from '../../../../public/images/nice.jpg';
 
 // interface News {
 //     id: string;

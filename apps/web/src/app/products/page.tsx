@@ -15,10 +15,10 @@ const Products = () => {
                 <button className="bg-white font-bold text-black py-2 px-4 rounded-full mx-2">ENERGY DRINK</button>
             </div>
 
-
-            <div className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+            
+            <div className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
                 {/* First Card */}
-                <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col">
+                <div className="w-full m-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col">
                     <div className="p-2 flex justify-center items-center">
                         <Image src={guaran} alt="Image 1" layout="responsive" width={50} height={50} />
                     </div>
@@ -38,7 +38,7 @@ const Products = () => {
                 </div>
 
                 {/* Second Card */}
-                <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col">
+                <div className="w-full m-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col">
                     <div className="p-2 flex justify-center items-center">
                         <Image src={energy} alt="Image 3" layout="responsive" width={50} height={50} />
                     </div>
@@ -57,6 +57,7 @@ const Products = () => {
                     </div>
                 </div>
             </div>
+        
         </>
     );
 };

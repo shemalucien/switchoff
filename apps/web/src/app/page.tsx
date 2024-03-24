@@ -37,7 +37,6 @@ export default function Page() {
         <TestimonialsPage />
         
         <Highlights />
-
         <NewsSection /> 
         <ContactUsSection />
       </main>

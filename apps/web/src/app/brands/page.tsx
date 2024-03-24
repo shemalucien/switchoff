@@ -33,11 +33,11 @@ const BrandsSection = () => {
 
  return (
     <><Navbar />
-      <div className="container mx-auto px-4 py-8"> {/* Adjust the top margin as needed */}
+      <div className="container px-4 py-8"> {/* Adjust the top margin as needed */}
         <h2 className="text-3xl text-center font-bold mb-8 mt-20">Our Brands</h2>
         <h3 className='text-xl text-center mb-8'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo voluptatum expedita deserunt doloremque quod, natus cum quisquam dolorem</h3>
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16"> {/* Adjust the grid layout based on screen size */}
+        <div className="flex ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"> {/* Adjust the grid layout based on screen size */}
             {brands.map((brand, index) => (
               <div key={index} className="bg-white p-6 rounded-lg text-center shadow-md flex flex-col items-center mb-8"> {/* Add margin to create space between cards */}
                 <div className="mx-auto w-24 h-24 mb-4">

@@ -7,12 +7,12 @@ import bottle from '../../../public/images/Image.jpg';
 const AboutUs = () => {
   return (
     <><Navbar />
-    <div className="container mx-auto px-4 py-8">
+    <div className="container px-4 py-8 m-2">
 
       <div className="flex flex-col lg:flex-row m-2">
         {/* Column for Image */}
         <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
-          <Image className='rounded-lg mx-auto object-cover' src={bottle} alt="Image 1" width={450} height={250} />
+          <Image className='rounded-lg  object-cover' src={bottle} alt="Image 1" width={450} height={250} />
         </div>
 
         {/* Column for Content */}
