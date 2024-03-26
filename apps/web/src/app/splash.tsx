@@ -4,7 +4,9 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 import underage from '../../public/images/18.png';
-import logo from '../../public/images/logo1.png';
+import dontdrink from '../../public/images/dontdrink.png';
+import pregnancy from '../../public/images/pregnant.png';
+import logo from '../../public/images/logo.png';
 // Define the prop types for SplashPage
 interface SplashPageProps {
     onAccessGranted: () => void; // This function will be called when access is granted
@@ -17,7 +19,10 @@ interface Error {
 }
 
 const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
-    const [dob, setDob] = useState<string>('');
+    // const [dob, setDob] = useState<string>('');
+    const [day, setDay] = useState("");
+    const [month, setMonth] = useState("");
+    const [year, setYear] = useState("");
     const [error, setError] = useState<Error | null>(null);
 
     // Check local storage for access status on component mount
@@ -35,7 +40,8 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         const today = new Date();
-        const birthDate = new Date(dob);
+        // const birthDate = new Date(dob);
+        const birthDate = new Date(`${year}-${month}-${day}`);
         let age = today.getFullYear() - birthDate.getFullYear();
         const m = today.getMonth() - birthDate.getMonth();
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
@@ -47,12 +53,25 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                 imageUrl: underage,
             });
         } else {
-            // Store access status in local storage
-            localStorage.setItem('accessGranted', 'true');
+            // // Store access status in local storage
+            // localStorage.setItem('accessGranted', 'true');
+
+            // Store access status in local storage with expiry time
+            setWithExpiry('accessGranted', 'true', 3600000); // 3600000 milliseconds = 1 hour
             // Call the onAccessGranted function to indicate access is granted
             onAccessGranted();
         }
     };
+
+    // Function to set a key in localStorage with an expiry time
+    function setWithExpiry(key: string, value: string, ttl: number) {
+        const now = new Date();
+        const item = {
+            value: value,
+            expiry: now.getTime() + ttl,
+        };
+        localStorage.setItem(key, JSON.stringify(item));
+    }
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-cyan-500 to-blue-500">
@@ -81,34 +100,67 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                     <div className="flex flex-col items-center justify-center">
                         <p className="text-lg font-bold mb-4">Please enter your date of birth</p>
                         <form onSubmit={handleSubmit} className="space-y-4 flex flex-col">
-                            <input
+                            {/* <input
                                 type="date"
                                 value={dob}
                                 onChange={(e) => setDob(e.target.value)}
                                 className="border-2 border-gray-300 p-2 rounded-md"
                                 required
-                            />
+                            /> */}
 
-                            {error && (
-                                <div className="flex items-center justify-center flex-col">
-                                    {error.imageUrl && <Image src={error.imageUrl} alt="Restricted Image" width={100} height={100} />}
-                                    <p className="text-red-500">{error.message}</p>
+                            <div className="flex space-x-2">
+                                <input
+                                    type="number"
+                                    value={day}
+                                    onChange={(e) => setDay(e.target.value)}
+                                    className="border-2 border-gray-300 p-2 rounded-md"
+                                    placeholder="Day"
+                                    required
+                                    min="1"
+                                    max="31"
+                                />
+                                <input
+                                    type="number"
+                                    value={month}
+                                    onChange={(e) => setMonth(e.target.value)}
+                                    className="border-2 border-gray-300 p-2 rounded-md"
+                                    placeholder="Month"
+                                    required
+                                    min="1"
+                                    max="12"
+                                />
+                                <input
+                                    type="number"
+                                    value={year}
+                                    onChange={(e) => setYear(e.target.value)}
+                                    className="border-2 border-gray-300 p-2 rounded-md"
+                                    placeholder="Year"
+                                    required
+                                    min="1900"
+                                    max="2099"
+                                />
                                 </div>
-                            )}
+
+                                {error && (
+                                    <div className="flex items-center justify-center flex-col">
+                                        {error.imageUrl && <Image src={error.imageUrl} alt="Restricted Image" width={100} height={100} />}
+                                        <p className="text-red-500">{error.message}</p>
+                                    </div>
+                                )}
 
 
 
 
-                            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">
-                                Submit Age
-                            </button>
+                                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">
+                                    Submit Age
+                                </button>
                         </form>
                     </div>
                 </div>
                 <div className="flex items-center justify-center mt-8">
-                    <Image src={underage} alt="Logo" width={30} height={20} className='mr-4' />
-                    <Image src={underage} alt="Logo" width={30} height={20} className='mr-4' />
-                    <Image src={underage} alt="Logo" width={30} height={20} className='mr-4' />
+                    <Image src={underage} alt="Logo" width={30} height={30} className='mr-4' />
+                    <Image src={pregnancy} alt="Logo" width={30} height={30} className='mr-4' />
+                    <Image src={dontdrink} alt="Logo" width={30} height={30} className='mr-4' />
                 </div>
             </div>
         </div>

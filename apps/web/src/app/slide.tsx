@@ -4,11 +4,11 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import Image from 'next/image';
 import energy from '../../public/images/ENERGY.jpg';
-import junior from '../../public/images/junior.jpg';
-import junior2 from '../../public/images/junior2.jpg';
-import muyango from '../../public/images/muyango.jpg';
-import muyango2 from '../../public/images/muyango2.jpg';
-import lady from '../../public/images/lady.jpg';
+// import junior from '../../public/images/junior.jpg';
+// import junior2 from '../../public/images/junior2.jpg';
+// import muyango from '../../public/images/muyango.jpg';
+// import muyango2 from '../../public/images/muyango2.jpg';
+// import lady from '../../public/images/lady.jpg';
 import lady2 from '../../public/images/lady2.jpg'; // change this image
 import guaran from '../../public/images/nice.jpg'; // change this image
 import nicepackage from '../../public/images/nice_package.jpg';
@@ -17,15 +17,15 @@ import energypackage from '../../public/images/energy_package.jpg';
 // Define an array of images and their associated text
 const images = [
  { src: energy, alt: "Energy", text1: "The secret to your stamina", text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
- { src: junior, alt: "Junior", text1: "The secret to your stamina", text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
- { src: junior2, alt: "Junior", text1: "The secret to your stamina", text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
- { src: muyango, alt: "Muyango", text1: "The secret to your stamina", text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
- { src: muyango2, alt: "Muyango", text1: "The secret to your stamina", text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
- { src: lady, alt: "Lady", text1: "The secret to your stamina", text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
+// { src: junior, alt: "Junior", text1: "The secret to your stamina", text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
+//  { src: junior2, alt: "Junior", text1: "The secret to your stamina", text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
+// { src: muyango, alt: "Muyango", text1: "The secret to your stamina", text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
+//  { src: muyango2, alt: "Muyango", text1: "The secret to your stamina", text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
+//  { src: lady, alt: "Lady", text1: "The secret to your stamina", text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
  { src: lady2, alt: "Lady", text1: "The secret to your stamina", text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
- { src: guaran, alt: "Guaran", text1: "The secret to your stamina", text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
  { src: nicepackage, alt: "Nice Package", text1: "Elevate your test Experience", text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
  { src: energypackage, alt: "Energy Package", text1: "The secret to your stamina",text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
+ { src: guaran, alt: "Guaran", text1: "The secret to your stamina", text2: "The secret to your stamina, featuring a unique blend of ingredients including guarana." },
  // Add more images and their text here
 ];
 
@@ -56,8 +56,8 @@ export default function Slide() {
                 </div>
               </div>
             </div>
-            <div className="w-full md:w-2/3">
-              <Image className='rounded-lg mx-auto h-full md:h-auto md:w-full' src={image.src} alt="Image 1" width={600} height={500} style={{ transform: 'rotate(0deg)' }} />
+            <div className="w-full md:w-2/3 lg:w-2/3 flex flex-col items-center justify-center">
+              <Image className='h-auto max-w-full rounded-lg object-fill' src={image.src} alt="Image 1" width={600} height={500} style={{ transform: 'rotate(0deg)' }} />
             </div>
           </div>
 

@@ -10,7 +10,7 @@ const BrandsSection = () => {
  const brands = [
     {
       name: "NICE GUARANA <sup>+</sup>",
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat fermentum felis, ut sodales dolor ultrices non.',
+      description: 'Energize your mind and body with SWITCHOFF NICE GUARANA, a refreshing beverage that combines the invigorating essence of high-quality spirit with the natural boost of guarana, all infused with exquisite flavors. Ideal for those seeking a natural energy lift, our guarana-infused drink offers a delightful fusion of taste and vitality. Whether you are tackling a busy day or winding down after work, SWITCHOFF NICE GUARANA is your trusted companion for sustained energy and pure enjoyment.',
       products: [
         { name: 'Product 1', icon: 'icon1.svg' },
         { name: 'Product 2', icon: 'icon2.svg' },
@@ -20,7 +20,7 @@ const BrandsSection = () => {
     },
     {
       name: 'ENERGY DRINK',
-      description: 'Phasellus quis finibus eros, sed consequat est. Mauris pretium est eu lacus rhoncus, vel malesuada ex ultricies.',
+      description: 'SWITCHOFF ENERGY DRINK:Elevate your energy and savor the taste of excitement with SWITCHOFF ENERGY DRINK. Bursting with vibrant flavors and infused with revitalizing ingredients, our energy drink is designed to fuel your passion and keep you going strong. Whether you are hitting the gym, embarking on an adventure, or simply need a pick-me-up during your daily routine, SWITCHOFF ENERGY DRINK delivers the perfect blend of refreshment and vigor. Indulge in the exhilarating taste that redefines what it means to feel alive.',
       products: [
         { name: 'Product 4', icon: 'icon4.svg' },
         { name: 'Product 5', icon: 'icon5.svg' },
@@ -35,9 +35,9 @@ const BrandsSection = () => {
     <><Navbar />
       <div className="container px-4 py-8"> {/* Adjust the top margin as needed */}
         <h2 className="text-3xl text-center font-bold mb-8 mt-20">Our Brands</h2>
-        <h3 className='text-xl text-center mb-8'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo voluptatum expedita deserunt doloremque quod, natus cum quisquam dolorem</h3>
+        <h3 className='text-base text-center  mb-8'>Welcome to the world of DISSCO LTD, where we bring you the finest selection of high-quality beverage products to invigorate your senses and elevate your experiences. Our brands, SWITCHOFF NICE GUARANA and SWITCHOFF ENERGY DRINK, epitomize excellence, flavor, and vitality. Crafted with precision and sourced from reputable manufacturers in Vietnam, our products are a testament to our commitment to delivering nothing but the best. As a proudly Rwandan-owned company, we take pride in offering beverages that not only tantalize your taste buds but also reflect our dedication to quality and innovation.</h3>
         <div className="flex ">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"> {/* Adjust the grid layout based on screen size */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8"> {/* Adjust the grid layout based on screen size */}
             {brands.map((brand, index) => (
               <div key={index} className="bg-white p-6 rounded-lg text-center shadow-md flex flex-col items-center mb-8"> {/* Add margin to create space between cards */}
                 <div className="mx-auto w-24 h-24 mb-4">

@@ -1,13 +1,16 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import logo from '../../../public/images/logo1.png';
+import dissco from '../../../public/images/dissco.png';
+import underage from '../../../public/images/18.png';
+import dontdrink from '../../../public/images/dontdrink.png';
+import pregnancy from '../../../public/images/pregnant.png';
 import Navbar from '../navbar/page';
 
 const ContactUsSection = () => {
   // Dummy data for partners
   const partners = [
-    { name: 'DISSCO LTD', address: 'City, Kigali, Rwanda,KN 20 Ave', logo: logo, email: 'dissco@gmail.com', tel: 250785135816 }
+    { name: 'DISSCO LTD', address: 'City, Kigali, Rwanda,KN 20 Ave', logo: dissco, email: 'dissco@gmail.com', tel: 250785135816 }
   ];
 
   return (
@@ -35,9 +38,15 @@ const ContactUsSection = () => {
                 <div>
                   <p className="font-semibold">Tel: +{partner.tel}</p>
                 </div>
+                <div className="flex">
+                  <Image src={underage} alt="Logo" width={30} height={20} className='mr-4' />
+                  <Image src={pregnancy} alt="Logo" width={30} height={20} className='mr-4' />
+                  <Image src={dontdrink} alt="Logo" width={30} height={20} className='mr-4' />
+                </div>
               </div>
             ))}
           </div>
+
 
           {/* Column for Contact Form */}
           <div className="lg:w-1/2">
