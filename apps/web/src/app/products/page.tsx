@@ -25,7 +25,7 @@ const Products = () => {
                         <Image src={nicepackage} alt="NICE GUARANA" className="h-auto max-w-full" />
                     </div>
                     <div className="p-5 flex flex-col justify-between h-1/2">
-                        <a href="#">
+                        <a href="/products">
                             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 NICE GUARANA <sup>+</sup>
                             </h5>
@@ -42,7 +42,7 @@ const Products = () => {
                         <Image src={energypackage} alt="ENERGY DRINK" className="h-auto max-w-full" />
                     </div>
                     <div className="p-5 flex flex-col justify-between h-1/2">
-                        <a href="#">
+                        <a href="/products">
                             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                                SWITCHOFF ENERGY DRINK
                             </h5>
