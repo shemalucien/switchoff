@@ -93,9 +93,9 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                     </Link>
                 </div>
                 <h1 className="text-3xl font-bold mb-8 text-center">Welcome</h1>
-                <div className="text-center flex gap-8">
+                <div className="text-center flex flex-col md:flex-row gap-8">
                     <div className="flex flex-col items-center justify-center">
-                        <Image src={logo} alt="Logo" width={100} height={100} />
+                        <Image src={logo} alt="Logo" width={200} height={200} />
                     </div>
                     <div className="flex flex-col items-center justify-center">
                         <p className="text-lg font-bold mb-4">Please enter your date of birth</p>
@@ -141,22 +141,19 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                                 />
                                 </div>
 
-                                {error && (
-                                    <div className="flex items-center justify-center flex-col">
-                                        {error.imageUrl && <Image src={error.imageUrl} alt="Restricted Image" width={100} height={100} />}
-                                        <p className="text-red-500">{error.message}</p>
-                                    </div>
-                                )}
-
-
-
-
-                                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">
-                                    Submit Age
-                                </button>
+                            {error && (
+                                <div className="flex items-center justify-center flex-col">
+                                    {error.imageUrl && <Image src={error.imageUrl} alt="Restricted Image" width={100} height={100} />}
+                                    <p className="text-red-500">{error.message}</p>
+                                </div>
+                            )}
+                            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">
+                                Submit Age
+                            </button>
                         </form>
                     </div>
                 </div>
+
                 <div className="flex items-center justify-center mt-8">
                     <Image src={underage} alt="Logo" width={30} height={30} className='mr-4' />
                     <Image src={pregnancy} alt="Logo" width={30} height={30} className='mr-4' />

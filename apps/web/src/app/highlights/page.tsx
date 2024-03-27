@@ -136,7 +136,7 @@ interface Tweet {
 const dummyTweets: Tweet[] = [
     {
         id: '1',
-        text: 'This is a highlight from Twitter featuring our latest product.',
+        text: 'This is a highlight from the social media featuring our latest product.',
         media: {
             type: 'image',
             url: 'https://example.com/path/to/image1.jpg',
@@ -170,7 +170,7 @@ const Highlights: React.FC = () => {
             <ul className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                 {tweets.map((tweet) => (
                     <li key={tweet.id} className="flex flex-col items-center">
-                        <p className="text-gray-700 text-sm text-center">{tweet.text}</p>
+                        <p className="text-gray-700 text-base text-center">{tweet.text}</p>
                         {tweet.media && (
                             <div className="flex justify-center">
                                 {tweet.media.type === 'image' && (

@@ -24,21 +24,21 @@ const ContactUsSection = () => {
           <div className="mb-8 lg:w-1/2">
             <h3 className="text-2xl font-semibold mb-4 text-left mt-4">Our Address</h3>
             {partners.map((partner, index) => (
-              <div key={index} className="flex flex-col mb-4">
+              <div key={index} className="flex flex-col mb-8">
                 <Image src={partner.logo} alt={partner.name} width={80} height={80} className="mr-4 rounded-lg" />
-                <div>
+                <div className='m-1'>
                   <h4 className="font-semibold">{partner.name}</h4>
                 </div>
-                <div>
+                <div className='m-1'>
                   <h4 className="font-semibold">{partner.address}</h4>
                 </div>
-                <div>
+                <div className='m-1'>
                   <p className="font-semibold">Email: {partner.email}</p>
                 </div>
-                <div>
+                <div className='m-1'>
                   <p className="font-semibold">Tel: +{partner.tel}</p>
                 </div>
-                <div className="flex">
+                <div className="flex mt-8">
                   <Image src={underage} alt="Logo" width={30} height={20} className='mr-4' />
                   <Image src={pregnancy} alt="Logo" width={30} height={20} className='mr-4' />
                   <Image src={dontdrink} alt="Logo" width={30} height={20} className='mr-4' />

@@ -38,9 +38,6 @@ const Navbar = () => {
                                 <li className="px-4 py-2">
                                     <Link href="/brands">Brand 2</Link>
                                 </li>
-                                <li className="px-4 py-2">
-                                    <Link href="/brands">Brand 3</Link>
-                                </li>
                             </ul>
                         )}
                     </li>
@@ -61,14 +58,14 @@ const Navbar = () => {
                 </button>
 
                 {nav && (
-                    <ul className="flex flex-col justify-center items-center fixed top-0 left-0 w-full bg-gradient-to-b from-cyan-500 to-blue-500 text-white">
-                        <li className="px-4 cursor-pointer capitalize py-4 text-xl">
+                    <ul className="flex flex-col justify-center items-center fixed mt-20 top-0 left-1/2 transform -translate-x-1/2 w-2/3 bg-gradient-to-b from-cyan-500 to-blue-500 text-white">
+                        <li className="px-4 cursor-pointer capitalize py-4 text-xl hover:bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
                             <Link href="/">Home</Link>
                         </li>
-                        <li className="px-4 cursor-pointer capitalize py-4 text-xl">
+                        <li className="px-4 cursor-pointer capitalize py-4 text-xl hover:bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
                             <Link href="/about">About Us</Link>
                         </li>
-                        <li className="px-4 cursor-pointer capitalize py-4 text-xl relative">
+                        <li className="px-4 cursor-pointer capitalize py-4 text-xl relative hover:bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
                             <button onClick={() => { setDropdownOpen(!dropdownOpen); return undefined; }} className="focus:outline-none">
                                 Brands
                             </button>
@@ -86,10 +83,11 @@ const Navbar = () => {
                                 </ul>
                             )}
                         </li>
-                        <li className="px-4 cursor-pointer capitalize py-4 text-xl">
+                        <li className="px-4 cursor-pointer capitalize py-4 text-xl hover:bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
                             <Link href="/contact">Get in touch</Link>
                         </li>
                     </ul>
+
                 )}
             </div>
         </nav>

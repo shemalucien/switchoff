@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Navbar from './navbar/page';
 import Footer from './footer/page';
-import NewsSection from './news/page';
+// import NewsSection from './news/page';
 import TestimonialsPage from './testimonials/page';
 import Products from './products/page';
 import AboutUs from './about/page';
@@ -37,7 +37,7 @@ export default function Page() {
         <TestimonialsPage />
         
         <Highlights />
-        <NewsSection /> 
+        {/* <NewsSection />  */}
         <ContactUsSection />
       </main>
       <Footer />

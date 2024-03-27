@@ -10,13 +10,13 @@ const Products = () => {
     return (
         <>
             <h2 className="text-4xl font-bold text-center mb-8">Are you Ready to Taste our Products</h2>
-            <h3 className="text-xl text-center mb-8">Discover the perfect blend of flavors and textures that redefine your taste buds. Our drinks are crafted with the finest ingredients, designed to quench your thirst while delighting your palate. Experience the essence of our brand, where every sip is a journey of discovery.</h3>
-
+            <h3 className="text-base text-center mb-8">Discover the perfect blend of flavors and textures that redefine your taste buds. Our drinks are crafted with the finest ingredients, designed to quench your thirst while delighting your palate. Experience the essence of our brand, where every sip is a journey of discovery.</h3>
+{/* 
             <div className="flex justify-center mb-8">
-                <button className="bg-blue-500 font-bold text-white py-2 px-4 rounded-full mx-2">ALL</button>
-                <button className="bg-white font-bold text-black py-2 px-4 rounded-full mx-2">NICE GUARANA</button>
-                <button className="bg-white font-bold text-black py-2 px-4 rounded-full mx-2">ENERGY DRINK</button>
-            </div>
+                <button className="bg-blue-500 font-bold text-white py-2 px-2 rounded-full mx-2 text-sm">ALL</button>
+                <button className="bg-white font-bold text-black py-2 px-2 rounded-full mx-2 text-sm">NICE GUARANA <sup>+</sup></button>
+                <button className="bg-white font-bold text-black py-2 px-2 rounded-full mx-2 text-sm">SWITCHOFF ENERGY DRINK</button>
+            </div> */}
 
             <div className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                 {/* First Card */}
