@@ -10,7 +10,7 @@ import Navbar from '../navbar/page';
 const ContactUsSection = () => {
   // Dummy data for partners
   const partners = [
-    { name: 'DISSCO LTD', address: 'City, Kigali, Rwanda,KN 20 Ave', logo: dissco, email: 'dissco@gmail.com', tel: 250785135816 }
+    { name: 'DISSCO LTD', address: 'City, Kigali, Rwanda,KN 20 Ave', logo: dissco, email: 'dissco04@gmail.com', tel: 250785135816 }
   ];
 
   return (
