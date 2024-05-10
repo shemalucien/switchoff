@@ -26,7 +26,7 @@ const MoreInfo = () => {
 
                         At DISSCO LTD, we believe in continuous improvement and innovation. We are constantly striving to enhance our products and expand our reach to serve a wider audience. With a solid plan for growth and a focus on excellence, we are poised to make a significant impact in the market and beyond.
 
-                        As a registered Rwandan company with a Tax Identification Number (TIN), we adhere to the highest standards of integrity, transparency, and professionalism in all our operations. We are proud to be a part of the vibrant Rwandan business community and are committed to contributing positively to its growth and development.
+                        As a registered Rwandan company , we adhere to the highest standards of integrity, transparency, and professionalism in all our operations. We are proud to be a part of the vibrant Rwandan business community and are committed to contributing positively to its growth and development.
 
                         Join us on our journey as we continue to push the boundaries of quality, affordability, and innovation. Experience the difference with DISSCO LTD – where excellence meets affordability.
                     </p>

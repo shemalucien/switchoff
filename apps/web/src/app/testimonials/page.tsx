@@ -1,15 +1,18 @@
 import React from 'react';
 import TestimonialCard from './testimonial-card';
-import charles from '../../../public/images/Charles.jpg';
-import aline from '../../../public/images/aline.jpg';
+// import charles from '../../../public/images/Charles.jpg';
+// import aline from '../../../public/images/aline.jpg';
 import junior from '../../../public/images/junior.jpg';
-import junior2 from '../../../public/images/junior2.jpg';
+// import junior2 from '../../../public/images/junior2.jpg';
 import muyango from '../../../public/images/muyango.jpg';
+import clement from '../../../public/images/clement.jpg';
+import judy from '../../../public/images/judy.jpg';
+import lady2 from '../../../public/images/lady2.jpg';
 const testimonials = [
- { quote: "This product has changed my life!", author: "Charles", imageUrl: charles },
- { quote: "I am happy with the service.", author: "Aline", imageUrl:aline },
+ { quote: "This product has changed my life!", author: "Clement", imageUrl: clement },
+ { quote: "I am happy with the service.", author: "Judy", imageUrl: judy },
  { quote: "Highly recommended!", author: "Junior", imageUrl: junior },
- { quote: "Excellent quality and service.", author: "Junior", imageUrl: junior2 },
+ { quote: "Excellent quality and service.", author: "Lady", imageUrl: lady2 },
  { quote: "Amazing experience!", author: "Muyango", imageUrl: muyango},
 ];
 

@@ -108,7 +108,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                                 required
                             /> */}
 
-                            <div className="flex space-x-2">
+                            <div className="flex space-x-2 dark:text-white">
                                 <input
                                     type="number"
                                     value={day}
