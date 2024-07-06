@@ -33,13 +33,13 @@ const BrandsSection = () => {
 
  return (
     <><Navbar />
-      <div className="container px-4 py-8"> {/* Adjust the top margin as needed */}
+      <div className="container px-4 py-8  dark:text-white dark:bg-gray-900"> {/* Adjust the top margin as needed */}
         <h2 className="text-3xl text-center font-bold mb-8 mt-20">Our Brands</h2>
         <h3 className='text-base text-center  mb-8'>Welcome to the world of DISSCO LTD, where we bring you the finest selection of high-quality beverage products to invigorate your senses and elevate your experiences. Our brands, SWITCHOFF NICE GUARANA and SWITCHOFF ENERGY DRINK, epitomize excellence, flavor, and vitality. Crafted with precision and sourced from reputable manufacturers in Vietnam, our products are a testament to our commitment to delivering nothing but the best. As a proudly Rwandan-owned company, we take pride in offering beverages that not only tantalize your taste buds but also reflect our dedication to quality and innovation.</h3>
         <div className="flex ">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8"> {/* Adjust the grid layout based on screen size */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8  dark:text-white dark:bg-gray-900"> {/* Adjust the grid layout based on screen size */}
             {brands.map((brand, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg text-center shadow-md flex flex-col items-center mb-8"> {/* Add margin to create space between cards */}
+              <div key={index} className="bg-white p-6 rounded-lg text-center shadow-md flex flex-col items-center mb-8  dark:text-white dark:bg-gray-900"> {/* Add margin to create space between cards */}
                 <div className="mx-auto w-24 h-24 mb-4">
                  <Image src={brand.image} alt={brand.name} width={96} height={96} className="rounded-full mx-auto object-cover" />
                 </div>

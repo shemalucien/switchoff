@@ -25,16 +25,16 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
     const [year, setYear] = useState("");
     const [error, setError] = useState<Error | null>(null);
 
-    // Check local storage for access status on component mount
-    useEffect(() => {
-        const accessGranted = localStorage.getItem('accessGranted');
-        if (accessGranted === 'true') {
-            onAccessGranted();
-        }
-        // Explicitly return undefined to avoid potential ESLint warnings
-        return undefined;
+    // // Check local storage for access status on component mount
+    // useEffect(() => {
+    //     const accessGranted = localStorage.getItem('accessGranted');
+    //     if (accessGranted === 'true') {
+    //         onAccessGranted();
+    //     }
+    //     // Explicitly return undefined to avoid potential ESLint warnings
+    //     return undefined;
 
-    }, [onAccessGranted]);
+    // }, [onAccessGranted]);
 
 
     const handleSubmit = (e: FormEvent) => {
@@ -74,22 +74,22 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
     }
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-cyan-500 to-blue-500">
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-cyan-500 to-blue-500  dark:text-white dark:bg-gray-900">
 
             <div className="flex flex-col items-center justify-center border-2 w-full sm:w-1/2 mx-auto bg-white p-8 rounded-lg shadow-lg">
                 <div className="flex items-center justify-center mb-8">
                     {/* Social Media Icons */}
                     <Link href="#">
-                        <FaFacebook className="mx-2" />
+                        <FaFacebook />
                     </Link>
                     <Link href="#">
-                        <FaTwitter className="mx-2" />
+                        <FaTwitter />
                     </Link>
                     <Link href="#">
-                        <FaInstagram className="mx-2" />
+                        <FaInstagram  />
                     </Link>
                     <Link href="#">
-                        <FaYoutube className="mx-2" />
+                        <FaYoutube />
                     </Link>
                 </div>
                 <h1 className="text-3xl font-bold mb-8 text-center">Welcome</h1>
@@ -113,7 +113,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                                     type="number"
                                     value={day}
                                     onChange={(e) => setDay(e.target.value)}
-                                    className="border-2 border-gray-300 p-2 rounded-md"
+                                    className="border-2 border-gray-300 p-2 rounded-md dark:text-white"
                                     placeholder="Day"
                                     required
                                     min="1"
@@ -123,7 +123,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                                     type="number"
                                     value={month}
                                     onChange={(e) => setMonth(e.target.value)}
-                                    className="border-2 border-gray-300 p-2 rounded-md"
+                                    className="border-2 border-gray-300 p-2 rounded-md  dark:text-white"
                                     placeholder="Month"
                                     required
                                     min="1"
@@ -133,7 +133,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                                     type="number"
                                     value={year}
                                     onChange={(e) => setYear(e.target.value)}
-                                    className="border-2 border-gray-300 p-2 rounded-md"
+                                    className="border-2 border-gray-300 p-2 rounded-md  dark:text-white"
                                     placeholder="Year"
                                     required
                                     min="1900"
