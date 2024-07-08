@@ -3,14 +3,14 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from 'next/image';
-import flag from '../../../public/images/flag.jpg';
+// import flag from '../../../public/images/flag.jpg';
 import logo from '../../../public/images/logo1.png';
 import { FaShoppingCart } from "react-icons/fa"; // Importing the shopping cart icon
 import { BsSun, BsMoon } from "react-icons/bs";
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+    // const [dropdownOpen, setDropdownOpen] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {

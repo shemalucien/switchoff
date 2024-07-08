@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 interface InstagramPost {
     id: string;
@@ -51,22 +51,21 @@ const Highlights: React.FC = () => {
     useEffect(() => {
         const fetchInstagramFeed = async () => {
             try {
-                const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,media_type,timestamp,permalink&access_token=${process.env.NEXT_PUBLIC_IG_TOKEN}`;
+                const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,media_type,timestamp,permalink&access_token=${process.env.NEXT_PUBLIC_IG_TOKEN as string}`;
                 const response = await fetch(url);
 
                 if (!response.ok) {
                     throw new Error("Failed to fetch Instagram feed");
                 }
 
-                const instagramFeed = await response.json();
-                //console.log(data);
-                setPosts(instagramFeed.data); // Assuming the data structure is { data: [InstagramPost[]] }
+                const instagramFeed: { data: InstagramPost[] } = await response.json();
+                setPosts(instagramFeed.data);
             } catch (err) {
                 if (err instanceof Error) {
-                    console.error("Error fetching Instagram feed:", err.message);
+                    // console.error("Error fetching Instagram feed:", err.message);
                     setError(err.message);
                 } else {
-                    console.error("Unexpected error:", err);
+                    // console.error("Unexpected error:", err);
                     setError("An unexpected error occurred.");
                 }
                 // Set dummy data as fallback
@@ -74,8 +73,8 @@ const Highlights: React.FC = () => {
             }
         };
 
-        fetchInstagramFeed();
-    }, [setPosts ]);
+        void fetchInstagramFeed(); 
+    }, []);
 
     return (
         <div className="highlights">

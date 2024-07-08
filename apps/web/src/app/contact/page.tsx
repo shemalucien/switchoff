@@ -5,7 +5,7 @@ import dissco from '../../../public/images/dissco.png';
 import underage from '../../../public/images/18.png';
 import dontdrink from '../../../public/images/dontdrink.png';
 import pregnancy from '../../../public/images/pregnant.png';
-import Navbar from '../navbar/page';
+// import Navbar from '../navbar/page';
 import ScrollButton from '../scroll/page';
 
 // const ContactUsSection = () => {
@@ -85,7 +85,7 @@ import ScrollButton from '../scroll/page';
 // export default ContactUsSection;
 
 
-import Heading from "../contact/Heading";
+// import Heading from "./heading";
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
@@ -97,26 +97,28 @@ const ContactUsSection = () => {
   const form = useRef();
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [dataReceived, setDataReceived] = useState(false);
-  const submitForm = (event: any) => {
+  const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFormSubmitted(true);
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
-        // @ts-ignore
+        // @ts-expect-error TypeScript expects a different type for ref, but this is handled appropriately within the component
         form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_ID
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_ID as string
       )
       .then(
         (result) => {
-          console.log(result.text);
+          result.status = 200;
+          // console.log(result.text);
           setFormSubmitted(false);
           setDataReceived(true);
-          event.target.reset();
+          (event.target as HTMLFormElement).reset(); // Reset form fields
         },
         (error) => {
-          console.log(error.text);
+          throw new Error(error);
+          // console.log(error.text);
         }
       );
   };
@@ -148,6 +150,21 @@ const ContactUsSection = () => {
       animate: { opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.6 } },
     },
   };
+
+  const renderButtonLabel = () => {
+    if (formSubmitted) {
+      return (
+        <>
+          <div className="loader"></div>
+        </>
+      );
+    } else if (dataReceived) {
+      return "Message Sent!";
+    } else {
+      return "Send Message";
+    }
+  };
+
   return (
     <>
 
@@ -185,7 +202,7 @@ const ContactUsSection = () => {
           <div className="lg:w-1/2">
             <div className="mt-10 font-bodyText">
               <form
-                // @ts-ignore
+                // @ts-expect-error : TypeScript expects a different type for ref, but this is handled appropriately within the component
                 ref={form}
                 onSubmit={submitForm}
                 className="flex flex-col items-center justify-center max-w-xl w-full mx-auto"
@@ -256,7 +273,7 @@ const ContactUsSection = () => {
                   className={`btn mt-2 bg-blue-500 text-white py-2 px-4 rounded ${formSubmitted && "cursor-not-allowed"} `}
                   type="submit"
                 >
-                  {formSubmitted ? (
+                  {/* {formSubmitted ? (
                     <>
                       <div className="loader"></div>
                     </>
@@ -264,7 +281,8 @@ const ContactUsSection = () => {
                     "Message Sent"
                   ) : (
                     "Send Message"
-                  )}
+                  )} */}
+                  {renderButtonLabel()}
                 </motion.button>
               </form>
             </div>

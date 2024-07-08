@@ -1,5 +1,5 @@
 'use client';
-import Heading from "./Heading";
+// import Heading from "./Heading";
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
@@ -10,27 +10,29 @@ const Appointment = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [dataReceived, setDataReceived] = useState(false);
 
-  const submitForm = (event : any) => {
+  const submitForm = (event : React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFormSubmitted(true);
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
-        // @ts-ignore
+        // @ts-expect-error: TypeScript error is expected here because form.current might be null, but it's handled elsewhere
         form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_ID
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_ID as string
       )
       .then(
         (result) => {
-          console.log(result.text);
+          //console.log(result.text);
           sendAutoReply();
+          result.status === 200 && setFormSubmitted(false);
           setFormSubmitted(false);
           setDataReceived(true);
-          event.target.reset();
+          (event.target as HTMLFormElement).reset(); // Reset form fields
         },
-        (error) => {
-          console.log(error.text);
+        (error : Error) => {
+          throw new Error(error.message || 'Something went wrong');
+          // console.log(error.text);
         }
       );
   };
@@ -41,7 +43,7 @@ const Appointment = () => {
   const sendAutoReply = () => {
     const formData = new FormData(form.current);
     const userEmail = formData.get("email");
-    console.log(userEmail);
+    // console.log(userEmail);
     emailjs
       .send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
@@ -60,10 +62,12 @@ const Appointment = () => {
       )
       .then(
         (result) => {
-          console.log("Auto-reply sent:", result.text);
+          result.status === 200 && setFormSubmitted(false);
+          //console.log("Auto-reply sent:", result.text);
         },
-        (error) => {
-          console.log("Auto-reply error:", error.text);
+        (error : Error) => {
+          throw new Error(error.message || 'Something went wrong');
+          //console.log("Auto-reply error:", error.text);
         }
       );
   };
@@ -111,6 +115,20 @@ const Appointment = () => {
     },
   };
 
+  const renderButtonLabel = () => {
+    if (formSubmitted) {
+      return (
+        <>
+          <div className="loader"></div>
+        </>
+      );
+    } else if (dataReceived) {
+      return "Appointment Booked!";
+    } else {
+      return "Book Appointment";
+    }
+  };
+
   return (
     <>
       <div className="mt-0 dark:text-white dark:bg-gray-900">
@@ -120,7 +138,7 @@ const Appointment = () => {
           <h3 className="text-2xl text-center font-semibold mb-4 mt-36">Book Appointment with Us</h3>
           <div className="mt-4 font-bodyText h-screen">
             <form
-            // @ts-ignore
+            // @ts-expect-error: TypeScript expects a different type for ref, but this is handled appropriately within the component
               ref={form}
               onSubmit={submitForm}
               className="flex flex-col items-center justify-center max-w-xl w-full mx-auto"
@@ -222,7 +240,7 @@ const Appointment = () => {
                 className={`btn mt-5 bg-blue-500 text-white py-2 px-4 rounded ${formSubmitted && "cursor-not-allowed"} `}
                 type="submit"
               >
-                {formSubmitted ? (
+                {/* {formSubmitted ? (
                   <>
                     <div className="loader"></div>
                   </>
@@ -230,7 +248,8 @@ const Appointment = () => {
                   "Appointment Sent"
                 ) : (
                   "Book Appointment"
-                )}
+                )} */}
+                 {renderButtonLabel()}
               </motion.button>
             </form>
           </div>
