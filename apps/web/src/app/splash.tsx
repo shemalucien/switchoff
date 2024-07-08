@@ -76,7 +76,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
     return (
         <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-cyan-500 to-blue-500  dark:text-white dark:bg-gray-900">
 
-            <div className="flex flex-col items-center justify-center border-2 w-full sm:w-1/2 mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <div className="flex flex-col items-center justify-center border-2 w-full sm:w-1/2 mx-auto bg-white p-8 rounded-lg shadow-lg dark:text-white dark:bg-gray-900 ">
                 <div className="flex items-center justify-center mb-8">
                     {/* Social Media Icons */}
                     <Link href="#">
@@ -97,7 +97,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                     <div className="flex flex-col items-center justify-center">
                         <Image src={logo} alt="Logo" width={200} height={200} />
                     </div>
-                    <div className="flex flex-col items-center justify-center">
+                    <div className="flex flex-col items-center justify-center dark:text-white dark:bg-gray-900 ">
                         <p className="text-lg font-bold mb-4">Please enter your date of birth</p>
                         <form onSubmit={handleSubmit} className="space-y-4 flex flex-col">
                             {/* <input
