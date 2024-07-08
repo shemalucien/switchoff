@@ -74,46 +74,37 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
     }
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-cyan-500 to-blue-500  dark:text-white dark:bg-gray-900">
-
-            <div className="flex flex-col items-center justify-center border-2 w-full sm:w-1/2 mx-auto bg-white p-8 rounded-lg shadow-lg dark:text-white dark:bg-gray-900 ">
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-cyan-500 to-blue-500 dark:text-white dark:bg-gray-900">
+            <div className="flex flex-col items-center justify-center border-2 w-full sm:w-1/2 mx-auto bg-white p-8 rounded-lg shadow-lg dark:bg-gray-800">
                 <div className="flex items-center justify-center mb-8">
                     {/* Social Media Icons */}
                     <Link href="#">
-                        <FaFacebook />
+                        <FaFacebook className="text-gray-800 dark:text-white" />
                     </Link>
                     <Link href="#">
-                        <FaTwitter />
+                        <FaTwitter className="text-gray-800 dark:text-white" />
                     </Link>
                     <Link href="#">
-                        <FaInstagram  />
+                        <FaInstagram className="text-gray-800 dark:text-white" />
                     </Link>
                     <Link href="#">
-                        <FaYoutube />
+                        <FaYoutube className="text-gray-800 dark:text-white" />
                     </Link>
                 </div>
-                <h1 className="text-3xl font-bold mb-8 text-center">Welcome</h1>
+                <h1 className="text-3xl font-bold mb-8 text-center dark:text-white">Welcome</h1>
                 <div className="text-center flex flex-col md:flex-row gap-8">
                     <div className="flex flex-col items-center justify-center">
                         <Image src={logo} alt="Logo" width={200} height={200} />
                     </div>
-                    <div className="flex flex-col items-center justify-center dark:text-white dark:bg-gray-900 ">
-                        <p className="text-lg font-bold mb-4">Please enter your date of birth</p>
+                    <div className="flex flex-col items-center justify-center dark:bg-gray-800">
+                        <p className="text-lg font-bold mb-4 dark:text-white">Please enter your date of birth</p>
                         <form onSubmit={handleSubmit} className="space-y-4 flex flex-col">
-                            {/* <input
-                                type="date"
-                                value={dob}
-                                onChange={(e) => setDob(e.target.value)}
-                                className="border-2 border-gray-300 p-2 rounded-md"
-                                required
-                            /> */}
-
-                            <div className="flex space-x-2 dark:text-white">
+                            <div className="flex space-x-2">
                                 <input
                                     type="number"
                                     value={day}
                                     onChange={(e) => setDay(e.target.value)}
-                                    className="border-2 border-gray-300 p-2 rounded-md dark:text-white"
+                                    className="border-2 border-gray-300 p-2 rounded-md dark:text-black dark:bg-gray-700"
                                     placeholder="Day"
                                     required
                                     min="1"
@@ -123,7 +114,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                                     type="number"
                                     value={month}
                                     onChange={(e) => setMonth(e.target.value)}
-                                    className="border-2 border-gray-300 p-2 rounded-md  dark:text-white"
+                                    className="border-2 border-gray-300 p-2 rounded-md dark:text-black dark:bg-gray-700"
                                     placeholder="Month"
                                     required
                                     min="1"
@@ -133,18 +124,17 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                                     type="number"
                                     value={year}
                                     onChange={(e) => setYear(e.target.value)}
-                                    className="border-2 border-gray-300 p-2 rounded-md  dark:text-white"
+                                    className="border-2 border-gray-300 p-2 rounded-md dark:text-black dark:bg-gray-700"
                                     placeholder="Year"
                                     required
                                     min="1900"
                                     max="2099"
                                 />
-                                </div>
-
+                            </div>
                             {error && (
                                 <div className="flex items-center justify-center flex-col">
                                     {error.imageUrl && <Image src={error.imageUrl} alt="Restricted Image" width={100} height={100} />}
-                                    <p className="text-red-500">{error.message}</p>
+                                    <p className="text-red-500 dark:text-red-400">{error.message}</p>
                                 </div>
                             )}
                             <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">
@@ -153,16 +143,14 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                         </form>
                     </div>
                 </div>
-
                 <div className="flex items-center justify-center mt-8">
-                    <Image src={underage} alt="Logo" width={30} height={30} className='mr-4' />
-                    <Image src={pregnancy} alt="Logo" width={30} height={30} className='mr-4' />
-                    <Image src={dontdrink} alt="Logo" width={30} height={30} className='mr-4' />
+                    <Image src={underage} alt="Underage Warning" width={30} height={30} className="mr-4" />
+                    <Image src={pregnancy} alt="Pregnancy Warning" width={30} height={30} className="mr-4" />
+                    <Image src={dontdrink} alt="Don't Drink Warning" width={30} height={30} className="mr-4" />
                 </div>
             </div>
         </div>
-
     );
-};
+}
 
 export default SplashPage;
