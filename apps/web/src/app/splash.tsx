@@ -75,7 +75,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-cyan-500 to-blue-500 dark:text-white dark:bg-gray-900">
-            <div className="flex flex-col items-center justify-center border-2 w-full sm:w-1/2 mx-auto bg-white p-8 rounded-lg shadow-lg dark:bg-gray-800">
+            <div className="flex flex-col items-center justify-center border-2 w-full sm:w-1/2 mx-auto bg-white p-8 rounded-lg shadow-lg dark:text-white dark:bg-gray-900">
                 <div className="flex items-center justify-center mb-8">
                     {/* Social Media Icons */}
                     <Link href="#">
@@ -104,7 +104,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                                     type="number"
                                     value={day}
                                     onChange={(e) => setDay(e.target.value)}
-                                    className="border-2 border-gray-300 p-2 rounded-md dark:text-black dark:bg-gray-700"
+                                    className="border-2 border-gray-300 p-2 rounded-md dark:text-white dark:bg-gray-700"
                                     placeholder="Day"
                                     required
                                     min="1"
@@ -114,7 +114,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                                     type="number"
                                     value={month}
                                     onChange={(e) => setMonth(e.target.value)}
-                                    className="border-2 border-gray-300 p-2 rounded-md dark:text-black dark:bg-gray-700"
+                                    className="border-2 border-gray-300 p-2 rounded-md dark:text-white dark:bg-gray-700"
                                     placeholder="Month"
                                     required
                                     min="1"
@@ -124,7 +124,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                                     type="number"
                                     value={year}
                                     onChange={(e) => setYear(e.target.value)}
-                                    className="border-2 border-gray-300 p-2 rounded-md dark:text-black dark:bg-gray-700"
+                                    className="border-2 border-gray-300 p-2 rounded-md dark:text-white dark:bg-gray-700"
                                     placeholder="Year"
                                     required
                                     min="1900"
