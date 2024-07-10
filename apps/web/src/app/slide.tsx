@@ -31,7 +31,7 @@ const images = [
 
 export default function Slide() {
   return (
-    <div className="flex justify-center my-8 bg-gradient-to-r from-cyan-500 to-blue-500 h-screen overflow-hidden mt-20">
+    <div className="flex justify-center my-8 bg-gradient-to-r from-cyan-500 to-blue-500 h-screen overflow-hidden mt-20  dark:text-white dark:bg-gray-900">
 
       <Splide
         options={{

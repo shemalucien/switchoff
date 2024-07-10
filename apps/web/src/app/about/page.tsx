@@ -10,7 +10,7 @@ import bottle from '../../../public/images/Image.jpg';
 const AboutUs = () => {
   return (
     <><Navbar />
-      <div className="container px-4 py-4 m-2">
+      <div className="container px-4 py-4 m-2 dark:text-white dark:bg-gray-900">
 
         <div className="flex flex-col lg:flex-row m-2">
           {/* Column for Image */}
