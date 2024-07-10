@@ -211,11 +211,11 @@ const OrderPage = () => {
 
   return (
     <>
-      <div className="mt-0  dark:text-white dark:bg-gray-900">
+      <div className="mt-0 h-screen">
         <Navbar />
-        <div className="px-2 lg:px-10 h-screen flex flex-col md:flex-row">
+        <div className="px-2 lg:px-10 flex flex-col md:flex-row dark:text-white dark:bg-gray-900 ">
           {/* <Heading heading={"Place Your Order"} /> */}
-          <div className="flex flex-col max-w-xl w-full mx-auto">
+          <div className="flex flex-col items-center justify-center max-w-xl w-full mx-auto  p-4 sm:p-6 md:p-8 dark:text-white dark:bg-gray-900">
             <h3 className="text-2xl text-center font-semibold mb-4 mt-36">Place Your Order</h3>
             <div className="mt-10 font-bodyText flex items-center mx-auto mr-5">
               <form
@@ -343,7 +343,7 @@ const OrderPage = () => {
             </div>
 
           </div>
-          <div className="mt-44 w-full items-center max-w-xl mx-auto">
+          <div className="mt-20 w-full items-center max-w-xl mx-auto dark:text-white dark:bg-gray-900">
             <h2 className="text-xl font-bold mb-5">Order Details</h2>
             <h2 className="text-xl font-bold">Invoice</h2>
             <div className="flex justify-between border-b py-2">

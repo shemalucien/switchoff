@@ -36,8 +36,8 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700  dark:text-white">
-            <div className="flex justify-between items-center w-full h-20 px-4 text-black bg-white fixed nav shadow-md z-50">
+        <nav className="bg-white border-gray-200  dark:border-gray-700  dark:text-white ">
+            <div className="flex justify-between items-center w-full h-20 px-4 text-black fixed nav shadow-md z-50 dark:text-white">
                 <div>
                     <Link href="/">
                         <button onClick={() => { setNav(false); return undefined; }} aria-label="Logo">
@@ -47,7 +47,7 @@ const Navbar = () => {
                 </div>
 
                 <ul className="hidden md:flex">
-                    <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black duration-200 link-underline">
+                    <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black duration-200 link-underline dark:text-white">
                         <Link href="/">Home</Link>
                     </li>
                     {/* <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black duration-200">
@@ -72,11 +72,11 @@ const Navbar = () => {
                         <Link href="/contact">Get in touch</Link>
                     </li> */}
 
-                    <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black duration-200">
+                    <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black duration-200 dark:text-white dark:bg-gray-900">
                         <Link href="/appointment">Book an Appointment</Link>
                     </li>
 
-                    <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black duration-200 flex items-center">
+                    <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black duration-200 flex items-center dark:text-white dark:bg-gray-900">
                         <Link href="/order">
                             <div className="flex items-center ">
                                 <FaShoppingCart />
@@ -85,7 +85,7 @@ const Navbar = () => {
                         </Link>
                     </li>
 
-                    <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black dark:hover:text-white duration-200 flex items-center">
+                    <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black dark:text-white dark:bg-gray-900 dark:hover:text-white duration-200 flex items-center">
                         <button onClick={toggleDarkMode} className="focus:outline-none">
                             {darkMode ? <BsSun /> : <BsMoon />}
                         </button>
@@ -145,6 +145,15 @@ const Navbar = () => {
                 )}
 
                 <div className="flex items-center space-x-4 lg:hidden">
+
+                    <button
+                        onClick={toggleDarkMode}
+                        className="focus:outline-none cursor-pointer text-gray-500 md:hidden"
+                        aria-label="Toggle dark mode"
+                    >
+                        {darkMode ? <BsSun size={30} /> : <BsMoon size={30} />}
+                    </button>
+
                     <button
                         onClick={() => setNav(!nav)}
                         className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
@@ -155,14 +164,6 @@ const Navbar = () => {
                         ) : (
                             <FaBars size={30} />
                         )}
-                    </button>
-
-                    <button
-                        onClick={toggleDarkMode}
-                        className="focus:outline-none cursor-pointer text-gray-500 md:hidden"
-                        aria-label="Toggle dark mode"
-                    >
-                        {darkMode ? <BsSun size={30} /> : <BsMoon size={30} />}
                     </button>
                 </div>
 
