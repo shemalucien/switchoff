@@ -74,7 +74,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
     }
     return (
         <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-cyan-500 to-blue-500">
-            <div className=" bg-white flex flex-col items-center justify-center border-2 w-full sm:w-1/2 mx-autop-8 rounded-lg shadow-lg">
+            <div className=" bg-white dark:text-black flex flex-col items-center justify-center border-2 w-full sm:w-1/2 mx-autop-8 rounded-lg shadow-lg">
                 <div className="flex items-center justify-center mb-8">
                     {/* Social Media Icons */}
                     <Link href="#">
@@ -90,20 +90,20 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                         <FaYoutube className="text-gray-800 " />
                     </Link>
                 </div>
-                <h1 className="text-3xl font-bold mb-8 text-center dark:text-white dark:bg-gray-900">Welcome</h1>
+                <h1 className="text-3xl font-bold mb-8 text-center dark:text-black ">Welcome</h1>
                 <div className="text-center flex flex-col md:flex-row gap-8">
                     <div className="flex flex-col items-center justify-center">
                         <Image src={logo} alt="Logo" width={200} height={200} />
                     </div>
-                    <div className="flex flex-col items-center justify-center dark:text-white dark:bg-gray-900">
-                        <p className="text-lg font-bold mb-4">Please enter your date of birth</p>
+                    <div className="flex flex-col items-center justify-center dark:text-black ">
+                        <p className="text-lg font-bold mb-4 dark:text-black ">Please enter your date of birth</p>
                         <form onSubmit={handleSubmit} className="space-y-4 flex flex-col">
                             <div className="flex space-x-2">
                                 <input
                                     type="number"
                                     value={day}
                                     onChange={(e) => setDay(e.target.value)}
-                                    className="border-2 border-gray-300 p-2 rounded-md  dark:text-white dark:bg-gray-900"
+                                    className="border-2 border-gray-300 p-2 rounded-md  dark:text-black "
                                     placeholder="Day"
                                     required
                                     min="1"
@@ -113,7 +113,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                                     type="number"
                                     value={month}
                                     onChange={(e) => setMonth(e.target.value)}
-                                    className="border-2 border-gray-300 p-2 rounded-md dark:text-white dark:bg-gray-900:"
+                                    className="border-2 border-gray-300 p-2 rounded-md dark:text-black :"
                                     placeholder="Month"
                                     required
                                     min="1"
@@ -123,7 +123,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                                     type="number"
                                     value={year}
                                     onChange={(e) => setYear(e.target.value)}
-                                    className="border-2 border-gray-300 p-2 rounded-md dark:text-white dark:bg-gray-900"
+                                    className="border-2 border-gray-300 p-2 rounded-md dark:text-black "
                                     placeholder="Year"
                                     required
                                     min="1900"
