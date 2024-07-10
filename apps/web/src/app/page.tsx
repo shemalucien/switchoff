@@ -46,7 +46,7 @@ const grantAccess = () => {
 };
 
   return (
-    <div className="flex flex-col min-h-screen dark:text-white dark:bg-gray-900">
+    <div className="flex flex-col min-h-screen">
       {isAccessGranted ? (
         <>
        <Navbar />
