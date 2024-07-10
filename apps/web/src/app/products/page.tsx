@@ -25,7 +25,7 @@ const Products = () => {
 
                 <div className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  dark:text-white dark:bg-gray-900">
                     {/* First Card */}
-                    <div className="w-full m-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col">
+                    <div className="w-full m-2  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col">
                         <div className="p-2 flex justify-center items-center ">
                             <Image src={nicepackage} alt="NICE GUARANA" className="h-auto max-w-full" />
                         </div>
@@ -42,7 +42,7 @@ const Products = () => {
                     </div>
 
                     {/* Second Card */}
-                    <div className="w-full m-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col">
+                    <div className="w-full m-2  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col">
                         <div className="p-2 flex justify-center items-center ">
                             <Image src={energypackage} alt="ENERGY DRINK" className="h-auto max-w-full" />
                         </div>

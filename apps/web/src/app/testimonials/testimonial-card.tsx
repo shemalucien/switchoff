@@ -9,7 +9,7 @@ interface TestimonialCardProps {
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author, imageUrl }) => {
  return (
-    <div className="bg-white shadow-md rounded-lg p-6 m-2 flex flex-col text-center relative  dark:text-white dark:bg-gray-900">
+    <div className="shadow-md rounded-lg p-6 m-2 flex flex-col text-center relative  dark:text-white dark:bg-gray-900">
       <p className="text-blue-500 text-lg mt-4 font-bold">Testimonial</p>
       <p className="text-gray-700 text-base m-4">{quote}</p>
       <div className="relative h-32 w-32 mx-auto mb-8">

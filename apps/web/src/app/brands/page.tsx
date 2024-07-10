@@ -39,7 +39,7 @@ const BrandsSection = () => {
         <div className="flex ">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8  dark:text-white dark:bg-gray-900"> {/* Adjust the grid layout based on screen size */}
             {brands.map((brand, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg text-center shadow-md flex flex-col items-center mb-8  dark:text-white dark:bg-gray-900"> {/* Add margin to create space between cards */}
+              <div key={index} className="p-6 rounded-lg text-center shadow-md flex flex-col items-center mb-8  dark:text-white dark:bg-gray-900"> {/* Add margin to create space between cards */}
                 <div className="mx-auto w-24 h-24 mb-4">
                  <Image src={brand.image} alt={brand.name} width={96} height={96} className="rounded-full mx-auto object-cover" />
                 </div>
