@@ -1,11 +1,10 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../../public/images/logo1.png';
-import { FaFacebook, FaTwitter, FaInstagram,FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
- return (
+  return (
     <footer className="bg-blue-950 text-white py-8 w-full dark:text-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
@@ -18,24 +17,24 @@ const Footer = () => {
           </div>
           <div className="flex items-center justify-center md:justify-end">
             {/* Social Media Icons */}
-            <Link href="#">
-              <FaFacebook className="mx-2" />
-            </Link>
-            <Link href="#">
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <FaFacebook className="mx-2" />
+              </a>
+            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
               <FaTwitter className="mx-2" />
-            </Link>
-            <Link href="#">
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
               <FaInstagram className="mx-2" />
-            </Link>
-            <Link href="#">
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
               <FaYoutube className="mx-2" />
-            </Link>
+            </a>
             <h2 className="mx-2">switchoff@gmail.com</h2>
           </div>
         </div>
       </div>
     </footer>
- );
+  );
 };
 
 export default Footer;

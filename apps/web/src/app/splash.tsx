@@ -1,7 +1,6 @@
 'use client';
 import React, { useState, FormEvent, useEffect} from 'react';
 import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 import underage from '../../public/images/18.png';
 import dontdrink from '../../public/images/dontdrink.png';
@@ -72,18 +71,18 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
         <div className={`flex items-center justify-center min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-gradient-to-r from-cyan-500 to-blue-500'}`}>
             <div className={`bg-white ${darkMode ? 'text-black' : 'text-gray-800'} flex flex-col items-center justify-center border-2 w-full sm:w-1/2 mx-auto p-8 rounded-lg shadow-lg`}>
                 <div className="flex items-center justify-center mb-8">
-                    <Link href="#">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
                         <FaFacebook className={darkMode ? 'text-white' : 'text-gray-800'} />
-                    </Link>
-                    <Link href="#">
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                         <FaTwitter className={darkMode ? 'text-white' : 'text-gray-800'} />
-                    </Link>
-                    <Link href="#">
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                         <FaInstagram className={darkMode ? 'text-white' : 'text-gray-800'} />
-                    </Link>
-                    <Link href="#">
+                    </a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
                         <FaYoutube className={darkMode ? 'text-white' : 'text-gray-800'} />
-                    </Link>
+                    </a>
                 </div>
                 <h1 className="text-3xl font-bold mb-8 text-center">Welcome</h1>
                 <div className="text-center flex flex-col md:flex-row gap-8">
