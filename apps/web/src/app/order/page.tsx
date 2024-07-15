@@ -213,7 +213,7 @@ const OrderPage = () => {
     <>
       <div className="mt-0 h-screen">
         <Navbar />
-        <div className="bg-gray-200 px-2 lg:px-10 flex flex-col md:flex-row dark:text-white dark:bg-gray-900 ">
+        <div className="bg-gray-200 text-black px-2 lg:px-10 flex flex-col md:flex-row dark:text-white dark:bg-gray-900 ">
           <div className="flex flex-col items-center justify-center max-w-xl w-full mx-auto  p-4 sm:p-6 md:p-8 dark:text-white dark:bg-gray-900">
             <h3 className="text-2xl text-center font-semibold mb-4 mt-36">Place Your Order</h3>
             <div className="mt-10 font-bodyText flex items-center mx-auto mr-5">
