@@ -133,8 +133,7 @@ const Appointment = () => {
     <>
       <div className="mt-0 dark:text-white dark:bg-gray-900">
         <Navbar />
-        {/* <Heading heading={"Book Appointment with Us"} /> */}
-        <div className="flex flex-col max-w-xl w-full mx-auto">
+        <div className="bg-gray-200 flex flex-col max-w-xl w-full mx-auto">
           <h3 className="text-2xl text-center font-semibold mb-4 mt-36">Book Appointment with Us</h3>
           <div className="mt-4 font-bodyText h-screen">
             <form
@@ -150,7 +149,7 @@ const Appointment = () => {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  className="w-full input border border-gray-300 mt-4 rounded-lg px-4 py-2"
+                  className="w-full input border border-gray-300 mt-4 rounded-lg px-4 py-2 dark:text-white dark:bg-gray-900"
                   type="text"
                   placeholder="Full Name"
                   required />
@@ -160,7 +159,7 @@ const Appointment = () => {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  className="w-full input border border-gray-300 mt-4 rounded-lg px-4 py-2"
+                  className="w-full input border border-gray-300 mt-4 rounded-lg px-4 py-2 dark:text-white dark:bg-gray-900"
                   type="email"
                   placeholder="Email"
                   required />
@@ -171,7 +170,7 @@ const Appointment = () => {
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                className="w-full input  border border-gray-300 mt-4 rounded-lg px-4 py-2"
+                className="w-full input  border border-gray-300 mt-4 rounded-lg px-4 py-2 dark:text-white dark:bg-gray-900"
                 type="phone"
                 placeholder="Phone Number"
                 required />
@@ -181,7 +180,7 @@ const Appointment = () => {
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                className="w-full m-4 input border border-gray-300 mt-4 rounded-lg px-4 py-2"
+                className="w-full m-4 input border border-gray-300 mt-4 rounded-lg px-4 py-2 dark:text-white dark:bg-gray-900"
                 type="text"
                 placeholder="Subject"
                 required />
@@ -192,7 +191,7 @@ const Appointment = () => {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  className="w-full input border border-gray-300 mt-4 rounded-lg px-4 py-2"
+                  className="w-full input border border-gray-300 mt-4 rounded-lg px-4 py-2 dark:text-white dark:bg-gray-900"
                   type="date"
                   placeholder="Select Date"
                   required />
@@ -202,7 +201,7 @@ const Appointment = () => {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  className="w-full input border border-gray-300 mt-4 rounded-lg px-4 py-2"
+                  className="w-full input border border-gray-300 mt-4 rounded-lg px-4 py-2 dark:text-white dark:bg-gray-900"
                   type="time"
                   placeholder="Select Time"
                   required />
@@ -226,7 +225,7 @@ const Appointment = () => {
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                className="w-full m-2 h-28 input border border-gray-300 mt-4 rounded-lg px-4 py-2"
+                className="w-full m-2 h-28 input border border-gray-300 mt-4 rounded-lg px-4 py-2 dark:text-white dark:bg-gray-900"
                 placeholder="Message"
                 name="message"
                 required

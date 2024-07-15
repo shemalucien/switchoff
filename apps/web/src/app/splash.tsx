@@ -49,7 +49,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
         }
         if (age < 18) {
             setError({
-                message: 'You must be at least 18 years old to view this content.',
+                message: 'You must be at least 18 years old to access this website.',
                 imageUrl: underage,
             });
         } else {
