@@ -44,7 +44,7 @@ const BrandsSection = () => {
                  <Image src={brand.image} alt={brand.name} width={96} height={96} className="rounded-full mx-auto object-cover" />
                 </div>
                 <h3 className="text-xl font-semibold text-center mb-2 mt-12" dangerouslySetInnerHTML={{ __html: brand.name }}></h3>
-                <p className="text-gray-600 mb-4">{brand.description}</p>
+                <p className="mb-4">{brand.description}</p>
                 <Link href="/products" className="bg-blue-500 text-white py-2 px-4 rounded">View Products</Link>
                 {/* <button className="bg-blue-500 text-white py-2 px-4 rounded">View Products</button> */}
               </div>

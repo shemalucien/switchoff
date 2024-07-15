@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from "react";
+import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Image from 'next/image';
@@ -11,7 +11,22 @@ import { BsSun, BsMoon } from "react-icons/bs";
 const Navbar = () => {
     const [nav, setNav] = useState(false);
     // const [dropdownOpen, setDropdownOpen] = useState(false);
+    const navRef: MutableRefObject<HTMLUListElement | null> = useRef(null);
     const [darkMode, setDarkMode] = useState(false);
+
+    const handleClickOutside = (event :MouseEvent) => {
+        if (navRef.current && !navRef.current.contains(event.target as Node)) {
+            setNav(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
 
     useEffect(() => {
         const savedTheme = localStorage.getItem("theme");
@@ -37,7 +52,7 @@ const Navbar = () => {
 
     return (
         <nav className="bg-white border-gray-200  dark:border-gray-700  dark:text-white ">
-            <div className="flex justify-between items-center w-full h-20 px-4 text-black fixed nav shadow-md z-50 dark:text-white">
+            <div className="bg-white flex justify-between items-center w-full h-20 px-4 text-black fixed nav shadow-md z-50 dark:bg-gray-900 dark:text-white">
                 <div>
                     <Link href="/">
                         <button onClick={() => { setNav(false); return undefined; }} aria-label="Logo">
@@ -98,8 +113,8 @@ const Navbar = () => {
 
 
                 {nav && (
-                    <ul className="flex flex-col justify-center items-center fixed mt-20 top-0 left-1/2 transform -translate-x-1/2 w-2/3 bg-gradient-to-b from-cyan-500 to-blue-500 text-white">
-                        <li className="px-4 cursor-pointer capitalize py-4 text-xl hover:bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
+                    <ul ref={navRef} className="flex flex-col justify-center items-center fixed mt-20 top-0 left-1/2 transform -translate-x-1/2 w-2/3 bg-gradient-to-b from-cyan-500 to-blue-500 text-white">
+                        <li className="px-4 cursor-pointer capitalize py-4 text-xl hover:bg-gradient-to-b from-cyan-500 to-blue-500 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
                             <Link href="/">Home</Link>
                         </li>
                         {/* <li className="px-4 cursor-pointer capitalize py-4 text-xl hover:bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
@@ -127,11 +142,11 @@ const Navbar = () => {
                             <Link href="/contact">Get in touch</Link>
                         </li> */}
 
-                        <li className="px-4 cursor-pointer capitalize py-4 text-xl hover:bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
+                        <li className="px-4 cursor-pointer capitalize py-4 text-xl hover:bg-gradient-to-b from-cyan-500 to-blue-500 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
                             <Link href="/appointment">Book an Appointment</Link>
                         </li>
 
-                        <li className="px-4 cursor-pointer capitalize py-4 text-xl hover:bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
+                        <li className="px-4 cursor-pointer capitalize py-4 text-xl hover:bg-gradient-to-b from-cyan-500 to-blue-500 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
                             <Link href="/order">
                                 <div className="flex items-center">
                                     <FaShoppingCart />
