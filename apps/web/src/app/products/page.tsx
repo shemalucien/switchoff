@@ -32,7 +32,7 @@ const Products = () => {
             <div className="mt-0 dark:text-white dark:bg-gray-900">
                 <Navbar />
                 <div className="container px-4 py-8  dark:text-white dark:bg-gray-900"> {/* Adjust the top margin as needed */}
-                    <h2 className="text-3xl text-center font-bold mb-8 mt-20">Are you Ready to Taste our Products</h2>
+                    <h2 className="text-3xl text-center font-bold mb-8 mt-4">Are you Ready to Taste our Products</h2>
                     <h3 className='text-base text-center  mb-8'>Discover the perfect blend of flavors and textures that redefine your taste buds. Our drinks are crafted with the finest ingredients, designed to quench your thirst while delighting your palate. Experience the essence of our brand, where every sip is a journey of discovery.</h3>
 
                     <div className="flex justify-center mb-8">
