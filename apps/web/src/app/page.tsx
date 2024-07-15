@@ -58,7 +58,7 @@ export default function Page() {
           <div className="mt-4">
             <NewsTicker announcements={announcement} />
           </div>
-          <main className="bg-gray-200 flex flex-col dark:text-white dark:bg-gray-900 mt-12">
+          <main className="bg-gray-200 text-black flex flex-col dark:text-white dark:bg-gray-900 mt-12">
 
             <Slide />
 
