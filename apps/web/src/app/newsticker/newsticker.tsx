@@ -28,7 +28,7 @@ const NewsTicker: React.FC<NewsTickerProps> = ({ announcements}: NewsTickerProps
   }, [announcements]);
 
   return ( 
-    <div className="relative top-0 left-0 w-full overflow-hidden h-12 bg-gray-200 text-black dark:text-white dark:bg-gray-900 shadow-md mt-20">
+    <div className="fixed top-0 left-0 w-full overflow-hidden h-12 bg-gray-200 text-black dark:text-white dark:bg-gray-900 shadow-md z-40 mt-20">
       <div
         ref={tickerRef}
         className=" w-full flex space-x-4"
