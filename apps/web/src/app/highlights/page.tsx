@@ -84,7 +84,7 @@ const Highlights: React.FC = () => {
                 <ul className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                     {posts.map((post : InstagramPost) => (
                         <li key={post.id} className="flex flex-col items-center">
-                            <p>{post.caption}</p>
+                            <p className="text-center">{post.caption}</p>
                             {post.media_url && (
                                 <div className="flex justify-center">
                                     {post.media_type === 'image' && (

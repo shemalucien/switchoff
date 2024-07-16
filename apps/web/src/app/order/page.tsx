@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { useState, useRef, SetStateAction } from "react";
 import emailjs from "@emailjs/browser";
 import Navbar from "../navbar/page";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 interface Order {
   product: string;
@@ -29,17 +32,13 @@ const OrderPage = () => {
 
   const products: Products = {
 
-    "Product 1": {
-      name: "Product 1",
-      price: 10
+    "SwitchOff Energy Drink": {
+      name: "SwitchOff Energy Drink",
+      price: 15000
     },
-    "Product 2": {
-      name: "Product 2",
-      price: 20
-    },
-    "Product 3": {
-      name: "Product 3",
-      price: 30
+    "SwitchOff Nice Guarrana": {
+      name: "SwitchOff Nice Guarrana",
+      price: 20000
     }
   };
 
@@ -71,11 +70,11 @@ const OrderPage = () => {
     if (form.current) {
       // Extend the form data to include the order summary and total price
       const formData = new FormData(form.current);
+      console.log("formData:", formData);
       formData.append('orders', orderSummary);
       formData.append('totalPrice', totalPrice.toString());
-      // const formDataObject = Object.fromEntries(formData.entries());
-      // console.log("Form Data:", formDataObject);
-
+      const formDataObject = Object.fromEntries(formData.entries());
+      console.log("Form Data:", formDataObject);
 
       emailjs
         .sendForm(
@@ -88,13 +87,15 @@ const OrderPage = () => {
           (result) => {
             // console.log(result.text);
             sendAutoReply(formData);
-            result.status === 200 && setFormSubmitted(false);
-            setFormSubmitted(false);
-            setDataReceived(true);
-            (event.target as HTMLFormElement).reset(); // Reset form fields
-            setOrders([]); // Clear orders
-            setTotalPrice(0); // Reset total price
-            handleResetSelect(); // Reset selected product to empty string
+            if (result.status === 200) {
+              toast.success('Order Placed successfully!');
+              setFormSubmitted(false);
+              setDataReceived(true);
+              (event.target as HTMLFormElement).reset();
+              setOrders([]);
+              setTotalPrice(0);
+              handleResetSelect();
+            }
 
           },
           (error) => {
@@ -103,8 +104,7 @@ const OrderPage = () => {
           }
         );
     }
-    else
-    {
+    else {
       //console.log('Form reference is not available');
     }
   };
@@ -145,15 +145,20 @@ const OrderPage = () => {
 
 
     if (product && quantity) {
-      const newOrder = {
-        product,
-        quantity,
-        price: products[product].price
-      };
-
+      // Check if the product exists in the products object
+      if (product in products)  {
+        const newOrder = {
+          product,
+          quantity,
+          price: products[product].price
+        };
+        console.log('New order:', newOrder);
       const updatedOrders = [...orders, newOrder];
       setOrders(updatedOrders);
       setTotalPrice(calculateTotalPrice(updatedOrders));
+    } else {
+      console.error(`Product "${product}" does not exist.`);
+    }
     }
   };
 
@@ -211,9 +216,9 @@ const OrderPage = () => {
 
   return (
     <>
-      <div className="mt-0 h-screen">
+      <div className="mt-0 dark:text-white dark:bg-gray-900">
         <Navbar />
-        <div className="bg-gray-200 text-black px-2 lg:px-10 flex flex-col md:flex-row dark:text-white dark:bg-gray-900 ">
+        <div className="bg-gray-200 text-black px-2 lg:px-10 flex flex-col items-center justify-center min-h-screen md:flex-row dark:text-white dark:bg-gray-900 ">
           <div className="flex flex-col items-center justify-center max-w-xl w-full mx-auto  p-4 sm:p-6 md:p-8 dark:text-white dark:bg-gray-900">
             <h3 className="text-2xl text-center font-semibold mb-4 mt-36">Place Your Order</h3>
             <div className="mt-10 font-bodyText flex items-center mx-auto mr-5">
@@ -269,8 +274,8 @@ const OrderPage = () => {
                   required
                 >
                   <option value="" disabled selected>Select Product</option>
-                  <option value="SwitchOFF Energy Drink">SwitchOff Energy Drink</option>
-                  <option value="SwitchOFF Guarrana">SwitchOff Nice Guarrana <sup>+</sup></option>
+                  <option value="SwitchOff Energy Drink">SwitchOff Energy Drink</option>
+                  <option value="SwitchOff Nice Guarrana">SwitchOff Nice Guarrana <sup>+</sup></option>
 
                 </motion.select>
                 <motion.input
@@ -329,6 +334,7 @@ const OrderPage = () => {
                   type="submit"
                 >
                   {renderButtonLabel()}
+                  <ToastContainer />
                 </motion.button>
               </form>
             </div>
