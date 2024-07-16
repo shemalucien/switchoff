@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Navbar from "../navbar/page";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Appointment = () => {
   const form = useRef();
@@ -26,9 +28,12 @@ const Appointment = () => {
           //console.log(result.text);
           sendAutoReply();
           result.status === 200 && setFormSubmitted(false);
-          setFormSubmitted(false);
-          setDataReceived(true);
-          (event.target as HTMLFormElement).reset(); // Reset form fields
+          if (result.status === 200) {
+            toast.success('Appointment booked! Successfully.We will get back to you shortly.');
+            setFormSubmitted(false);
+            setDataReceived(true);
+            (event.target as HTMLFormElement).reset(); // Reset form fields
+          }
         },
         (error : Error) => {
           throw new Error(error.message || 'Something went wrong');
@@ -133,9 +138,9 @@ const Appointment = () => {
     <>
       <div className="mt-0 dark:text-white dark:bg-gray-900">
         <Navbar />
-        <div className="bg-gray-200 text-black flex flex-col max-w-xl w-full mx-auto dark:text-white dark:bg-gray-900 ">
+        <div className="bg-gray-200 text-black flex flex-col max-w-xl w-full mx-auto min-h-screen dark:text-white dark:bg-gray-900 ">
           <h3 className="text-2xl text-center font-semibold mb-4 mt-36">Book Appointment with Us</h3>
-          <div className="mt-4 font-bodyText h-screen">
+          <div className="mt-4 font-bodyText">
             <form
             // @ts-expect-error: TypeScript expects a different type for ref, but this is handled appropriately within the component
               ref={form}
@@ -191,7 +196,7 @@ const Appointment = () => {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  className="w-full input border border-gray-300 mt-4 rounded-lg px-4 py-2 dark:text-white dark:bg-gray-900"
+                  className="w-full input border border-gray-300 mt-4 rounded-lg px-4 py-2 text-black placeholder-black dark:placeholder-white  dark:text-white dark:bg-gray-900 dark:border-gray-700"
                   type="date"
                   placeholder="Select Date"
                   required />
@@ -201,7 +206,7 @@ const Appointment = () => {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  className="w-full input border border-gray-300 mt-4 rounded-lg px-4 py-2 dark:text-white dark:bg-gray-900"
+                  className="w-full input border border-gray-300 mt-4 rounded-lg px-4 py-2 text-black placeholder-black dark:placeholder-white  dark:text-white dark:bg-gray-900 dark:border-gray-700"
                   type="time"
                   placeholder="Select Time"
                   required />
@@ -216,9 +221,9 @@ const Appointment = () => {
                 required
               >
                 <option value="" disabled selected>Select Person to Meet</option>
-                <option value="Person A">CEO</option>
-                <option value="Person B">Markerting Manager</option>
-                <option value="Person C">Sales Manager</option>
+                <option value="CEO">CEO</option>
+                <option value="Markerting Manager">Markerting Manager</option>
+                <option value="Sales Manager">Sales Manager</option>
               </motion.select>
               <motion.textarea
                 variants={animations.msgInput}
@@ -239,16 +244,8 @@ const Appointment = () => {
                 className={`btn mt-5 bg-blue-500 text-white py-2 px-4 rounded ${formSubmitted && "cursor-not-allowed"} `}
                 type="submit"
               >
-                {/* {formSubmitted ? (
-                  <>
-                    <div className="loader"></div>
-                  </>
-                ) : dataReceived ? (
-                  "Appointment Sent"
-                ) : (
-                  "Book Appointment"
-                )} */}
                  {renderButtonLabel()}
+                 <ToastContainer />
               </motion.button>
             </form>
           </div>
