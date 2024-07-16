@@ -269,8 +269,9 @@ const OrderPage = () => {
                   required
                 >
                   <option value="" disabled selected>Select Product</option>
-                  <option value="SwitchOFF Energy Drink">SwitchOFF Energy Drink</option>
-                  <option value="SwitchOFF Guarrana">SwitchOFF Guarrana</option>
+                  <option value="SwitchOFF Energy Drink">SwitchOff Energy Drink</option>
+                  <option value="SwitchOFF Guarrana">SwitchOff Nice Guarrana <sup>+</sup></option>
+
                 </motion.select>
                 <motion.input
                   name="quantity"
@@ -306,7 +307,7 @@ const OrderPage = () => {
                   <option value="" disabled selected>Payment Mode</option>
                   <option value="Credit Card">Credit Card</option>
                   <option value="Debit Card">Debit Card</option>
-                  <option value="PayPal">PayPal</option>
+                  <option value="PayPal">Mobile Money</option>
                   <option value="Cash on Delivery">Cash on Delivery</option>
                 </motion.select>
                 <motion.textarea

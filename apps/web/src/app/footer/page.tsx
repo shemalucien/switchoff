@@ -23,7 +23,7 @@ const Footer = () => {
             <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
               <FaTwitter className="mx-2" />
             </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/switchoff_official/" target="_blank" rel="noopener noreferrer">
               <FaInstagram className="mx-2" />
             </a>
             <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">

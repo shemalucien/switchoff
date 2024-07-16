@@ -77,7 +77,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                     <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                         <FaTwitter className={darkMode ? 'text-white' : 'text-gray-800'} />
                     </a>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/switchoff_official/" target="_blank" rel="noopener noreferrer">
                         <FaInstagram className={darkMode ? 'text-white' : 'text-gray-800'} />
                     </a>
                     <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
