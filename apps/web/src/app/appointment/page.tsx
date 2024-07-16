@@ -133,7 +133,7 @@ const Appointment = () => {
     <>
       <div className="mt-0 dark:text-white dark:bg-gray-900">
         <Navbar />
-        <div className="bg-gray-200 text-black flex flex-col max-w-xl w-full mx-auto">
+        <div className="bg-gray-200 text-black flex flex-col max-w-xl w-full mx-auto dark:text-white dark:bg-gray-900 ">
           <h3 className="text-2xl text-center font-semibold mb-4 mt-36">Book Appointment with Us</h3>
           <div className="mt-4 font-bodyText h-screen">
             <form
@@ -216,9 +216,9 @@ const Appointment = () => {
                 required
               >
                 <option value="" disabled selected>Select Person to Meet</option>
-                <option value="Person A">Person A</option>
-                <option value="Person B">Person B</option>
-                <option value="Person C">Person C</option>
+                <option value="Person A">CEO</option>
+                <option value="Person B">Markerting Manager</option>
+                <option value="Person C">Sales Manager</option>
               </motion.select>
               <motion.textarea
                 variants={animations.msgInput}
