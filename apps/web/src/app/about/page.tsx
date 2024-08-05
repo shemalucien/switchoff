@@ -22,7 +22,7 @@ const AboutUs = () => {
           <div className="w-full lg:w-2/3 lg:pl-4">
             <h2 className="text-3xl font-bold mb-4">About Us</h2>
             <p className="mb-4 text-base text-justify">
-              Welcome to DISSCO LTD, a proudly Rwandan company dedicated to providing superior quality products at competitive prices. With our commitment to excellence, we aim to elevate the local market by offering unparalleled goods that meet and exceed consumer expectations.
+            Welcome to DISSCO LTD, a company dedicated to providing superior quality products at competitive prices. With our commitment to excellence, we aim to elevate the world market by offering unparalleled goods that meet and exceed consumer expectations.
             </p>
             <div className="mb-6">
               <h3 className="text-xl font-bold mb-2">Motto</h3>
@@ -39,7 +39,7 @@ const AboutUs = () => {
 
             <div className="mb-6">
               <h3 className="text-xl font-bold mb-2">Vision</h3>
-              <p className="mb-2 text-base text-justify">Our vision is to become a leading provider of premium-quality products in Rwanda and beyond, recognized for our commitment to excellence, innovation, and customer satisfaction.
+              <p className="mb-2 text-base text-justify">Our vision is to become a leading provider of premium-quality products in Region and beyond, recognized for our commitment to excellence, innovation, and customer satisfaction.
               </p>
             </div>
 

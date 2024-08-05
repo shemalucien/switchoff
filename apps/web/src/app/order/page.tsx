@@ -77,11 +77,11 @@ const OrderPage = () => {
       console.log("Form Data:", formDataObject);
 
       emailjs
-        .sendForm(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
-          form.current,
-          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_ID as string
+        .send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID_2 as string,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_ORDER as string,
+          formDataObject,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_ID_2 as string
         )
         .then(
           (result) => {
@@ -113,7 +113,7 @@ const OrderPage = () => {
     const userEmail = formData.get("email");
     emailjs
       .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID_2 as string,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_ORDER as string, // Use the ID for the auto-reply template
         {
           name: formData.get("name"),
