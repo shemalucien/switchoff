@@ -21,7 +21,7 @@ const ContactUsSection = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [dataReceived, setDataReceived] = useState(false);
   const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
-    console.log("public id: ", process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_ID);
+    // console.log("public id: ", process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_ID);
     event.preventDefault();
     setFormSubmitted(true);
     emailjs
@@ -108,15 +108,15 @@ const ContactUsSection = () => {
                   <div className='m-1'>
                     <h4 className="font-semibold">{partner.name}</h4>
                   </div>
-                  <div className='m-1'>
+                  {/* <div className='m-1'>
                     <h4 className="font-semibold">{partner.address}</h4>
-                  </div>
+                  </div> */}
                   <div className='m-1'>
                     <p className="font-semibold">Email: {partner.email}</p>
                   </div>
-                  <div className='m-1'>
+                  {/* <div className='m-1'>
                     <p className="font-semibold">Tel: +{partner.tel}</p>
-                  </div>
+                  </div> */}
                   <div className="flex mt-8">
                     <Image src={underage} alt="Logo" width={30} height={20} className='mr-4' />
                     <Image src={pregnancy} alt="Logo" width={30} height={20} className='mr-4' />

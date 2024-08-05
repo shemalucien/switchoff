@@ -1,8 +1,9 @@
 'use client';
-import React, { useState, FormEvent, useEffect} from 'react';
+import React, { useState, FormEvent, useEffect } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 import underage from '../../public/images/18.png';
+import invalidYearImage from '../../public/images/invalidYearImage.jpg';
 import dontdrink from '../../public/images/dontdrink.png';
 import pregnancy from '../../public/images/pregnant.png';
 import logo from '../../public/images/logo.png';
@@ -37,15 +38,29 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
         }
     }, []);
 
+
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         const today = new Date();
+        const currentYear = today.getFullYear();
+        const birthYear = parseInt(year, 10);
+
+        // Check if the year is within the valid range
+        if (birthYear > currentYear || birthYear < currentYear - 75) {
+            setError({
+                message: 'Please enter a valid year.',
+                imageUrl: invalidYearImage, // Assuming you have an image for this error
+            });
+            return;
+        }
+
         const birthDate = new Date(`${year}-${month}-${day}`);
         let age = today.getFullYear() - birthDate.getFullYear();
         const m = today.getMonth() - birthDate.getMonth();
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
             age--;
         }
+
         if (age < 18) {
             setError({
                 message: 'You must be at least 18 years old to access this website.',
