@@ -11,7 +11,8 @@ import ContactUsSection from './contact/page';
 import Highlights from './highlights/page';
 import Slide from './slide';
 import SplashPage from './splash';
-import NewsTicker from './newsticker/newsticker';
+// import NewsTicker from './newsticker/newsticker';
+import Announcement from './announcement/announcement';
 
 export default function Page() {
   const [isAccessGranted, setIsAccessGranted] = useState(false); // State to track access
@@ -46,18 +47,26 @@ export default function Page() {
     setIsAccessGranted(true);
   };
 
-  const announcement = [
-    'We have a new product coming soon!',
-  ];
+  // const announcement = [
+  //   'We have a new product coming soon!',
+  // ];
 
   return (
     <div className="flex flex-col min-h-screen">
       {isAccessGranted ? (
         <>
           <Navbar />
-          <div className="mt-4">
-            <NewsTicker announcements={announcement} />
+          <div className="mt-24">
+            <Announcement
+              // message=""
+              backgroundColor="bg-blue-500"
+              textColor="text-white"
+              dismissible={true}
+            />
           </div>
+          {/* <div className="mt-4">
+            <NewsTicker announcements={announcement} />
+          </div> */}
           <main className="bg-gray-200 text-black flex flex-col dark:text-white dark:bg-gray-900 mt-12">
 
             <Slide />
