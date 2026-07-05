@@ -1,94 +1,84 @@
-// import "./globals.css";
-// import type { Metadata } from "next";
-// import { Inter } from "next/font/google";
-
-// const inter = Inter({ subsets: ["latin"] });
-
-// export const metadata: Metadata = {
-//   title: "Switchoffdrinks",
-//   description: "Switchoffdrinks Branding Website",
-// };
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }): JSX.Element {
-//   return (
-//     <html lang="en">
-//       <head>
-//       <link rel="icon" href="/icon.png" sizes="32x32"/>
-//       </head>
-//       <body className={inter.className}>{children}</body>
-//     </html>
-//   );
-// }
-
 import "./globals.css";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Head from "next/head";
 
-const inter = Inter({ subsets: ["latin"] });
-
-interface Metadata {
-  title: string;
-  description: string;
-  openGraph?: {
-    title: string;
-    description: string;
-    images: string[];
-  };
-  twitter?: {
-    card: string;
-    site: string;
-  };
-}
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Switchoffdrinks",
-  description: "Experience innovative beverage branding solutions with Switchoffdrinks. Discover refreshing designs and marketing strategies tailored for your drink brand.",
-  openGraph: {
-    title: "Experience innovative beverage branding solutions with Switchoffdrinks",
-    description: "Discover refreshing designs and marketing strategies tailored for your drink brand",
-    images: ["icon.png"],
+  metadataBase: new URL("https://www.switchoffdrinks.com"),
+
+  title: {
+    default: "Switchoff Drinks",
+    template: "%s | Switchoff Drinks",
   },
+
+  description:
+    "Experience innovative beverage branding solutions with Switchoff Drinks. Discover premium energy drinks, guarana beverages, and refreshing drink innovations.",
+
+  keywords: [
+    "Switchoff Drinks",
+    "Energy Drink",
+    "Nice Guarana",
+    "Premium Drinks",
+    "Original apple",
+    "sv vodka energy mix",
+    "Beverages",
+    "Energy Beverage",
+    "Soft Drinks",
+  ],
+
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
+
+  alternates: {
+    canonical: "/",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "Switchoff Drinks",
+    description: "Premium energy drinks and innovative beverage branding.",
+    url: "https://www.switchoffdrinks.com",
+    siteName: "Switchoff Drinks",
+    images: [
+      {
+        url: "/icon.png",
+        width: 512,
+        height: 512,
+        alt: "Switchoff Drinks",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
   twitter: {
     card: "summary_large_image",
-    site: "@Switchoffdrinks",
+    title: "Switchoff Drinks",
+    description: "Premium energy drinks and innovative beverage branding.",
+    images: ["/icon.png"],
+    creator: "@Switchoffdrinks",
   },
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}): JSX.Element {
+}>) {
   return (
-    <html lang="en">
-      <Head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <meta name="keywords" content="Best Energy Drinks, Switchoff Energy Drink, Switchoff Nice Guarana, Quality Beverages, Superior Drinks, beverage branding, innovative drinks, Switchoffdrinks" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.switchoffdrinks.com" />
-        {metadata.openGraph && (
-          <>
-            <meta property="og:title" content={metadata.openGraph.title} />
-            <meta property="og:description" content={metadata.openGraph.description} />
-            <meta property="og:image" content={metadata.openGraph.images[0]} />
-          </>
-        )}
-        {metadata.twitter && (
-          <>
-            <meta name="twitter:card" content={metadata.twitter.card} />
-            <meta name="twitter:site" content={metadata.twitter.site} />
-          </>
-        )}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/icon.png" sizes="32x32" />
-      </Head>
+     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>{children}</body>
     </html>
   );
 }
-

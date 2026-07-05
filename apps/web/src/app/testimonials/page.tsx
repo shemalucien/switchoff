@@ -1,5 +1,4 @@
 import React from 'react';
-import TestimonialCard from './testimonial-card';
 // import charles from '../../../public/images/Charles.jpg';
 // import aline from '../../../public/images/aline.jpg';
 import junior from '../../../public/images/junior.jpg';
@@ -8,6 +7,8 @@ import muyango from '../../../public/images/muyango.jpg';
 import clement from '../../../public/images/clement.jpg';
 import judy from '../../../public/images/judy.jpg';
 import lady2 from '../../../public/images/lady2.jpg';
+import TestimonialCard from './testimonial-card';
+
 const testimonials = [
  { quote: "This product has changed my life!", author: "Clement", imageUrl: clement },
  { quote: "I am happy with the service.", author: "Judy", imageUrl: judy },
@@ -16,17 +17,28 @@ const testimonials = [
  { quote: "Amazing experience!", author: "Muyango", imageUrl: muyango},
 ];
 
-const TestimonialsPage = () => {
+function TestimonialsPage() {
  return (
-    <div className="container px-4 py-8  dark:text-white dark:bg-gray-900">
-      <h2 className="text-4xl font-bold text-center mb-8">Testimonials</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
+    <section className="container-page py-16 md:py-20">
+      <div className="mb-12">
+        <h2 className="section-heading text-gray-900 dark:text-white">What Our Customers Say</h2>
+        <p className="section-subheading">
+          Hear from our satisfied customers about their experience with Switchoff Drinks
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
         {testimonials.map((testimonial, index) => (
-          <TestimonialCard key={index} quote={testimonial.quote} author={testimonial.author} imageUrl={testimonial.imageUrl} />
+          <TestimonialCard 
+            author={testimonial.author} 
+            imageUrl={testimonial.imageUrl} 
+            key={index} 
+            quote={testimonial.quote} 
+          />
         ))}
       </div>
-    </div>
+    </section>
  );
-};
+}
 
 export default TestimonialsPage;
