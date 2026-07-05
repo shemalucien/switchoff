@@ -2,10 +2,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Navbar from '../navbar/page';
+import Footer from '../footer/page';
 import guaran from '../../../public/images/Image.jpg';
 import energy from '../../../public/images/ENERGY.jpg';
+import apple from '../../../public/images/apple.png';
+import vodka from '../../../public/images/vodka.png';
 
-const BrandsSection = () => {
+function BrandsSection() {
  const brands = [
     {
       name: "NICE GUARANA <sup>+</sup>",
@@ -27,35 +31,81 @@ const BrandsSection = () => {
       ],
       image: energy
     },
-    // Add more brands as needed
+    {
+      name: 'SWITCHOFF ORIGINAL APPLE',
+      description: 'Experience the crisp and refreshing taste of SWITCHOFF ORIGINAL APPLE. Crafted with natural apple flavor and premium ingredients, this 500ml beverage delivers authentic apple goodness in every sip. Perfect for those seeking a naturally delicious and satisfying refreshment that stands out with its distinctive green label and silver can design. Ideal for any occasion, from daily hydration to special moments.',
+      products: [
+        { name: 'Original Apple 500ml', icon: 'apple.svg' },
+        { name: 'Natural Flavor', icon: 'flavor.svg' },
+        { name: 'Premium Quality', icon: 'quality.svg' }
+      ],
+      image: apple
+    },
+    {
+      name: 'SV VODKA ENERGY MIX',
+      description: 'Indulge in premium excellence with SV VODKA ENERGY MIX. This sophisticated 330ml spirit beverage combines quality vodka with energizing elements, featuring an eye-catching blue and red gradient design. With 18% ABV and a premium blend, this ready-to-drink cocktail alternative delivers refined taste and premium experience. Perfect for those seeking a sophisticated and memorable beverage experience.',
+      products: [
+        { name: 'Vodka Energy Mix 330ml', icon: 'vodka.svg' },
+        { name: 'Premium Spirit', icon: 'spirit.svg' },
+        { name: '18% ABV', icon: 'alcohol.svg' }
+      ],
+      image: vodka
+    }
  ];
 
  return (
     <>
-      <div className="container px-4 py-8  dark:text-white dark:bg-gray-900"> {/* Adjust the top margin as needed */}
-        <h2 className="text-3xl text-center font-bold mb-8 mt-20">Our Brands</h2>
-        <h3 className='text-base text-center  mb-8'>
-        Welcome to the world of Dissco Ltd, where we bring you the finest selection of high-quality beverage products to invigorate your senses and elevate your experiences. Our brands, Switchoff Nice Guarana <sup>+</sup> and Switchoff Energy Drink, epitomize excellence, flavor, and vitality. Crafted with precision and sourced from reputable manufacturers in Vietnam, our products are a testament to our commitment to delivering nothing but the best. We take pride in offering beverages that not only tantalize your taste buds but also reflect our dedication to quality and innovation.</h3>
-        <div className="flex ">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8  dark:text-white dark:bg-gray-900"> {/* Adjust the grid layout based on screen size */}
-            {brands.map((brand, index) => (
-              <div key={index} className="p-6 rounded-lg text-center shadow-md flex flex-col items-center mb-8  dark:text-white dark:bg-gray-900"> {/* Add margin to create space between cards */}
-                <div className="mx-auto w-24 h-24 mb-4">
-                 <Image src={brand.image} alt={brand.name} width={96} height={96} className="rounded-full mx-auto object-cover" />
-                </div>
-                <h3 className="text-xl font-semibold text-center mb-2 mt-12" dangerouslySetInnerHTML={{ __html: brand.name }}></h3>
-                <p className="mb-4">{brand.description}</p>
-                <Link href="/products" className="bg-blue-500 text-white py-2 px-4 rounded">View Products</Link>
-                {/* <button className="bg-blue-500 text-white py-2 px-4 rounded">View Products</button> */}
-              </div>
-            ))}
-          </div>
+      <Navbar />
+      <section className="container-page py-16 md:py-20" id="brands">
+        <div className="mb-12">
+          <h2 className="section-heading text-gray-900 dark:text-white">Our Brands</h2>
+          <p className="section-subheading">
+            Welcome to the world of Dissco Ltd, where we bring you the finest selection of high-quality beverage
+            products to invigorate your senses and elevate your experiences. Our brands epitomize excellence, flavor, and vitality. Crafted with precision
+            and sourced from reputable manufacturers in Vietnam, our products are a testament to our commitment to
+            delivering nothing but the best.
+          </p>
         </div>
+
+      <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
+        {brands.map((brand, index) => (
+          <div 
+            className="card-interactive group flex flex-col items-center p-6 sm:p-8 text-center h-full transition-all duration-300" 
+            key={index}
+          >
+            {/* Image */}
+            <div className="mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full ring-4 ring-brand-100 dark:ring-gray-700 group-hover:ring-brand-300 dark:group-hover:ring-brand-600 transition-all duration-300">
+              <Image 
+                alt={brand.name} 
+                className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300" 
+                height={128} 
+                src={brand.image} 
+                width={128} 
+              />
+            </div>
+            
+            {/* Title */}
+            <h3
+              className="mb-3 text-xl sm:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors"
+              dangerouslySetInnerHTML={{ __html: brand.name }}
+             />
+            
+            {/* Description */}
+            <p className="mb-6 sm:mb-8 text-sm sm:text-base leading-relaxed text-gray-600 dark:text-gray-300 flex-grow line-clamp-4">
+              {brand.description}
+            </p>
+            
+            {/* CTA Button */}
+            <Link className="btn-primary text-sm sm:text-base w-full sm:w-auto" href="/products">
+              View Products
+            </Link>
+          </div>
+        ))}
       </div>
-
+    </section>
+      {/* <Footer /> */}
     </>
-
  );
-};
+}
 
 export default BrandsSection;

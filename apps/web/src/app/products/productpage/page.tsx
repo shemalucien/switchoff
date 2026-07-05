@@ -1,161 +1,131 @@
-import React from 'react';
-import Image, { StaticImageData } from 'next/image';
-import guaran from '../../../../public/images/Image.jpg';
+'use client';
+import React, { Suspense } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { useSearchParams } from "next/navigation";
+import { FaCheckCircle, FaArrowLeft } from "react-icons/fa";
+import Navbar from "../../navbar/page";
+import Footer from "../../footer/page";
+import ProductCard from "../product-card";
+import { products, getProductBySlug } from "../../../lib/products";
+import { useStoredIds } from "../../../lib/use-stored-ids";
 
-interface Product {
-  title: string;
-  imageUrl: StaticImageData;
-  description: string;
-  benefits: string[];
-  relatedProducts: Product[];
-  productDetails: {
-    brand: string;
-    sample: string;
-    volume: string;
-    packaging: string;
-    shelfLife: string;
-    paymentTerm: string;
-    fobPrice: string;
-    deliveryTime: string;
-    certification: string[];
-    minimumOrderQuantity: string;
-    port: string;
-    supplyAbility: string;
-  };
-}
+const noop = () => undefined;
 
-// Define your static product object outside the component
-const staticProduct: Product = {
-  title: 'Example Product',
-  imageUrl: guaran, // Update this path to your actual image URL
-  description: 'This is an example product.',
-  benefits: ['Benefit 1', 'Benefit 2', 'Benefit 3'],
-  relatedProducts: [
-    {
-      title: 'Related Product 1',
-      imageUrl: guaran, // Update this path to your actual image URL
-      description: 'This is a related product.',
-      benefits: [],
-      relatedProducts: [],
-      productDetails: {
-        brand: '',
-        sample: '',
-        volume: '',
-        packaging: '',
-        shelfLife: '',
-        paymentTerm: '',
-        fobPrice: '',
-        deliveryTime: '',
-        certification: [],
-        minimumOrderQuantity: '',
-        port: '',
-        supplyAbility: ''
-      }
-    },
-    {
-      title: 'Related Product 2',
-      imageUrl: guaran, // Update this path to your actual image URL
-      description: 'This is another related product.',
-      benefits: [],
-      relatedProducts: [],
-      productDetails: {
-        brand: '',
-        sample: '',
-        volume: '',
-        packaging: '',
-        shelfLife: '',
-        paymentTerm: '',
-        fobPrice: '',
-        deliveryTime: '',
-        certification: [],
-        minimumOrderQuantity: '',
-        port: '',
-        supplyAbility: ''
-      }
-    },
-  ],
-  productDetails: {
-    brand: 'RITA or OEM/ODM available',
-    sample: 'Free sample',
-    volume: '330 ml',
-    packaging: 'Short can',
-    shelfLife: '24 months',
-    paymentTerm: 'L/C, T/T',
-    fobPrice: 'Get Latest Price',
-    deliveryTime: '20 - 25 Days after confirming the order',
-    certification: ['ISO', 'HACCP', 'FDA', 'HALAL', 'USDA', 'ORGANIC'],
-    minimumOrderQuantity: '200 Carton/Order',
-    port: 'Ho Chi Minh Port, Vietnam',
-    supplyAbility: '300 Twenty-Foot Container/Month',
-  },
-};
+function ProductDetail() {
+  const searchParams = useSearchParams();
+  const slug = searchParams.get("id") ?? products[0]?.id;
+  const product = getProductBySlug(slug ?? "") ?? products[0];
+  const wishlist = useStoredIds("switchoff:wishlist");
 
-const ProductPage: React.FC = () => {
+  if (!product) {
+    return (
+      <div className="container-page py-24 text-center">
+        <p>Product not found.</p>
+        <Link className="btn-primary mt-4 inline-flex" href="/products">
+          Back to products
+        </Link>
+      </div>
+    );
+  }
+
+  const related = products.filter((p) => p.id !== product.id).slice(0, 3);
+
   return (
-    <div className="flex flex-col items-center">
-      <h1 className="text-4xl font-bold mb-4">{staticProduct.title}</h1>
-      <div className="flex flex-wrap justify-center">
-        <div className="w-full md:w-1/2">
-          <Image src={staticProduct.imageUrl} alt={staticProduct.title} width={500} height={500} />
+    <div>
+      <Link className="btn-secondary mb-8 !py-2 text-sm" href="/products">
+        <FaArrowLeft /> All products
+      </Link>
+
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+        <div className="relative flex aspect-square items-center justify-center rounded-xl2 bg-gradient-to-br from-brand-50 to-silver-200 p-10 dark:from-gray-800 dark:to-gray-950">
+          <Image
+            alt={product.name.replace(/<[^>]+>/g, "")}
+            className="object-contain p-8"
+            fill
+            sizes="(min-width: 768px) 480px, 100vw"
+            src={product.image}
+          />
         </div>
-        <div className="w-full md:w-1/2">
-          <table className="table-auto mt-4">
-            <tbody>
-              <tr>
-                <td className="border px-4 py-2">Description</td>
-                <td className="border px-4 py-2">{staticProduct.description}</td>
-              </tr>
-            </tbody>
-          </table>
-          <div className="mt-4">
-            <h2 className="text-2xl font-bold mb-2">Product Details</h2>
-            <table className="table-auto mt-4 w-full">
-              <tbody>
-                {Object.entries(staticProduct.productDetails).map(([key, value], index) => (
-                  <tr key={index}>
-                    <td className="border font-bold px-4 py-2">{key}</td>
-                    <td className="border px-4 py-2">{Array.isArray(value) ? value.join(', ') : value}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-brand-500">
+            {product.category} &middot; {product.volume}
+          </p>
+          <h1
+            className="mt-1 text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl"
+            dangerouslySetInnerHTML={{ __html: product.name }}
+          />
+          <p className="mt-2 text-gray-500 dark:text-gray-400">{product.tagline}</p>
+          <p className="mt-4 leading-relaxed text-gray-600 dark:text-gray-300">{product.description}</p>
+
+          <ul className="mt-5 space-y-2">
+            {product.benefits.map((b) => (
+              <li className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300" key={b}>
+                <FaCheckCircle className="mt-0.5 shrink-0 text-brand-500" />
+                {b}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link className="btn-primary" href="/order">
+              Order Now
+            </Link>
+            <button className="btn-secondary" onClick={() => wishlist.toggle(product.id)}>
+              {wishlist.has(product.id) ? "Saved to Wishlist" : "Add to Wishlist"}
+            </button>
+          </div>
+
+          <div className="mt-10 grid grid-cols-2 gap-4 rounded-xl2 border border-gray-100 p-5 dark:border-gray-800 sm:grid-cols-3">
+            <div>
+              <p className="text-xs text-gray-400">Calories</p>
+              <p className="font-bold">{product.nutrition.calories} kcal</p>
+            </div>
+            <div>
+              <p className="text-xs text-gray-400">Sugar</p>
+              <p className="font-bold">{product.nutrition.totalSugar}</p>
+            </div>
+            <div>
+              <p className="text-xs text-gray-400">Caffeine</p>
+              <p className="font-bold">{product.nutrition.caffeine}</p>
+            </div>
           </div>
         </div>
-
-      </div>
-      {/* Add image of the product in big size */}
-      <div className='w-full md:w-1/2'>
-        <Image src={staticProduct.imageUrl} alt={staticProduct.title} width={700} height={500} />
       </div>
 
-      <div className="mt-4">
-        <h2 className="text-2xl font-bold mb-2">Benefits</h2>
-        <ul>
-          {staticProduct.benefits.map((benefit, index) => (
-            <li key={index} className="list-disc pl-5">{benefit}</li>
-          ))}
-        </ul>
-      </div>
-      <div className="mt-4">
-        <h2 className="text-2xl font-bold mb-4 text-center ">Related Products</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-wrap">
-          {staticProduct.relatedProducts.map((relatedProduct, index) => (
-            <div key={index} className="border p-4 relative">
-              <Image src={relatedProduct.imageUrl} alt={relatedProduct.title} width={500} height={500} />
-              <div className="p-4">
-                <h3 className="text-xl font-bold mt-2">{relatedProduct.title}</h3>
-                <p>{relatedProduct.description}</p>
-              </div>
-            </div>
+      <div className="mt-16">
+        <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">You Might Also Like</h2>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {related.map((p) => (
+            <ProductCard
+              isComparing={false}
+              isWishlisted={wishlist.has(p.id)}
+              key={p.id}
+              onQuickView={noop}
+              onToggleCompare={noop}
+              onToggleWishlist={() => wishlist.toggle(p.id)}
+              product={p}
+            />
           ))}
         </div>
-
-
-
       </div>
-
     </div>
   );
-};
+}
+
+function ProductPage() {
+  return (
+    <div className="dark:bg-gray-900">
+      <Navbar />
+      <div className="container-page pt-28 pb-16">
+        <Suspense fallback={<div className="py-24 text-center text-gray-400">Loading product...</div>}>
+          <ProductDetail />
+        </Suspense>
+      </div>
+      <Footer />
+    </div>
+  );
+}
 
 export default ProductPage;

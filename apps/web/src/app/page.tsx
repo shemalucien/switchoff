@@ -4,8 +4,8 @@ import Navbar from './navbar/page';
 import Footer from './footer/page';
 // import NewsSection from './news/page';
 import TestimonialsPage from './testimonials/page';
-import Products from './products/page';
-import AboutUs from './about/page';
+import ProductsSection from './products/products-section';
+import AboutSection from './about/about-section';
 import BrandsSection from './brands/page';
 import ContactUsSection from './contact/page';
 import Highlights from './highlights/page';
@@ -13,6 +13,7 @@ import Slide from './slide';
 import SplashPage from './splash';
 // import NewsTicker from './newsticker/newsticker';
 import Announcement from './announcement/announcement';
+// import NewsSection from './news/page';
 
 export default function Page() {
   const [isAccessGranted, setIsAccessGranted] = useState(false); // State to track access
@@ -67,19 +68,20 @@ export default function Page() {
           {/* <div className="mt-4">
             <NewsTicker announcements={announcement} />
           </div> */}
-          <main className="bg-gray-200 text-black flex flex-col dark:text-white dark:bg-gray-900 mt-12">
+          <main className="flex flex-col bg-gray-50 text-black dark:bg-gray-900 dark:text-white">
 
             <Slide />
 
             <BrandsSection />
 
-            <AboutUs />
+            <AboutSection />
 
-            <Products />
+            <ProductsSection />
 
             <TestimonialsPage />
 
             <Highlights />
+
             {/* <NewsSection />  */}
             <ContactUsSection />
           </main>

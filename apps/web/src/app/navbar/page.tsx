@@ -1,190 +1,167 @@
 'use client';
-import React, { MutableRefObject, useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { FaBars, FaTimes } from "react-icons/fa";
-import Image from 'next/image';
-// import flag from '../../../public/images/flag.jpg';
-import logo from '../../../public/images/logo1.png';
-import { FaShoppingCart } from "react-icons/fa"; // Importing the shopping cart icon
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
+import { FaBars, FaTimes, FaShoppingCart, FaHeart } from "react-icons/fa";
 import { BsSun, BsMoon } from "react-icons/bs";
+import logo from "../../../public/images/logo1.png";
+import { useStoredIds } from "../../lib/use-stored-ids";
 
-const Navbar = () => {
-    const [nav, setNav] = useState(false);
-    // const [dropdownOpen, setDropdownOpen] = useState(false);
-    const navRef: MutableRefObject<HTMLUListElement | null> = useRef(null);
-    const [darkMode, setDarkMode] = useState(false);
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/products", label: "Products" },
+  // { href: "/brands", label: "Brands" },
+  // { href: "/contact", label: "Contact" },
+];
 
-    const handleClickOutside = (event :MouseEvent) => {
-        if (navRef.current && !navRef.current.contains(event.target as Node)) {
-            setNav(false);
-        }
-    };
+function Navbar() {
+  const [nav, setNav] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const wishlist = useStoredIds("switchoff:wishlist");
 
-    useEffect(() => {
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, []);
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-    useEffect(() => {
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme === "dark") {
-            setDarkMode(true);
-            document.documentElement.classList.add("dark");
-        } else {
-            setDarkMode(false);
-            document.documentElement.classList.remove("dark");
-        }
-    }, []);
+  useEffect(() => {
+    setNav(false);
+  }, [pathname]);
 
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
-        if (darkMode) {
-            document.documentElement.classList.remove("dark");
-            localStorage.setItem("theme", "light");
-        } else {
-            document.documentElement.classList.add("dark");
-            localStorage.setItem("theme", "dark");
-        }
-    };
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => {
+      const next = !prev;
+      document.documentElement.classList.toggle("dark", next);
+      localStorage.setItem("theme", next ? "dark" : "light");
+      return next;
+    });
+  };
 
-    return (
-        <nav className="bg-white border-gray-200  dark:border-gray-700  dark:text-white ">
-            <div className="bg-white flex justify-between items-center w-full h-20 px-4 text-black fixed nav shadow-md z-50 dark:bg-gray-900 dark:text-white">
-                <div>
-                    <Link href="/">
-                        <button onClick={() => { setNav(false); return undefined; }} aria-label="Logo">
-                            <Image src={logo} alt="Logo" width={50} height={40} />
-                        </button>
-                    </Link>
-                </div>
+  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname?.startsWith(href));
 
-                <ul className="hidden md:flex">
-                    <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black duration-200 link-underline dark:text-white">
-                        <Link href="/">Home</Link>
-                    </li>
-                    {/* <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black duration-200">
-                        <Link href="/about">About Us</Link>
-                    </li>
-                    <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black duration-200 relative">
-                        <button onClick={() => { setDropdownOpen(!dropdownOpen); return undefined; }} className="focus:outline-none">
-                            Brands
-                        </button>
-                        {dropdownOpen && (
-                            <ul className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg">
-                                <li className="px-4 py-2">
-                                    <Link href="/brands">Brand 1</Link>
-                                </li>
-                                <li className="px-4 py-2">
-                                    <Link href="/brands">Brand 2</Link>
-                                </li>
-                            </ul>
-                        )}
-                    </li> */}
-                    {/* <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black duration-200">
-                        <Link href="/contact">Get in touch</Link>
-                    </li> */}
+  return (
+    <nav
+      className={`fixed inset-x-0 top-0 z-50 h-20 transition-all duration-300 ${
+        scrolled 
+          ? "bg-white/95 shadow-lg backdrop-blur-sm dark:bg-gray-900/95" 
+          : "bg-white dark:bg-gray-900"
+      }`}
+    >
+      <div className="container-page flex h-20 items-center justify-between gap-4">
+        <Link aria-label="Switchoff home" className="shrink-0 group" href="/">
+          <div className="relative flex items-center gap-2">
+            <Image alt="Switchoff logo" className="group-hover:opacity-80 transition-opacity" height={38} priority src={logo} width={48} />
+            <span className="hidden sm:inline font-bold text-lg text-gray-900 dark:text-white">Switchoff</span>
+          </div>
+        </Link>
 
-                    <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black duration-200 dark:text-white dark:bg-gray-900">
-                        <Link href="/appointment">Book an Appointment</Link>
-                    </li>
-
-                    <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black duration-200 flex items-center dark:text-white dark:bg-gray-900">
-                        <Link href="/order">
-                            <div className="flex items-center ">
-                                <FaShoppingCart />
-                                <span className="ml-2">Order Now </span>
-                            </div>
-                        </Link>
-                    </li>
-
-                    <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-black dark:text-white dark:bg-gray-900 dark:hover:text-white duration-200 flex items-center">
-                        <button onClick={toggleDarkMode} className="focus:outline-none">
-                            {darkMode ? <BsSun /> : <BsMoon />}
-                        </button>
-                    </li>
-
-                    {/* <li className="nav-links px-4 cursor-pointer capitalize font-medium text-white hover:scale-105 hover:text-black duration-200">
-                        <Image src={flag} alt="Flag" width={40} height={40} />
-                    </li> */}
-                </ul>
-
-
-                {nav && (
-                    <ul ref={navRef} className="flex flex-col justify-center items-center fixed mt-20 top-0 left-1/2 transform -translate-x-1/2 w-2/3 bg-gradient-to-b from-cyan-500 to-blue-500 text-white">
-                        <li className="px-4 cursor-pointer capitalize py-4 text-xl hover:bg-gradient-to-b from-cyan-500 to-blue-500 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
-                            <Link href="/">Home</Link>
-                        </li>
-                        {/* <li className="px-4 cursor-pointer capitalize py-4 text-xl hover:bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
-                            <Link href="/about">About Us</Link>
-                        </li>
-                        <li className="px-4 cursor-pointer capitalize py-4 text-xl relative hover:bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
-                            <button onClick={() => { setDropdownOpen(!dropdownOpen); return undefined; }} className="focus:outline-none">
-                                Brands
-                            </button>
-                            {dropdownOpen && (
-                                <ul className="absolute left-0 mt-2 w-48 text-black bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg">
-                                    <li className="px-4 py-2">
-                                        <Link href="/brands">Brand 1</Link>
-                                    </li>
-                                    <li className="px-4 py-2">
-                                        <Link href="/brands">Brand 2</Link>
-                                    </li>
-                                    <li className="px-4 py-2">
-                                        <Link href="/brands">Brand 3</Link>
-                                    </li>
-                                </ul>
-                            )}
-                        </li>
-                        <li className="px-4 cursor-pointer capitalize py-4 text-xl hover:bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
-                            <Link href="/contact">Get in touch</Link>
-                        </li> */}
-
-                        <li className="px-4 cursor-pointer capitalize py-4 text-xl hover:bg-gradient-to-b from-cyan-500 to-blue-500 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
-                            <Link href="/appointment">Book an Appointment</Link>
-                        </li>
-
-                        <li className="px-4 cursor-pointer capitalize py-4 text-xl hover:bg-gradient-to-b from-cyan-500 to-blue-500 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">
-                            <Link href="/order">
-                                <div className="flex items-center">
-                                    <FaShoppingCart />
-                                    <span className="ml-2">Order Now </span>
-                                </div>
-                            </Link>
-                        </li>
-
-                    </ul>
-
+        {/* Desktop links */}
+        <ul className="hidden items-center md:flex gap-1">
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link
+                className={`relative px-4 py-2 text-sm font-semibold capitalize transition-all duration-200 rounded-lg ${
+                  isActive(link.href)
+                    ? "text-brand-600 bg-brand-50 dark:text-brand-400 dark:bg-brand-900/20"
+                    : "text-gray-700 hover:text-brand-600 hover:bg-gray-100 dark:text-gray-200 dark:hover:text-brand-400 dark:hover:bg-gray-800"
+                }`}
+                href={link.href}
+              >
+                {link.label}
+                {isActive(link.href) && (
+                  <motion.span
+                    className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-brand-500"
+                    layoutId="nav-underline"
+                  />
                 )}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-                <div className="flex items-center space-x-4 lg:hidden">
+        {/* Right-side actions */}
+        <div className="flex items-center gap-1 sm:gap-2">
+          <Link aria-label="Wishlist" className="btn-ghost-icon relative" href="/products">
+            <FaHeart className="text-lg" />
+            {wishlist.ids.length > 0 && (
+              <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-brand-500 text-[10px] font-bold text-white">
+                {wishlist.ids.length}
+              </span>
+            )}
+          </Link>
 
-                    <button
-                        onClick={toggleDarkMode}
-                        className="focus:outline-none cursor-pointer text-gray-500 md:hidden"
-                        aria-label="Toggle dark mode"
-                    >
-                        {darkMode ? <BsSun size={30} /> : <BsMoon size={30} />}
-                    </button>
+          <Link className="btn-primary hidden sm:inline-flex text-sm px-4 py-2" href="/order">
+            <FaShoppingCart /> Order
+          </Link>
 
-                    <button
-                        onClick={() => setNav(!nav)}
-                        className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
-                        aria-label="Toggle navigation"
-                    >
-                        {nav ? (
-                            <FaTimes size={30} />
-                        ) : (
-                            <FaBars size={30} />
-                        )}
-                    </button>
-                </div>
+          <Link className="btn-secondary hidden lg:inline-flex text-sm px-4 py-2" href="/appointment">
+            Appointment
+          </Link>
 
-            </div>
-        </nav>
-    );
-};
+          <button aria-label="Toggle dark mode" className="btn-ghost-icon" onClick={toggleDarkMode}>
+            {darkMode ? <BsSun /> : <BsMoon />}
+          </button>
+
+          <button
+            aria-expanded={nav}
+            aria-label="Toggle navigation menu"
+            className="btn-ghost-icon md:hidden"
+            onClick={() => setNav((v) => !v)}
+          >
+            {nav ? <FaTimes size={20} /> : <FaBars size={20} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {nav ? <motion.ul
+            animate={{ opacity: 1, height: "auto" }}
+            className="flex flex-col overflow-hidden bg-white shadow-lg dark:bg-gray-900 md:hidden"
+            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, height: 0 }}
+          >
+            {links.map((link) => (
+              <li className="border-t border-gray-100 dark:border-gray-800" key={link.href}>
+                <Link
+                  className={`block px-6 py-4 text-base font-semibold capitalize ${
+                    isActive(link.href) ? "text-brand-600" : "text-gray-700 dark:text-gray-200"
+                  }`}
+                  href={link.href}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            <li className="border-t border-gray-100 px-6 py-4 dark:border-gray-800">
+              <Link className="btn-secondary w-full" href="/appointment">
+                Book an Appointment
+              </Link>
+            </li>
+            <li className="border-t border-gray-100 px-6 py-4 pb-6 dark:border-gray-800">
+              <Link className="btn-primary w-full" href="/order">
+                <FaShoppingCart /> Order Now
+              </Link>
+            </li>
+          </motion.ul> : null}
+      </AnimatePresence>
+    </nav>
+  );
+}
 
 export default Navbar;
