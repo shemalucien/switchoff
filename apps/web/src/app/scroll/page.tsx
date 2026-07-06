@@ -31,7 +31,7 @@ const ScrollButton = () => {
 
   return (
     <button
-      className="fixed bottom-4 right-4 bg-blue-500 text-white py-2 px-4 rounded"
+      className="btn-primary fixed bottom-4 right-4 text-white py-2 px-4 rounded"
       onClick={scrollToTopOrBottom}
     >
       {isAtTop ? (

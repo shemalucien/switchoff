@@ -6,7 +6,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaBars, FaTimes, FaShoppingCart, FaHeart } from "react-icons/fa";
 import { BsSun, BsMoon } from "react-icons/bs";
-import logo from "../../../public/images/logo1.png";
+import logo from "../../../public/images/icon.png";
 import { useStoredIds } from "../../lib/use-stored-ids";
 
 const links = [

@@ -43,7 +43,7 @@ function ContactUsSection() {
       address: 'KN 20 Ave, Kigali, Rwanda',
       logo: dissco,
       email: 'disscoltd04@gmail.com',
-      tel: '+250 (788) 273-790',
+      tel: '+250 (785) 135-816',
       hours: 'Monday - Saturday: 7:00 AM - 10:00 PM'
     }
   ];

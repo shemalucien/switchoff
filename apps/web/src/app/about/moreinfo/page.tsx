@@ -48,7 +48,7 @@ import React from 'react';
 import Image from 'next/image';
 import Navbar from '../../navbar/page';
 import Footer from '../../footer/page';
-import bottle from '../../../../public/images/Image.jpg';
+import bottle from '../../../../public/images/nice.png';
 import { Award, Target, Heart, Globe } from 'lucide-react';
 
 const MoreInfo = () => {

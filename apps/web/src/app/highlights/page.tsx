@@ -141,7 +141,7 @@ const Highlights: React.FC = () => {
             <div className="order-1 md:order-2 flex items-center justify-center">
               <div className="bg-white/10 rounded-xl p-8 backdrop-blur-sm">
                 <div className="text-center text-white">
-                  <p className="text-5xl md:text-6xl font-bold mb-2">50+</p>
+                  <p className="text-5xl md:text-6xl font-bold mb-2">5+</p>
                   <p className="text-lg text-white/90">
                     Distributors Worldwide
                   </p>

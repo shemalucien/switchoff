@@ -6,7 +6,7 @@ import underage from '../../public/images/18.png';
 import invalidYearImage from '../../public/images/invalidYearImage.jpg';
 import dontdrink from '../../public/images/dontdrink.png';
 import pregnancy from '../../public/images/pregnant.png';
-import logo from '../../public/images/logo.png';
+import logo from '../../public/images/icon.png';
 
 
 // Define the prop types for SplashPage
@@ -145,7 +145,7 @@ const SplashPage: React.FC<SplashPageProps> = ({ onAccessGranted }) => {
                                     <p className="text-red-500">{error.message}</p>
                                 </div>
                             )}
-                            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">
+                            <button type="submit" className="btn-primary text-white px-4 py-2 rounded-md">
                                 Submit Age
                             </button>
                         </form>
