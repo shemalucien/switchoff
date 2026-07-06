@@ -1,18 +1,18 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import Navbar from './navbar/page';
-import Footer from './footer/page';
+"use client";
+import React, { useEffect, useState } from "react";
+import Navbar from "./navbar/page";
+import Footer from "./footer/page";
 // import NewsSection from './news/page';
-import TestimonialsPage from './testimonials/page';
-import ProductsSection from './products/products-section';
-import AboutSection from './about/about-section';
-import BrandsSection from './brands/page';
-import ContactUsSection from './contact/page';
-import Highlights from './highlights/page';
-import Slide from './slide';
-import SplashPage from './splash';
+// import TestimonialsPage from "./testimonials/page";
+import ProductsSection from "./products/products-section";
+import AboutSection from "./about/about-section";
+import BrandsSection from "./brands/page";
+import ContactUsSection from "./contact/page";
+import Highlights from "./highlights/page";
+import Slide from "./slide";
+import SplashPage from "./splash";
 // import NewsTicker from './newsticker/newsticker';
-import Announcement from './announcement/announcement';
+import Announcement from "./announcement/announcement";
 // import NewsSection from './news/page';
 
 export default function Page() {
@@ -20,8 +20,8 @@ export default function Page() {
 
   useEffect(() => {
     // Check if access token and expiration are in local storage
-    const accessToken = localStorage.getItem('accessGranted');
-    const expiration = localStorage.getItem('expiration');
+    const accessToken = localStorage.getItem("accessGranted");
+    const expiration = localStorage.getItem("expiration");
 
     if (accessToken && expiration) {
       // Parse expiration as a date
@@ -42,8 +42,8 @@ export default function Page() {
     const expirationDate = new Date();
     expirationDate.setHours(expirationDate.getHours() + 1); // Expires in 1 hour
 
-    localStorage.setItem('accessGranted', 'true');
-    localStorage.setItem('expiration', expirationDate.toISOString());
+    localStorage.setItem("accessGranted", "true");
+    localStorage.setItem("expiration", expirationDate.toISOString());
 
     setIsAccessGranted(true);
   };
@@ -58,18 +58,19 @@ export default function Page() {
         <>
           <Navbar />
           <div className="mt-24">
-            <Announcement
+            {/* <Announcement
               // message=""
               backgroundColor="bg-blue-500"
               textColor="text-white"
               dismissible={true}
-            />
+            /> */}
+
+           <Announcement />
           </div>
           {/* <div className="mt-4">
             <NewsTicker announcements={announcement} />
           </div> */}
           <main className="flex flex-col bg-gray-50 text-black dark:bg-gray-900 dark:text-white">
-
             <Slide />
 
             <BrandsSection />
@@ -77,8 +78,8 @@ export default function Page() {
             <AboutSection />
 
             <ProductsSection />
-
-            <TestimonialsPage />
+{/* 
+            <TestimonialsPage /> */}
 
             <Highlights />
 

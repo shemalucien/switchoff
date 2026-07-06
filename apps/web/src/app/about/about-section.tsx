@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaBullseye, FaEye, FaGem } from "react-icons/fa";
-import bottle from "../../../public/images/Image.jpg";
+import bottle from "../../../public/images/nice.png";
 
 const pillars = [
   {

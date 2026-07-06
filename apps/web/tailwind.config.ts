@@ -11,26 +11,38 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Core Switchoff brand palette — keeps the existing blue/white/gray
-        // identity but gives it names so it stays consistent across the app.
+        // Core Switchoff brand palette.
+        // Updated 2026: the logo's primary color moved from blue to a
+        // metallic gold, so `brand` is now gold. Every existing
+        // bg-brand-500 / text-brand-600 / border-brand-400 class across the
+        // app picks this up automatically — no other files need to change
+        // just for this.
         brand: {
-          50: "#eef6ff",
-          100: "#d9ecff",
-          200: "#b7dbff",
-          300: "#84c2ff",
-          400: "#4aa1ff",
-          500: "#2f7ef9", // primary blue
-          600: "#1c5fe0",
-          700: "#164ab4",
-          800: "#153f8f",
-          900: "#163871",
-          950: "#0f2247",
+          50: "#fdf9ec",
+          100: "#fbf1d2",
+          200: "#f3dfa3",
+          300: "#e9c86e",
+          400: "#ddb048",
+          500: "#c99730", // primary gold
+          600: "#a97c22",
+          700: "#86611b",
+          800: "#654815",
+          900: "#43300e",
+          950: "#2b1e09",
         },
         accent: {
-          // the cyan used on the Energy Drink line
+          // the cyan used on the Energy Drink line — unchanged, this is a
+          // product-specific color rather than the overall site identity
           400: "#5eead4",
           500: "#22d3c8",
           600: "#0fb8ac",
+        },
+        // New: the blue → green gradient used in the logo's lightning-bolt
+        // icon (the "o" in "off"). Use as e.g.
+        // bg-gradient-to-r from-bolt-blue to-bolt-green
+        bolt: {
+          blue: "#2e9bf0",
+          green: "#3ecf8e",
         },
         silver: {
           // the silver/white used on the Nice Guarana line
@@ -50,7 +62,8 @@ const config: Config = {
       boxShadow: {
         card: "0 2px 10px 0 rgba(15, 34, 71, 0.06)",
         "card-hover": "0 16px 40px -12px rgba(15, 34, 71, 0.25)",
-        glow: "0 0 0 1px rgba(47,126,249,0.15), 0 8px 24px -8px rgba(47,126,249,0.45)",
+        // Updated to match the new gold brand color (was rgba(47,126,249,...))
+        glow: "0 0 0 1px rgba(201,151,48,0.18), 0 8px 24px -8px rgba(201,151,48,0.45)",
       },
       borderRadius: {
         xl2: "1.25rem",

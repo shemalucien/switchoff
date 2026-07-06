@@ -6,22 +6,22 @@ import React, { useEffect, useState } from "react";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import type { Splide as SplideInstance } from "@splidejs/splide";
-
 import "@splidejs/react-splide/css";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import energy from "../../public/images/ENERGY.jpg";
-import energyPackage from "../../public/images/energy_package.jpg";
-import nice from "../../public/images/nice.jpg";
-import muyango2 from "../../public/images/muyango2.jpg";
-import nicePackage from "../../public/images/nice_package.jpg";
+import lemon from "../../public/images/lemon.png";
+import energy from "../../public/images/energy.png";
+// import energyPackage from "../../public/images/energy_package.jpg";
+// import muyango2 from "../../public/images/muyango2.jpg";
+// import nicePackage from "../../public/images/nice_package.jpg";
+import nice from "../../public/images/nice.png";
 import apple from "../../public/images/apple.png";
 import vodka from "../../public/images/vodka.png";
 
 // Define an array of images and their associated text
 const images = [
   {
-    gallery: [nice, muyango2, nicePackage],
+    gallery: [nice],
     alt: "Nice Guarana Package",
     eyebrow: "Nice Guarana",
     text1: "SWITCHOFF NICE GUARANA",
@@ -30,7 +30,7 @@ const images = [
     accent: "from-slate-400/20 to-slate-200/10",
   },
   {
-    gallery: [energy, energyPackage],
+    gallery: [energy],
     alt: "Energy Package",
     eyebrow: "Energy Drink",
     text1: "SWITCHOFF ENERGY DRINK",
@@ -41,11 +41,20 @@ const images = [
   {
     gallery: [apple],
     alt: "Original Apple",
-    eyebrow: "Original",
-    text1: "SWITCHOFF ORIGINAL APPLE",
+    eyebrow: "Apple",
+    text1: "SWITCHOFF APPLE",
     text2:
       "Crisp, refreshing apple flavor with natural sweetness. The perfect beverage for any occasion. Premium quality in every 500ml can.",
     accent: "from-green-400/20 to-green-200/10",
+  },
+  {
+    gallery: [lemon],
+    alt: "Switchoff Lemon",
+    eyebrow: "New — Lemon",
+    text1: "SWITCHOFF LEMON",
+    text2:
+      "Zesty citrus refreshment made with natural lemon flavour and a touch of Vitamin C. Now in a 500ml can.",
+    accent: "from-yellow-400/20 to-yellow-200/10",
   },
   {
     gallery: [vodka],

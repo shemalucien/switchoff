@@ -258,6 +258,33 @@ body {
   .alert-info {
     @apply alert border-blue-200 bg-blue-50 text-blue-700 dark:border-blue-900 dark:bg-blue-900/20 dark:text-blue-200;
   }
+
+  /* ---------- New: logo-matching gradient utilities ---------- */
+
+  /* Metallic gold text/surface — matches the new "Switchoff" wordmark */
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #f3dfa3 0%, #c99730 50%, #86611b 100%);
+  }
+
+  .bg-gradient-gold {
+    background-image: linear-gradient(135deg, #f3dfa3 0%, #c99730 50%, #86611b 100%);
+  }
+
+  /* Blue → green gradient — matches the lightning-bolt icon in the "o" of "off" */
+  .text-gradient-bolt {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #2e9bf0 0%, #3ecf8e 100%);
+  }
+
+  .bg-gradient-bolt {
+    background-image: linear-gradient(135deg, #2e9bf0 0%, #3ecf8e 100%);
+  }
+
+  /* Navy surface — the dark background the standalone logo mark sits on */
+  .bg-brand-navy {
+    background-color: #0a1b3d;
+  }
 }
 
 /* Custom scrollbar */
@@ -269,7 +296,8 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(47, 126, 249, 0.35);
+  /* Updated from the old blue (47, 126, 249) to match the new gold brand color */
+  background-color: rgba(201, 151, 48, 0.4);
   border-radius: 999px;
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
-import logo from "../../../public/images/logo1.png";
+import logo from "../../../public/images/icon.png";
 import NewsletterSignup from "../components/newsletter-signup";
 
 const quickLinks = [
@@ -99,7 +99,7 @@ function Footer() {
               </p>
               <p>
                 <a className="transition-colors duration-200 hover:text-brand-400" href="tel:+1234567890">
-                 +250 (788) 273-790
+                 +250 (785) 135-816
                 </a>
               </p>
               <p className="mt-4 text-xs text-gray-400">Monday - Saturday: 7:00 AM - 10:00 PM</p>
