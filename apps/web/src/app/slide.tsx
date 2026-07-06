@@ -17,9 +17,19 @@ import energy from "../../public/images/energy.png";
 import nice from "../../public/images/nice.png";
 import apple from "../../public/images/apple.png";
 import vodka from "../../public/images/vodka.png";
+import allProducts from "../../public/images/switchoff_products.png";
 
 // Define an array of images and their associated text
 const images = [
+    {
+    gallery: [allProducts],
+    alt: "The full range of Switchoff products",
+    eyebrow: "Full Range",
+    text1: "THE SWITCHOFF RANGE",
+    text2:
+      "From zero-proof refreshers to premium alcoholic energy mixes — discover every can in the Switchoff lineup.",
+    accent: "from-brand-400/20 to-brand-200/10",
+  },
   {
     gallery: [nice],
     alt: "Nice Guarana Package",
