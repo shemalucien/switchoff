@@ -155,7 +155,7 @@ const Highlights: React.FC = () => {
       </section>
 
       {/* Highlights Section */}
-      <section className="container-page py-12 md:py-16">
+      {/* <section className="container-page py-12 md:py-16">
         <div className="mb-12">
           <h2 className="section-heading text-gray-900 dark:text-white">
             Recent Highlights From Our Social Media
@@ -181,7 +181,6 @@ const Highlights: React.FC = () => {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                {/* Media Container */}
                 <div className="relative w-full aspect-square bg-gray-200 dark:bg-gray-800 overflow-hidden rounded-lg mb-4">
                   {post.media_type === "image" && (
                     <Image
@@ -200,21 +199,15 @@ const Highlights: React.FC = () => {
                       Your browser does not support the video tag.
                     </video>
                   )}
-
-                  {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="text-white font-semibold text-sm">
                       View on Instagram
                     </span>
                   </div>
                 </div>
-
-                {/* Caption */}
                 <p className="text-gray-700 dark:text-gray-300 text-sm line-clamp-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
                   {post.caption}
                 </p>
-
-                {/* Timestamp */}
                 <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
                   {new Date(post.timestamp).toLocaleDateString()}
                 </p>
@@ -222,7 +215,8 @@ const Highlights: React.FC = () => {
             ))}
           </div>
         )}
-      </section>
+      </section> */}
+    
     </div>
   );
 };

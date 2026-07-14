@@ -11,10 +11,10 @@ import { useStoredIds } from "../../lib/use-stored-ids";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/products", label: "Products" },
+  { href: "/about", label: "About Us" },
+   { href: "/brands", label: "Our Brands" },
+  { href: "/products", label: "Our Products" },
   { href: "/catalog", label: "Catalog" },
-  // { href: "/brands", label: "Brands" },
   // { href: "/contact", label: "Contact" },
 ];
 
