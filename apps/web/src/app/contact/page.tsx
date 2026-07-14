@@ -119,7 +119,97 @@ function ContactUsSection() {
             <p className="section-subheading">We&apos;d love to hear from you. Reach out to us with any questions or feedback.</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+         
+
+          {/* Contact Form */}
+          <motion.div
+            className="max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
+            whileInView={{ opacity: 1, y: 0 }}
+          >
+            <div className="card-elevated p-8 md:p-12">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Send us a Message</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-8">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
+
+              <form className="space-y-6" onSubmit={submitForm} ref={form}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <FormInput
+                    error={errors.name}
+                    label="Full Name"
+                    name="name"
+                    onChange={handleInputChange}
+                    placeholder="John Doe"
+                    required
+                    type="text"
+                    value={formData.name}
+                  />
+
+                  <FormInput
+                    error={errors.email}
+                    label="Email Address"
+                    name="email"
+                    onChange={handleInputChange}
+                    placeholder="john@example.com"
+                    required
+                    type="email"
+                    value={formData.email}
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <FormInput
+                    error={errors.phoneNumber}
+                    label="Phone Number"
+                    name="phoneNumber"
+                    onChange={handleInputChange}
+                    placeholder="+250 7XX XXX XXX"
+                    required
+                    type="tel"
+                    value={formData.phoneNumber}
+                  />
+
+                  <FormInput
+                    error={errors.subject}
+                    label="Subject"
+                    name="subject"
+                    onChange={handleInputChange}
+                    placeholder="How can we help?"
+                    required
+                    type="text"
+                    value={formData.subject}
+                  />
+                </div>
+
+                <FormTextarea
+                  error={errors.message}
+                  label="Message"
+                  name="message"
+                  onChange={handleInputChange}
+                  placeholder="Tell us what you're thinking..."
+                  required
+                  value={formData.message}
+                />
+
+                <button
+                  className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={isSubmitting}
+                  type="submit"
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </button>
+              </form>
+
+              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                <p className="text-sm text-blue-900 dark:text-blue-200">
+                  We typically respond to all inquiries within 24 business hours. Thank you for reaching out!
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+
+           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16 mt-10">
             {/* Contact Info Cards */}
             {partners.map((partner, index) => (
               <motion.div
@@ -220,93 +310,6 @@ function ContactUsSection() {
               </div>
             </motion.div>
           </div>
-
-          {/* Contact Form */}
-          <motion.div
-            className="max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-            whileInView={{ opacity: 1, y: 0 }}
-          >
-            <div className="card-elevated p-8 md:p-12">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Send us a Message</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-8">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
-
-              <form className="space-y-6" onSubmit={submitForm} ref={form}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <FormInput
-                    error={errors.name}
-                    label="Full Name"
-                    name="name"
-                    onChange={handleInputChange}
-                    placeholder="John Doe"
-                    required
-                    type="text"
-                    value={formData.name}
-                  />
-
-                  <FormInput
-                    error={errors.email}
-                    label="Email Address"
-                    name="email"
-                    onChange={handleInputChange}
-                    placeholder="john@example.com"
-                    required
-                    type="email"
-                    value={formData.email}
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <FormInput
-                    error={errors.phoneNumber}
-                    label="Phone Number"
-                    name="phoneNumber"
-                    onChange={handleInputChange}
-                    placeholder="+250 7XX XXX XXX"
-                    required
-                    type="tel"
-                    value={formData.phoneNumber}
-                  />
-
-                  <FormInput
-                    error={errors.subject}
-                    label="Subject"
-                    name="subject"
-                    onChange={handleInputChange}
-                    placeholder="How can we help?"
-                    required
-                    type="text"
-                    value={formData.subject}
-                  />
-                </div>
-
-                <FormTextarea
-                  error={errors.message}
-                  label="Message"
-                  name="message"
-                  onChange={handleInputChange}
-                  placeholder="Tell us what you're thinking..."
-                  required
-                  value={formData.message}
-                />
-
-                <button
-                  className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled={isSubmitting}
-                  type="submit"
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </button>
-              </form>
-
-              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-                <p className="text-sm text-blue-900 dark:text-blue-200">
-                  We typically respond to all inquiries within 24 business hours. Thank you for reaching out!
-                </p>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 

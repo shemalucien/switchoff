@@ -14,6 +14,9 @@ import SplashPage from "./splash";
 // import NewsTicker from './newsticker/newsticker';
 import Announcement from "./announcement/announcement";
 // import NewsSection from './news/page';
+import ImageGallery from "./components/image-gallery";
+import { IMAGES } from "../lib/media-config";
+import MediaShowcase from "./components/media-showcase";
 
 export default function Page() {
   const [isAccessGranted, setIsAccessGranted] = useState(false); // State to track access
@@ -65,7 +68,7 @@ export default function Page() {
               dismissible={true}
             /> */}
 
-           <Announcement />
+            <Announcement />
           </div>
           {/* <div className="mt-4">
             <NewsTicker announcements={announcement} />
@@ -73,12 +76,17 @@ export default function Page() {
           <main className="flex flex-col bg-gray-50 text-black dark:bg-gray-900 dark:text-white">
             <Slide />
 
-            <BrandsSection />
+          
+
+            {/* <BrandsSection /> */}
 
             <AboutSection />
 
-            <ProductsSection />
-{/* 
+            <MediaShowcase />
+
+            {/* <ProductsSection /> */}
+
+            {/* 
             <TestimonialsPage /> */}
 
             <Highlights />
