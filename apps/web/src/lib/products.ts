@@ -21,9 +21,14 @@
 export interface NutritionFacts {
   servingSize: string;
   calories: number;
+  /** Energy in kJ, when the source material provides it alongside kcal. */
+  energyKJ?: number;
   totalSugar: string;
   caffeine: string;
   sodium: string;
+  fat?: string;
+  carbohydrates?: string;
+  protein?: string;
   vitamins?: string[];
   alcohol?: string;
 }
@@ -45,6 +50,8 @@ export interface Product {
   gallery: string[];
   badges: ("New" | "Best Seller" | "Zero Sugar" | "Limited" | "Premium")[];
   isNew: boolean;
+  /** Optional storage/serving guidance shown on the product detail page. */
+  storageNote?: string;
 }
 
 export const products: Product[] = [
@@ -245,6 +252,76 @@ export const products: Product[] = [
     gallery: ["/images/vodka.png"],
     badges: ["Premium"],
     isNew: true,
+  },
+  {
+    id: "premium-lager-beer",
+    slug: "premium-lager-beer",
+    name: "SWITCHOFF PREMIUM LAGER BEER",
+    shortName: "Premium Lager",
+    tagline: "Refresh. Recharge. Rise Again.",
+    category: "Beer",
+    colorTheme: "Amber",
+    volume: "330 ml (glass bottle)",
+    description:
+      "Part of the SWITCHOFF® Beer Collection. A premium lager brewed from carefully selected malted barley and premium hops for a smooth, refreshing taste, packaged in a 330ml glass bottle. Contains barley (gluten).",
+    benefits: [
+      "Brewed with premium malted barley and hops",
+      "Smooth, refreshing lager taste",
+      "Classic 330ml glass bottle presentation",
+    ],
+    ingredients: ["Water", "Malted barley", "Barley malt", "Hops", "Yeast"],
+    nutrition: {
+      servingSize: "100 ml",
+      calories: 42,
+      energyKJ: 176,
+      totalSugar: "Not specified",
+      caffeine: "0 mg",
+      sodium: "0.02 g (salt)", // source gives Salt, not Sodium — kept as-is per request
+      fat: "0 g",
+      carbohydrates: "3.8 g",
+      protein: "0.3 g",
+      alcohol: "5% Alc./Vol.",
+    },
+    image: "/images/premium-lager.png",
+    gallery: ["/images/premium-lager.png"],
+    badges: ["New"],
+    isNew: true,
+    storageNote: "Store in a cool, dry place. Best served chilled (4–8°C). Protect from direct sunlight.",
+  },
+  {
+    id: "strong-beer",
+    slug: "strong-beer",
+    name: "SWITCHOFF STRONG BEER",
+    shortName: "Strong Beer",
+    tagline: "Refresh. Recharge. Rise Again.",
+    category: "Beer",
+    colorTheme: "Dark Amber",
+    volume: "500 ml (can)",
+    description:
+      "Part of the SWITCHOFF® Beer Collection. A bold, strong lager with rich flavour and a smooth finish, packaged in a 500ml can. Contains barley (gluten).",
+    benefits: [
+      "Bold, full-bodied strong lager",
+      "Rich flavour with a smooth finish",
+      "Convenient 500ml can format",
+    ],
+    ingredients: ["Water", "Malted barley", "Barley malt", "Hops", "Yeast"],
+    nutrition: {
+      servingSize: "100 ml",
+      calories: 62,
+      energyKJ: 260,
+      totalSugar: "Not specified",
+      caffeine: "0 mg",
+      sodium: "0.02 g (salt)", // source gives Salt, not Sodium — kept as-is per request
+      fat: "0 g",
+      carbohydrates: "4.5 g",
+      protein: "0.5 g",
+      alcohol: "10% Alc./Vol.",
+    },
+    image: "/images/strong-beer.png",
+    gallery: ["/images/strong-beer.png"],
+    badges: ["New"],
+    isNew: true,
+    storageNote: "Store in a cool, dry place. Best served chilled (4–8°C). Protect from direct sunlight.",
   },
 ];
 
