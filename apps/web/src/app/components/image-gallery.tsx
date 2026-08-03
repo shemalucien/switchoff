@@ -105,19 +105,19 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({
 
       {/* Lightbox Modal */}
       {showLightbox && selectedIndex !== null && (
-        <div className="fixed inset-0 z-50 mt-20 flex items-center justify-center bg-black/95 p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4">
           {/* Close Button */}
           <button
             onClick={() => setSelectedIndex(null)}
-            className="absolute top-6 right-6 text-white transition-colors hover:text-gray-300"
+            className="absolute top-6 right-6 z-20 text-white transition-colors hover:text-gray-300"
             aria-label="Close"
           >
             <X size={32} />
           </button>
 
           {/* Image Container */}
-          <div className="relative w-full max-w-4xl max-h-[80vh]">
-            <div className="relative h-[85vh] w-full max-w-6xl overflow-hidden rounded-lg bg-black md:h-[600px]">
+          <div className="relative flex h-full w-full max-w-7xl flex-col items-center justify-center">
+            <div className="relative h-[85vh] w-full overflow-hidden rounded-lg bg-black">
               {!isPlaceholder(images[selectedIndex].url) ? (
                 <Image
                   src={images[selectedIndex].url}

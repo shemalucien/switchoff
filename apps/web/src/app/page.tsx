@@ -82,7 +82,7 @@ export default function Page() {
 
             <AboutSection />
 
-            <MediaShowcase />
+            {/* <MediaShowcase /> */}
 
             {/* <ProductsSection /> */}
 

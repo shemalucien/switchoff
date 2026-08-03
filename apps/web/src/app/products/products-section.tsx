@@ -148,7 +148,7 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({ full = true }) => {
         />
       </section>
 
-      <section className="container mx-auto px-4 py-16">
+      {/* <section className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold mb-8 text-center">
           Our Products Gallery
         </h2>
@@ -157,7 +157,7 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({ full = true }) => {
           columns={3}
           showLightbox={true}
         />
-      </section>
+      </section> */}
     </>
   );
 };

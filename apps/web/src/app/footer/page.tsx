@@ -89,7 +89,7 @@ function Footer() {
           </div>
 
           {/* Info */}
-          <div>
+          {/* <div>
             <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-white">Contact</h4>
             <div className="space-y-2.5 text-sm text-gray-300">
               <p>
@@ -104,7 +104,7 @@ function Footer() {
               </p>
               <p className="mt-4 text-xs text-gray-400">Monday - Saturday: 7:00 AM - 10:00 PM</p>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="mt-12 divider" />

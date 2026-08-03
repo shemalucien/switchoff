@@ -1,9 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-// import { Splide, SplideSlide } from "@splidejs/react-splide";
-// import type { Splide, SplideSlide } from "@splidejs/splide";
-
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import type { Splide as SplideInstance } from "@splidejs/splide";
 import "@splidejs/react-splide/css";
@@ -11,13 +8,10 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import lemon from "../../public/images/lemon.png";
 import energy from "../../public/images/energy.png";
-// import energyPackage from "../../public/images/energy_package.jpg";
-// import muyango2 from "../../public/images/muyango2.jpg";
-// import nicePackage from "../../public/images/nice_package.jpg";
 import nice from "../../public/images/nice.png";
 import apple from "../../public/images/apple.png";
 import vodka from "../../public/images/vodka.png";
-import allProducts from "../../public/images/switchoff_products.png";
+import allProducts from "../../public/images/switchoff_products_updated.png";
 
 // Define an array of images and their associated text
 const images = [
@@ -102,7 +96,7 @@ function ProductGallery({
   }, [isActive, gallery.length]);
 
   return (
-    <div className="relative flex items-center justify-center order-1 md:order-2 min-h-72 sm:min-h-80 md:min-h-96 xl:min-h-[560px]">
+    <div className="relative flex items-center justify-center order-1 md:order-2 min-h-[260px] sm:min-h-[320px] md:min-h-[420px] lg:min-h-[480px]">
       {/* Soft color blob fills extra space behind the can on large screens */}
       <div
         className={`absolute inset-0 m-auto h-64 w-64 sm:h-80 sm:w-80 md:h-[26rem] md:w-[26rem] xl:h-[34rem] xl:w-[34rem] rounded-full bg-gradient-to-br ${accent} blur-3xl`}
@@ -187,24 +181,24 @@ export default function Slide() {
       >
         {images.map((image, index) => (
           <SplideSlide key={index} className="!flex items-center">
-            <div className="relative w-full py-10 sm:py-12 md:py-16 lg:py-20 xl:py-24 min-h-[420px] sm:min-h-[500px] md:min-h-[600px] xl:min-h-[680px] 2xl:min-h-[760px] flex items-center">
+            <div className="relative w-full py-8 md:py-10 lg:py-12 xl:py-14 min-h-[380px] sm:min-h-[440px] md:min-h-[520px] lg:min-h-[560px] xl:min-h-[620px] flex items-center">
               {/* Content container — widens further on very large screens so it doesn't float in empty margin */}
-              <div className="container-page w-full 2xl:max-w-[1600px]">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center">
+              <div className="container-page w-full max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-6 md:gap-8 lg:gap-10 xl:gap-12 items-center">
                   {/* Text Section */}
                   <div className="flex flex-col justify-center space-y-4 sm:space-y-5 md:space-y-6 xl:space-y-8 order-2 md:order-1">
-                    <div className="space-y-2 sm:space-y-3">
+                    <div className="space-y-2">
                       <span className="inline-block text-xs sm:text-sm font-semibold tracking-widest uppercase text-brand-500 dark:text-brand-400">
                         {image.eyebrow}
                       </span>
                       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-gray-900 dark:text-white leading-tight text-balance">
                         {image.text1}
                       </h1>
-                      <p className="text-sm sm:text-base md:text-lg xl:text-xl text-gray-600 dark:text-gray-300 leading-relaxed text-pretty max-w-xl">
+                      <p className="text-sm sm:text-base md:text-lg xl:text-xl text-gray-600 dark:text-gray-300 leading-relaxed text-pretty max-w-lg">
                         {image.text2}
                       </p>
                     </div>
-                    <div className="pt-2 sm:pt-4">
+                    <div className="pt-1 md:pt-2">
                       <Link
                         href="/products"
                         className="btn-primary inline-flex items-center justify-center text-xs sm:text-sm md:text-base xl:text-lg px-5 sm:px-6 xl:px-8 py-2.5 sm:py-3 xl:py-3.5 whitespace-nowrap"

@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaBullseye, FaEye, FaGem, FaCheckCircle, FaGlobeAfrica } from "react-icons/fa";
-import bottle from "../../../public/images/switchoff_products.png";
+import bottle from "../../../public/images/switchoff_products_updated.png";
 
 const pillars = [
   {

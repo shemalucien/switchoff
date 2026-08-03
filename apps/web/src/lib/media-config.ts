@@ -65,6 +65,14 @@ const PRODUCTS_DATA = {
     { url: '/images/vodka_1.png', alt: 'Vodka Energy Mix Lifestyle', type: 'lifestyle' },
     { url: '/images/vodka_2.png', alt: 'Vodka Energy Mix Detail', type: 'detail' },
   ],
+
+  LAGER_BEER: [
+    { url: '/images/premium-lager.png', alt: 'SWITCHOFF PREMIUM LAGER BEER', type: 'product' },
+  ],
+
+  STRONG_BEER : [
+    { url: '/images/strong-beer.png', alt: 'SWITCHOFF STRONG BEER', type: 'product' },
+  ],
 };
 
 export const IMAGES = {
@@ -77,6 +85,8 @@ export const IMAGES = {
       ...PRODUCTS_DATA.LEMON,
       ...PRODUCTS_DATA.APPLE,
       ...PRODUCTS_DATA.VODKA,
+      ...PRODUCTS_DATA.LAGER_BEER,
+      ...PRODUCTS_DATA.STRONG_BEER,
     ],
   },
 
